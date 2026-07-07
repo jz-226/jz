@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>姜梓 · AI产品经理作品集</title>
+<style>
+:root {
+  --bg: #0f1117; --card: #1a1d27; --text: #e1e4e8;
+  --muted: #8b949e; --accent: #58a6ff; --green: #3fb950;
+  --orange: #d2991d; --border: #30363d; --radius: 12px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.6; }
+a { color:var(--accent); text-decoration:none; }
+.container { max-width:1000px; margin:0 auto; padding:0 24px; }
+.hero { padding:80px 0 60px; text-align:center; }
+.hero h1 { font-size:3rem; font-weight:700; background:linear-gradient(135deg,#58a6ff,#a5d6ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.hero .sub { font-size:1.2rem; color:var(--muted); margin-top:10px; }
+.hero .contact-row { margin-top:20px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; color:var(--muted); font-size:0.95rem; }
+.badge-row { margin-top:16px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+.badge { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:6px 16px; font-size:0.85rem; color:var(--muted); }
+.section { padding:60px 0; }
+.section h2 { font-size:1.8rem; margin-bottom:30px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; transition:transform .2s,border-color .2s; }
+.card:hover { transform:translateY(-4px); border-color:var(--accent); }
+.card .tag { display:inline-block; font-size:0.75rem; padding:3px 10px; border-radius:12px; margin-bottom:12px; }
+.tag-ai { background:rgba(88,166,255,.15); color:var(--accent); }
+.tag-mini { background:rgba(63,185,80,.15); color:var(--green); }
+.tag-design { background:rgba(210,153,29,.15); color:var(--orange); }
+.card h3 { font-size:1.15rem; margin-bottom:8px; }
+.card p { color:var(--muted); font-size:0.9rem; margin-bottom:16px; }
+.card .links a { display:inline-block; margin-right:16px; font-size:0.9rem; font-weight:500; }
+.gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; }
+.gallery-item { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:transform .2s; }
+.gallery-item:hover { transform:scale(1.02); }
+.gallery-item .img-placeholder { height:200px; background:linear-gradient(135deg,#1a1d27,#252830); display:flex; align-items:center; justify-content:center; font-size:3rem; }
+.gallery-item .info { padding:16px; }
+.gallery-item .info h4 { font-size:1rem; }
+.gallery-item .info span { font-size:0.8rem; color:var(--muted); }
+.timeline { border-left:2px solid var(--border); padding-left:24px; margin-left:12px; }
+.timeline-item { margin-bottom:28px; position:relative; }
+.timeline-item:before { content:""; position:absolute; left:-31px; top:4px; width:12px; height:12px; background:var(--accent); border-radius:50%; }
+.timeline-item .year { font-size:0.85rem; color:var(--accent); font-weight:600; }
+.timeline-item h4 { margin:4px 0; }
+.timeline-item p { color:var(--muted); font-size:0.9rem; }
+.footer { text-align:center; padding:40px 0; color:var(--muted); font-size:0.85rem; border-top:1px solid var(--border); margin-top:40px; }
+.footer a { color:var(--text); }
+@media (max-width:600px) {
+  .hero h1 { font-size:2rem; }
+  .cards,.gallery { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<section class="hero container">
+  <h1>姜梓</h1>
+  <p class="sub">AI产品经理 · 数字媒体艺术 · 2027届校招</p>
+  <div class="contact-row">
+    <span>18621691272</span>
+    <span>2175546440@qq.com</span>
+    <span>苏州</span>
+  </div>
+  <div class="badge-row">
+    <span class="badge">3个AI Agent</span>
+    <span class="badge">国赛金奖</span>
+    <span class="badge">已上线小程序</span>
+    <span class="badge">AI短片</span>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>AI Agent 项目</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag tag-ai">AI Agent · RAG</span>
+      <h3>旅行规划助手</h3>
+      <p>3种画像x3种模式，搭载苏州本地知识库。先问你是谁，再帮你规划。</p>
+      <div class="links"><a href="https://github.com/jz-226/jz/tree/master/AI%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92%E5%99%A8" target="_blank">产品文档</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-ai">AI Agent · 实习项目</span>
+      <h3>儿童康复家庭训练助手</h3>
+      <p>康复师指令变成家长版每日训练方案。基于昆山小白杨真实场景。</p>
+      <div class="links"><a href="https://github.com/jz-226/jz/tree/master/AI%E5%84%BF%E7%AB%A5%E5%BA%B7%E5%A4%8D%E5%8A%A9%E6%89%8B" target="_blank">产品方案</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-mini">微信小程序 · 已上线</span>
+      <h3>姜记学情本</h3>
+      <p>面向家教场景的学生管理与学情追踪工具。</p>
+      <div class="links"><a href="https://github.com/jz-226/jz/tree/master/%E5%AD%A6%E6%83%85%E6%9C%AC%E5%B0%8F%E7%A8%8B%E5%BA%8F" target="_blank">源码</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>信息可视化设计</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <div class="img-placeholder">A</div>
+      <div class="info"><h4>岁月叩响 铺首衔环信息可视化</h4><span>东方创意之星 国赛金奖 · 江苏省特金奖</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="img-placeholder">B</div>
+      <div class="info"><h4>元气派 IP形象设计</h4><span>全国大学生数字媒体科技作品竞赛 省三等奖</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="img-placeholder">C</div>
+      <div class="info"><h4>海洋文化创意大赛作品</h4><span>江苏海洋大学 艺术设计学院</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>AI 短片 向海</h2>
+  <div class="card" style="max-width:600px;">
+    <span class="tag tag-design">AI工具链 · 即梦·豆包·Claude</span>
+    <h3>90秒治愈系动画短片</h3>
+    <p>选题定位 用户情绪曲线设计 AI内容生成 分发策略，完整内容产品化流程。</p>
+    <div class="links"><a href="https://github.com/jz-226/jz/tree/master/AI%E7%9F%AD%E7%89%87_%E5%90%91%E6%B5%B7" target="_blank">查看素材</a></div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>竞赛与荣誉</h2>
+  <div class="timeline">
+    <div class="timeline-item"><div class="year">2024.08</div><h4>东方创意之星创新设计大赛 国赛金奖</h4><p>岁月叩响——铺首衔环信息可视化设计</p></div>
+    <div class="timeline-item"><div class="year">2024.08</div><h4>东方创意之星 江苏省特金奖</h4></div>
+    <div class="timeline-item"><div class="year">2024.10</div><h4>釜山国际艺术节平面设计大赛 铜奖</h4></div>
+    <div class="timeline-item"><div class="year">2024.05</div><h4>中国大学生计算机设计大赛 省二等奖</h4><p>入围国赛</p></div>
+    <div class="timeline-item"><div class="year">2024.11</div><h4>全国大学生数字媒体科技作品及创意竞赛 省三等奖</h4><p>元气派IP形象设计</p></div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>实习经历</h2>
+  <div class="cards">
+    <div class="card"><span class="tag tag-ai">2026.07 - 至今</span><h3>昆山小白杨健康管理</h3><p>AI产品实习 · 发现真实痛点并搭建AI Agent方案</p></div>
+    <div class="card"><span class="tag tag-design">2023.12 - 2024.11</span><h3>东家智创文化传媒</h3><p>设计竞赛研发 · 近1年驻留 · 国奖金奖</p></div>
+    <div class="card"><span class="tag tag-mini">2024.03 - 2024.08</span><h3>彩玻国际贸易</h3><p>抖音运营 · 单条1万播放 · B端成交转化</p></div>
+  </div>
+</section>
+
+<footer class="footer container">
+  <p>2026 姜梓 · <a href="https://github.com/jz-226/jz" target="_blank">GitHub</a> · 所有AI项目可现场演示</p>
+</footer>
+</body></html>
