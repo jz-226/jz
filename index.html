@@ -3,146 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>姜梓 · AI产品经理作品集</title>
+<title>姜梓 · 作品集</title>
 <style>
 :root {
-  --bg: #0f1117; --card: #1a1d27; --text: #e1e4e8;
-  --muted: #8b949e; --accent: #58a6ff; --green: #3fb950;
-  --orange: #d2991d; --border: #30363d; --radius: 12px;
+  --bg-start: #0f0c29; --bg-mid: #302b63; --bg-end: #24243e;
+  --card-bg: rgba(255,255,255,0.06); --card-border: rgba(255,255,255,0.12);
+  --text: #e8e6f0; --muted: #a9a5c0; --accent: #7c8aff;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-body { background:var(--bg); color:var(--text); font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.6; }
-a { color:var(--accent); text-decoration:none; }
-.container { max-width:1000px; margin:0 auto; padding:0 24px; }
-.hero { padding:80px 0 60px; text-align:center; }
-.hero h1 { font-size:3rem; font-weight:700; background:linear-gradient(135deg,#58a6ff,#a5d6ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.hero .sub { font-size:1.2rem; color:var(--muted); margin-top:10px; }
-.hero .contact-row { margin-top:20px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; color:var(--muted); font-size:0.95rem; }
-.badge-row { margin-top:16px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
-.badge { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:6px 16px; font-size:0.85rem; color:var(--muted); }
-.section { padding:60px 0; }
-.section h2 { font-size:1.8rem; margin-bottom:30px; }
-.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; }
-.card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; transition:transform .2s,border-color .2s; }
-.card:hover { transform:translateY(-4px); border-color:var(--accent); }
-.card .tag { display:inline-block; font-size:0.75rem; padding:3px 10px; border-radius:12px; margin-bottom:12px; }
-.tag-ai { background:rgba(88,166,255,.15); color:var(--accent); }
-.tag-mini { background:rgba(63,185,80,.15); color:var(--green); }
-.tag-design { background:rgba(210,153,29,.15); color:var(--orange); }
-.card h3 { font-size:1.15rem; margin-bottom:8px; }
-.card p { color:var(--muted); font-size:0.9rem; margin-bottom:16px; }
-.card .links a { display:inline-block; margin-right:16px; font-size:0.9rem; font-weight:500; }
-.gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; }
-.gallery-item { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:transform .2s; }
-.gallery-item:hover { transform:scale(1.02); }
-.gallery-item .img-placeholder { height:200px; background:linear-gradient(135deg,#1a1d27,#252830); display:flex; align-items:center; justify-content:center; font-size:3rem; }
-.gallery-item .info { padding:16px; }
-.gallery-item .info h4 { font-size:1rem; }
-.gallery-item .info span { font-size:0.8rem; color:var(--muted); }
-.timeline { border-left:2px solid var(--border); padding-left:24px; margin-left:12px; }
-.timeline-item { margin-bottom:28px; position:relative; }
-.timeline-item:before { content:""; position:absolute; left:-31px; top:4px; width:12px; height:12px; background:var(--accent); border-radius:50%; }
-.timeline-item .year { font-size:0.85rem; color:var(--accent); font-weight:600; }
-.timeline-item h4 { margin:4px 0; }
-.timeline-item p { color:var(--muted); font-size:0.9rem; }
-.footer { text-align:center; padding:40px 0; color:var(--muted); font-size:0.85rem; border-top:1px solid var(--border); margin-top:40px; }
-.footer a { color:var(--text); }
-@media (max-width:600px) {
-  .hero h1 { font-size:2rem; }
-  .cards,.gallery { grid-template-columns:1fr; }
+body {
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-mid), var(--bg-end));
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  min-height: 100vh; line-height: 1.6;
 }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.header { text-align: center; padding: 60px 0 40px; }
+.header h1 { font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #c4b5fd, #7c8aff, #67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header .subtitle { color: var(--muted); font-size: 1.15rem; margin-top: 10px; }
+.nav { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 50px; }
+.nav-btn {
+  background: var(--card-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border); color: var(--muted); padding: 12px 28px;
+  border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 500;
+  transition: all .25s; display: flex; align-items: center; gap: 8px;
+}
+.nav-btn:hover { border-color: var(--accent); color: var(--text); transform: translateY(-2px); }
+.nav-btn.active { background: rgba(124,138,255,0.2); border-color: var(--accent); color: #fff; box-shadow: 0 0 20px rgba(124,138,255,0.25); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; padding-bottom: 60px; }
+.card {
+  background: var(--card-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border); border-radius: 18px; overflow: hidden;
+  transition: all .35s cubic-bezier(0.25,0.8,0.25,1.2);
+  display: flex; flex-direction: column;
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(124,138,255,0.15); border-color: rgba(255,255,255,0.25); }
+.card-img { width: 100%; height: 220px; object-fit: cover; display: block; background: linear-gradient(135deg, #1e1b4b, #312e81); }
+.card-video { width: 100%; max-height: 220px; background: #000; }
+.card-video video { width: 100%; height: 220px; object-fit: cover; }
+.card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.cat-tag { display: inline-block; font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; width: fit-content; font-weight: 500; }
+.cat-visual { background: rgba(244,114,182,0.15); color: #f472b6; }
+.cat-agent { background: rgba(124,138,255,0.15); color: #7c8aff; }
+.cat-video { background: rgba(52,211,153,0.15); color: #34d399; }
+.cat-other { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.card-body h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; }
+.card-body p { color: var(--muted); font-size: 0.88rem; margin-bottom: 14px; flex: 1; }
+.links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+.btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
+  font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all .2s;
+  border: 1px solid rgba(255,255,255,0.15); color: var(--text);
+}
+.btn:hover { background: rgba(255,255,255,0.08); text-decoration: none; }
+.btn-accent { background: rgba(124,138,255,0.15); border-color: var(--accent); color: #a5b4fc; }
+.btn-accent:hover { background: rgba(124,138,255,0.25); }
+.empty { text-align: center; padding: 60px 20px; color: var(--muted); grid-column: 1/-1; }
+.empty .icon { font-size: 3rem; margin-bottom: 16px; }
+.footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 20px; }
+.footer a { color: var(--accent); text-decoration: none; }
+@media (max-width: 768px) { .header h1 { font-size: 2rem; } .grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-<section class="hero container">
-  <h1>姜梓</h1>
-  <p class="sub">AI产品经理 · 数字媒体艺术 · 2027届校招</p>
-  <div class="contact-row">
-    <span>18621691272</span>
-    <span>2175546440@qq.com</span>
-    <span>苏州</span>
-  </div>
-  <div class="badge-row">
-    <span class="badge">3个AI Agent</span>
-    <span class="badge">国赛金奖</span>
-    <span class="badge">已上线小程序</span>
-    <span class="badge">AI短片</span>
-  </div>
-</section>
-
-<section class="section container">
-  <h2>AI Agent 项目</h2>
-  <div class="cards">
-    <div class="card">
-      <span class="tag tag-ai">AI Agent · RAG</span>
-      <h3>旅行规划助手</h3>
-      <p>3种画像x3种模式，搭载苏州本地知识库。先问你是谁，再帮你规划。</p>
-      <div class="links"><a href="https://github.com/jz-226/jz/tree/master/AI%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92%E5%99%A8" target="_blank">产品文档</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-ai">AI Agent · 实习项目</span>
-      <h3>儿童康复家庭训练助手</h3>
-      <p>康复师指令变成家长版每日训练方案。基于昆山小白杨真实场景。</p>
-      <div class="links"><a href="https://github.com/jz-226/jz/tree/master/AI%E5%84%BF%E7%AB%A5%E5%BA%B7%E5%A4%8D%E5%8A%A9%E6%89%8B" target="_blank">产品方案</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-mini">微信小程序 · 已上线</span>
-      <h3>姜记学情本</h3>
-      <p>面向家教场景的学生管理与学情追踪工具。</p>
-      <div class="links"><a href="https://github.com/jz-226/jz/tree/master/%E5%AD%A6%E6%83%85%E6%9C%AC%E5%B0%8F%E7%A8%8B%E5%BA%8F" target="_blank">源码</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="section container">
-  <h2>信息可视化设计</h2>
-  <div class="gallery">
-    <div class="gallery-item">
-      <div class="img-placeholder">A</div>
-      <div class="info"><h4>岁月叩响 铺首衔环信息可视化</h4><span>东方创意之星 国赛金奖 · 江苏省特金奖</span></div>
-    </div>
-    <div class="gallery-item">
-      <div class="img-placeholder">B</div>
-      <div class="info"><h4>元气派 IP形象设计</h4><span>全国大学生数字媒体科技作品竞赛 省三等奖</span></div>
-    </div>
-    <div class="gallery-item">
-      <div class="img-placeholder">C</div>
-      <div class="info"><h4>海洋文化创意大赛作品</h4><span>江苏海洋大学 艺术设计学院</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section container">
-  <h2>AI 短片 向海</h2>
-  <div class="card" style="max-width:600px;">
-    <span class="tag tag-design">AI工具链 · 即梦·豆包·Claude</span>
-    <h3>90秒治愈系动画短片</h3>
-    <p>选题定位 用户情绪曲线设计 AI内容生成 分发策略，完整内容产品化流程。</p>
-    <div class="links"><a href="https://github.com/jz-226/jz/tree/master/AI%E7%9F%AD%E7%89%87_%E5%90%91%E6%B5%B7" target="_blank">查看素材</a></div>
-  </div>
-</section>
-
-<section class="section container">
-  <h2>竞赛与荣誉</h2>
-  <div class="timeline">
-    <div class="timeline-item"><div class="year">2024.08</div><h4>东方创意之星创新设计大赛 国赛金奖</h4><p>岁月叩响——铺首衔环信息可视化设计</p></div>
-    <div class="timeline-item"><div class="year">2024.08</div><h4>东方创意之星 江苏省特金奖</h4></div>
-    <div class="timeline-item"><div class="year">2024.10</div><h4>釜山国际艺术节平面设计大赛 铜奖</h4></div>
-    <div class="timeline-item"><div class="year">2024.05</div><h4>中国大学生计算机设计大赛 省二等奖</h4><p>入围国赛</p></div>
-    <div class="timeline-item"><div class="year">2024.11</div><h4>全国大学生数字媒体科技作品及创意竞赛 省三等奖</h4><p>元气派IP形象设计</p></div>
-  </div>
-</section>
-
-<section class="section container">
-  <h2>实习经历</h2>
-  <div class="cards">
-    <div class="card"><span class="tag tag-ai">2026.07 - 至今</span><h3>昆山小白杨健康管理</h3><p>AI产品实习 · 发现真实痛点并搭建AI Agent方案</p></div>
-    <div class="card"><span class="tag tag-design">2023.12 - 2024.11</span><h3>东家智创文化传媒</h3><p>设计竞赛研发 · 近1年驻留 · 国奖金奖</p></div>
-    <div class="card"><span class="tag tag-mini">2024.03 - 2024.08</span><h3>彩玻国际贸易</h3><p>抖音运营 · 单条1万播放 · B端成交转化</p></div>
-  </div>
-</section>
-
+<div class="container">
+  <header class="header">
+    <h1>我的作品集</h1>
+    <p class="subtitle">姜梓 · AI产品经理 · 数字媒体艺术 · 2027届校招</p>
+  </header>
+  <nav class="nav" id="nav">
+    <button class="nav-btn active" data-cat="all">All</button>
+    <button class="nav-btn" data-cat="visual">Visual</button>
+    <button class="nav-btn" data-cat="agent">AI Agent</button>
+    <button class="nav-btn" data-cat="video">Video</button>
+    <button class="nav-btn" data-cat="other">Other</button>
+  </nav>
+  <div class="grid" id="grid"></div>
+</div>
 <footer class="footer container">
-  <p>2026 姜梓 · <a href="https://github.com/jz-226/jz" target="_blank">GitHub</a> · 所有AI项目可现场演示</p>
+  <p>2026 姜梓 · <a href="https://github.com/jz-226/jz">GitHub</a> · 18621691272 · 2175546440@qq.com</p>
 </footer>
-</body></html>
+<script>
+var projectsData = [
+  {id:1,title:"The Sound of Time - Door Knocker Info Viz",description:"Oriental Creative Star National Gold Award. Information visualization of traditional Chinese door knockers from Northern Jiangsu. 国赛金奖 · 江苏省特金奖",category:"visual",imageUrl:"https://picsum.photos/seed/door/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:2,title:"Yuan Qi Pai - IP Character Design",description:"National Digital Media Tech Competition Provincial 3rd Prize. Original IP character system including expressions, stickers, and merchandise designs. 省三等奖",category:"visual",imageUrl:"https://picsum.photos/seed/yuanqi/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:3,title:"Ocean Culture Creative Competition",description:"Ocean-themed visual design exploring the fusion of maritime culture and modern graphic design. Jiangsu Ocean University.",category:"visual",imageUrl:"https://picsum.photos/seed/ocean/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:4,title:"Donghai Local Product Packaging",description:"Donghai County Specialty Packaging Competition Bronze Award. Regional culture meets modern packaging design. 铜奖",category:"visual",imageUrl:"https://picsum.photos/seed/package/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:5,title:"Travel Planner AI Agent",description:"3 personas x 3 modes. Dify + DeepSeek V4 + RAG. A travel agent that asks who you are before planning. 5-dim eval system + Token cost model. Live demo available.",category:"agent",imageUrl:"https://picsum.photos/seed/travel/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz/tree/master/AI%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92%E5%99%A8"},
+  {id:6,title:"Children Rehab Home Training Agent",description:"Built during internship at Kunshan Xiaobaiyang Health. Therapist inputs training commands -> AI auto-generates parent-friendly daily plans with gamification. 真实实习场景",category:"agent",imageUrl:"https://picsum.photos/seed/rehab/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz/tree/master/AI%E5%84%BF%E7%AB%A5%E5%BA%B7%E5%A4%8D%E5%8A%A9%E6%89%8B"},
+  {id:7,title:"Jiang Ji Xue Qing Ben - WeChat Mini Program",description:"Student management tool for tutoring scenarios. 4 modules + error tracking state machine + Dashboard. Already live on WeChat. 已上线",category:"agent",imageUrl:"https://picsum.photos/seed/miniapp/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz/tree/master/%E5%AD%A6%E6%83%85%E6%9C%AC%E5%B0%8F%E7%A8%8B%E5%BA%8F"},
+  {id:8,title:"AI Short Film 'Xiang Hai' (To the Sea)",description:"90-second healing animation. Full AI pipeline: Jimeng + Doubao + Claude Code. From concept to distribution strategy. AI工具链全流程",category:"video",imageUrl:"https://picsum.photos/seed/xianghai/400/300",videoUrl:"https://www.w3schools.com/html/mov_bbb.mp4",projectLink:"https://github.com/jz-226/jz/tree/master/AI%E7%9F%AD%E7%89%87_%E5%90%91%E6%B5%B7"},
+  {id:9,title:"Academy Promotional Video",description:"Filmed and edited for the college. Full process: pre-production planning, storyboarding, shooting, editing, and post-production.",category:"video",imageUrl:"https://picsum.photos/seed/academy/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:10,title:"Douyin Commercial Short Videos",description:"Created during Caibo International Trade internship. Top video 10K+ views. 3-4 B2B deals closed directly via content marketing. 内容带货闭环验证",category:"video",imageUrl:"https://picsum.photos/seed/douyin/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:11,title:"Unity 3D Project",description:"Unity engine project - 3D scene building and interactive design practice.",category:"other",imageUrl:"https://picsum.photos/seed/unity/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:12,title:"Blender 3D Design Works",description:"Blender 3D modeling and rendering - scene composition, materials, lighting, and animation basics.",category:"other",imageUrl:"https://picsum.photos/seed/blender/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"}
+];
+var catLabels = {visual:"Visual Design",agent:"AI Agent",video:"Video",other:"Other"};
+var catCss = {visual:"cat-visual",agent:"cat-agent",video:"cat-video",other:"cat-other"};
+function render(filter) {
+  var items = filter === "all" ? projectsData : projectsData.filter(function(p) { return p.category === filter; });
+  var grid = document.getElementById("grid");
+  if (items.length === 0) {
+    grid.innerHTML = '<div class="empty"><div class="icon">Empty</div><p>Coming soon</p></div>';
+    return;
+  }
+  grid.innerHTML = items.map(function(p) {
+    var media = p.videoUrl
+      ? '<div class="card-video"><video controls preload="metadata"><source src="' + p.videoUrl + '" type="video/mp4"></video></div>'
+      : '<img class="card-img" src="' + p.imageUrl + '" alt="' + p.title + '" loading="lazy">';
+    return '<div class="card">' + media +
+      '<div class="card-body">' +
+        '<span class="cat-tag ' + (catCss[p.category] || "cat-other") + '">' + (catLabels[p.category] || p.category) + '</span>' +
+        '<h3>' + p.title + '</h3>' +
+        '<p>' + p.description + '</p>' +
+        '<div class="links"><a class="btn btn-accent" href="' + p.projectLink + '" target="_blank">View Project</a></div>' +
+      '</div></div>';
+  }).join("");
+}
+document.getElementById("nav").addEventListener("click", function(e) {
+  var btn = e.target.closest(".nav-btn");
+  if (!btn) return;
+  document.querySelectorAll(".nav-btn").forEach(function(b) { b.classList.remove("active"); });
+  btn.classList.add("active");
+  render(btn.dataset.cat);
+});
+render("all");
+</script>
+</body>
+</html>
