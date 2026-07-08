@@ -3,131 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>姜梓 · 作品集</title>
+<title>My Portfolio</title>
 <style>
 :root {
-  --bg-start: #0f0c29; --bg-mid: #302b63; --bg-end: #24243e;
-  --card-bg: rgba(255,255,255,0.06); --card-border: rgba(255,255,255,0.12);
+  --bg: #0f0c29; --bg2: #302b63; --bg3: #24243e;
+  --card: rgba(255,255,255,0.06); --border: rgba(255,255,255,0.12);
   --text: #e8e6f0; --muted: #a9a5c0; --accent: #7c8aff;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
-  background: linear-gradient(135deg, var(--bg-start), var(--bg-mid), var(--bg-end));
+  background: linear-gradient(135deg, var(--bg), var(--bg2), var(--bg3));
   background-attachment: fixed;
   color: var(--text);
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-  min-height: 100vh; line-height: 1.6;
+  line-height: 1.6;
 }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.header { text-align: center; padding: 60px 0 40px; }
-.header h1 { font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #c4b5fd, #7c8aff, #67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.header .subtitle { color: var(--muted); font-size: 1.15rem; margin-top: 10px; }
-.nav { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 50px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.nav { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
 .nav-btn {
-  background: var(--card-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--card-border); color: var(--muted); padding: 12px 28px;
-  border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 500;
+  background: var(--card); backdrop-filter: blur(10px);
+  border: 1px solid var(--border); color: var(--muted); padding: 10px 24px;
+  border-radius: 50px; cursor: pointer; font-size: 0.95rem; font-weight: 500;
   transition: all .25s; display: flex; align-items: center; gap: 8px;
 }
-.nav-btn:hover { border-color: var(--accent); color: var(--text); transform: translateY(-2px); }
-.nav-btn.active { background: rgba(124,138,255,0.2); border-color: var(--accent); color: #fff; box-shadow: 0 0 20px rgba(124,138,255,0.25); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; padding-bottom: 60px; }
+.nav-btn:hover { border-color: var(--accent); color: var(--text); }
+.nav-btn.active { background: rgba(124,138,255,0.2); border-color: var(--accent); color: #fff; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
 .card {
-  background: var(--card-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--card-border); border-radius: 18px; overflow: hidden;
+  background: var(--card); backdrop-filter: blur(16px);
+  border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
   transition: all .35s cubic-bezier(0.25,0.8,0.25,1.2);
   display: flex; flex-direction: column;
 }
-.card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(124,138,255,0.15); border-color: rgba(255,255,255,0.25); }
+.card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.25); }
 .card-img { width: 100%; height: 220px; object-fit: cover; display: block; background: linear-gradient(135deg, #1e1b4b, #312e81); }
-.card-video { width: 100%; max-height: 220px; background: #000; }
-.card-video video { width: 100%; height: 220px; object-fit: cover; }
-.card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-.cat-tag { display: inline-block; font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; width: fit-content; font-weight: 500; }
+.card-video { width: 100%; height: 220px; background: #000; }
+.card-video video { width: 100%; height: 100%; object-fit: cover; }
+.card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+.cat-tag { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; width: fit-content; font-weight: 500; }
 .cat-visual { background: rgba(244,114,182,0.15); color: #f472b6; }
 .cat-agent { background: rgba(124,138,255,0.15); color: #7c8aff; }
 .cat-video { background: rgba(52,211,153,0.15); color: #34d399; }
 .cat-other { background: rgba(251,191,36,0.15); color: #fbbf24; }
-.card-body h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; }
-.card-body p { color: var(--muted); font-size: 0.88rem; margin-bottom: 14px; flex: 1; }
+.card-body h3 { font-size: 1.05rem; margin-bottom: 6px; font-weight: 600; }
+.card-body p { color: var(--muted); font-size: 0.85rem; margin-bottom: 14px; flex: 1; }
 .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
 .btn {
-  display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
-  font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: all .2s;
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 500; text-decoration: none; transition: all .2s;
   border: 1px solid rgba(255,255,255,0.15); color: var(--text);
 }
 .btn:hover { background: rgba(255,255,255,0.08); text-decoration: none; }
 .btn-accent { background: rgba(124,138,255,0.15); border-color: var(--accent); color: #a5b4fc; }
-.btn-accent:hover { background: rgba(124,138,255,0.25); }
-.empty { text-align: center; padding: 60px 20px; color: var(--muted); grid-column: 1/-1; }
-.empty .icon { font-size: 3rem; margin-bottom: 16px; }
-.footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 20px; }
-.footer a { color: var(--accent); text-decoration: none; }
-@media (max-width: 768px) { .header h1 { font-size: 2rem; } .grid { grid-template-columns: 1fr; } }
+.empty { text-align: center; padding: 60px; color: var(--muted); grid-column: 1/-1; }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <div class="container">
-  <header class="header">
-    <h1>我的作品集</h1>
-    <p class="subtitle">姜梓 · AI产品经理 · 数字媒体艺术 · 2027届校招</p>
-  </header>
   <nav class="nav" id="nav">
     <button class="nav-btn active" data-cat="all">All</button>
-    <button class="nav-btn" data-cat="visual">Visual</button>
+    <button class="nav-btn" data-cat="visual">Visual Design</button>
     <button class="nav-btn" data-cat="agent">AI Agent</button>
     <button class="nav-btn" data-cat="video">Video</button>
     <button class="nav-btn" data-cat="other">Other</button>
   </nav>
   <div class="grid" id="grid"></div>
 </div>
-<footer class="footer container">
-  <p>2026 姜梓 · <a href="https://github.com/jz-226/jz">GitHub</a> · 18621691272 · 2175546440@qq.com</p>
-</footer>
+
 <script>
 var projectsData = [
-  {id:1,title:"The Sound of Time - Door Knocker Info Viz",description:"Oriental Creative Star National Gold Award. Information visualization of traditional Chinese door knockers from Northern Jiangsu. 国赛金奖 · 江苏省特金奖",category:"visual",imageUrl:"https://picsum.photos/seed/door/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
-  {id:2,title:"Yuan Qi Pai - IP Character Design",description:"National Digital Media Tech Competition Provincial 3rd Prize. Original IP character system including expressions, stickers, and merchandise designs. 省三等奖",category:"visual",imageUrl:"https://picsum.photos/seed/yuanqi/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
-  {id:3,title:"Ocean Culture Creative Competition",description:"Ocean-themed visual design exploring the fusion of maritime culture and modern graphic design. Jiangsu Ocean University.",category:"visual",imageUrl:"https://picsum.photos/seed/ocean/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
-  {id:4,title:"Donghai Local Product Packaging",description:"Donghai County Specialty Packaging Competition Bronze Award. Regional culture meets modern packaging design. 铜奖",category:"visual",imageUrl:"https://picsum.photos/seed/package/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
-  {id:5,title:"Travel Planner AI Agent",description:"3 personas x 3 modes. Dify + DeepSeek V4 + RAG. A travel agent that asks who you are before planning. 5-dim eval system + Token cost model. Live demo available.",category:"agent",imageUrl:"https://picsum.photos/seed/travel/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz/tree/master/AI%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92%E5%99%A8"},
-  {id:6,title:"Children Rehab Home Training Agent",description:"Built during internship at Kunshan Xiaobaiyang Health. Therapist inputs training commands -> AI auto-generates parent-friendly daily plans with gamification. 真实实习场景",category:"agent",imageUrl:"https://picsum.photos/seed/rehab/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz/tree/master/AI%E5%84%BF%E7%AB%A5%E5%BA%B7%E5%A4%8D%E5%8A%A9%E6%89%8B"},
-  {id:7,title:"Jiang Ji Xue Qing Ben - WeChat Mini Program",description:"Student management tool for tutoring scenarios. 4 modules + error tracking state machine + Dashboard. Already live on WeChat. 已上线",category:"agent",imageUrl:"https://picsum.photos/seed/miniapp/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz/tree/master/%E5%AD%A6%E6%83%85%E6%9C%AC%E5%B0%8F%E7%A8%8B%E5%BA%8F"},
-  {id:8,title:"AI Short Film 'Xiang Hai' (To the Sea)",description:"90-second healing animation. Full AI pipeline: Jimeng + Doubao + Claude Code. From concept to distribution strategy. AI工具链全流程",category:"video",imageUrl:"https://picsum.photos/seed/xianghai/400/300",videoUrl:"https://www.w3schools.com/html/mov_bbb.mp4",projectLink:"https://github.com/jz-226/jz/tree/master/AI%E7%9F%AD%E7%89%87_%E5%90%91%E6%B5%B7"},
-  {id:9,title:"Academy Promotional Video",description:"Filmed and edited for the college. Full process: pre-production planning, storyboarding, shooting, editing, and post-production.",category:"video",imageUrl:"https://picsum.photos/seed/academy/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
-  {id:10,title:"Douyin Commercial Short Videos",description:"Created during Caibo International Trade internship. Top video 10K+ views. 3-4 B2B deals closed directly via content marketing. 内容带货闭环验证",category:"video",imageUrl:"https://picsum.photos/seed/douyin/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
-  {id:11,title:"Unity 3D Project",description:"Unity engine project - 3D scene building and interactive design practice.",category:"other",imageUrl:"https://picsum.photos/seed/unity/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
-  {id:12,title:"Blender 3D Design Works",description:"Blender 3D modeling and rendering - scene composition, materials, lighting, and animation basics.",category:"other",imageUrl:"https://picsum.photos/seed/blender/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"}
+  {id:1,title:"The Sound of Time - Door Knocker Info Viz",description:"Oriental Creative Star National Gold Award. Information visualization of traditional Chinese door knockers.",category:"visual",imageUrl:"images/铺首衔环/作品_01.jpg",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:2,title:"Yuan Qi Pai - IP Character Design",description:"National Digital Media Tech Competition Provincial 3rd Prize. Original IP character system.",category:"visual",imageUrl:"images/铺首衔环/作品_02.jpg",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:3,title:"Ocean Culture Creative Competition",description:"Ocean-themed visual design. Jiangsu Ocean University.",category:"visual",imageUrl:"images/铺首衔环/作品_03.jpg",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:4,title:"Donghai Local Product Packaging",description:"Donghai County Specialty Packaging Competition Bronze Award.",category:"visual",imageUrl:"images/铺首衔环/作品_04.jpg",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:5,title:"Travel Planner AI Agent",description:"3 personas x 3 modes. Dify + DeepSeek V4 + RAG. Live on Dify Marketplace.",category:"agent",imageUrl:"images/铺首衔环/作品_05.jpg",videoUrl:"",projectLink:"https://marketplace.dify.ai/template/jz226/%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92%E5%8A%A9%E6%89%8B?templateId=388c0d68-d5ba-4547-b095-a98ac74b0e19&creationType=templates"},
+  {id:6,title:"Children Rehab Home Training Agent",description:"Built during internship at Kunshan Xiaobaiyang. Therapist input -> parent-friendly plan.",category:"agent",imageUrl:"https://picsum.photos/seed/rehab/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:7,title:"Jiang Ji Xue Qing Ben - Mini Program",description:"Student management tool for tutoring. Live on WeChat.",category:"agent",imageUrl:"https://picsum.photos/seed/miniapp/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:8,title:"AI Short Film 'Xiang Hai'",description:"90s healing animation. Jimeng + Doubao + Claude Code.",category:"video",imageUrl:"https://picsum.photos/seed/xianghai/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:9,title:"Academy Promotional Video",description:"Planned, filmed and edited for the college.",category:"video",imageUrl:"https://picsum.photos/seed/academy/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:10,title:"Douyin Commercial Shorts",description:"Caibo internship. Top 10K+ views. 3-4 B2B deals.",category:"video",imageUrl:"https://picsum.photos/seed/douyin/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:11,title:"Unity 3D Project",description:"3D scene building and interactive design.",category:"other",imageUrl:"https://picsum.photos/seed/unity/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"},
+  {id:12,title:"Blender 3D Works",description:"3D modeling, rendering, materials and lighting.",category:"other",imageUrl:"https://picsum.photos/seed/blender/400/300",videoUrl:"",projectLink:"https://github.com/jz-226/jz"}
 ];
-var catLabels = {visual:"Visual Design",agent:"AI Agent",video:"Video",other:"Other"};
+
+var catLabels = {visual:"Visual",agent:"AI Agent",video:"Video",other:"Other"};
 var catCss = {visual:"cat-visual",agent:"cat-agent",video:"cat-video",other:"cat-other"};
+
 function render(filter) {
-  var items = filter === "all" ? projectsData : projectsData.filter(function(p) { return p.category === filter; });
-  var grid = document.getElementById("grid");
-  if (items.length === 0) {
-    grid.innerHTML = '<div class="empty"><div class="icon">Empty</div><p>Coming soon</p></div>';
-    return;
-  }
-  grid.innerHTML = items.map(function(p) {
-    var media = p.videoUrl
-      ? '<div class="card-video"><video controls preload="metadata"><source src="' + p.videoUrl + '" type="video/mp4"></video></div>'
-      : '<img class="card-img" src="' + p.imageUrl + '" alt="' + p.title + '" loading="lazy">';
-    return '<div class="card">' + media +
-      '<div class="card-body">' +
-        '<span class="cat-tag ' + (catCss[p.category] || "cat-other") + '">' + (catLabels[p.category] || p.category) + '</span>' +
-        '<h3>' + p.title + '</h3>' +
-        '<p>' + p.description + '</p>' +
-        '<div class="links"><a class="btn btn-accent" href="' + p.projectLink + '" target="_blank">View Project</a></div>' +
+  var items = filter === "all" ? projectsData : projectsData.filter(function(p){return p.category===filter;});
+  var g = document.getElementById("grid");
+  if(items.length===0){g.innerHTML='<div class="empty">Coming soon</div>';return;}
+  g.innerHTML = items.map(function(p){
+    var m = p.videoUrl
+      ? '<div class="card-video"><video controls preload="metadata"><source src="'+p.videoUrl+'" type="video/mp4"></video></div>'
+      : '<img class="card-img" src="'+p.imageUrl+'" alt="'+p.title+'" loading="lazy">';
+    return '<div class="card">'+m+
+      '<div class="card-body">'+
+        '<span class="cat-tag '+(catCss[p.category]||"cat-other")+'">'+(catLabels[p.category]||p.category)+'</span>'+
+        '<h3>'+p.title+'</h3>'+
+        '<p>'+p.description+'</p>'+
+        (p.projectLink?'<div class="links"><a class="btn btn-accent" href="'+p.projectLink+'" target="_blank">View</a></div>':'')+
       '</div></div>';
   }).join("");
 }
-document.getElementById("nav").addEventListener("click", function(e) {
-  var btn = e.target.closest(".nav-btn");
-  if (!btn) return;
-  document.querySelectorAll(".nav-btn").forEach(function(b) { b.classList.remove("active"); });
-  btn.classList.add("active");
-  render(btn.dataset.cat);
+
+document.getElementById("nav").addEventListener("click",function(e){
+  var b = e.target.closest(".nav-btn"); if(!b) return;
+  document.querySelectorAll(".nav-btn").forEach(function(x){x.classList.remove("active");});
+  b.classList.add("active"); render(b.dataset.cat);
 });
+
 render("all");
 </script>
 </body>
