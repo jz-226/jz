@@ -9,17 +9,15 @@
 ### 今天吃啥（Agent）⭐ 已上架 Dify Marketplace
 真正的 Agent——飞书数据库持久化记忆。记住口味+预算，自动避开重复食材，多用户数据隔离。
 
-🔗 https://marketplace.dify.ai/template/jz226/今天吃啥
+🔗 https://marketplace.dify.ai/template/jz226/%E4%BB%8A%E5%A4%A9%E5%90%83%E5%95%A5?templateId=4159a5dd-9021-4798-b20e-410b51ece8e9&creationType=templates
 
 ### 儿童康复家庭训练助手（Chatbot）⭐ 已上架 Dify Marketplace
 昆山小白杨实习项目。康复师输入专业指令，30秒生成家长版每日训练方案。含危险动作拦截、游戏化引导、打卡表。
 
-🔗 https://marketplace.dify.ai/template/jz226/儿童康复家庭训练助手
+🔗 https://marketplace.dify.ai/template/jz226/%E5%84%BF%E7%AB%A5%E5%BA%B7%E5%A4%8D%E5%AE%B6%E5%BA%AD%E8%AE%AD%E7%BB%83%E5%8A%A9%E6%89%8B?templateId=1b5be078-e95e-4393-9220-519788421b77&creationType=templates
 
 ### 旅行规划助手（Chatbot）⏳ 暂时下架，即将重新上架
 3画像×3模式，RAG知识库，五维评测体系，Token成本模型。
-
-🔗 待重新上架后更新链接
 
 ### 姜记学情本（微信小程序）
 家教场景学生管理工具，微信原生开发，已上线运行。
