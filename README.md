@@ -6,17 +6,15 @@
 
 ## 🤖 AI 项目
 
-### 今天吃啥（Agent）
-真正的 Agent——飞书数据库持久化记忆。记住口味+预算，自动避开重复食材。
-`Dify Workflow + DeepSeek V4 + 飞书 API`
+### 今天吃啥（Agent）🆕
+真正的 Agent——飞书数据库持久化记忆。记住口味+预算，自动避开重复食材，多用户数据隔离。
 
-### 旅行规划助手（Chatbot）
+### 旅行规划助手（Chatbot）⭐ 已上架
 3画像×3模式，RAG苏州知识库，五维评测体系。
-`Dify + DeepSeek V4 + RAG`
+→ [Dify Marketplace 在线体验](https://marketplace.dify.ai/template/jz226/旅行规划助手)
 
 ### 儿童康复家庭训练助手（Chatbot）
-昆山小白杨实习项目。康复师指令→家长版方案。
-`Dify + DeepSeek V4`
+昆山小白杨实习项目。康复师指令→30秒出家长版方案。
 
 ### 姜记学情本（小程序）
 家教场景学生管理工具，已上线微信。
@@ -32,14 +30,11 @@
 
 ---
 
-## 📂 目录
+## 🔗 在线入口
 
-| 文件夹 | 内容 |
-|------|------|
-| AI项目/ | 旅行规划、康复助手、今天吃啥、学情本 |
-| 视觉设计/ | 铺首衔环、元气派、海洋文化、东海包装 |
-| 面试资产/ | 简历、自我介绍、国企投递清单 |
-| 学习笔记/ | Agent学习、Prompt技巧、AI基础 |
+- Dify Marketplace：https://marketplace.dify.ai/user/jz226
+- GitHub Pages：https://jz-226.github.io/jz/index.html
+- GitHub 仓库：https://github.com/jz-226/jz
 
 ---
 
