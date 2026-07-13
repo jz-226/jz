@@ -9,9 +9,9 @@
 ### 今天吃啥（Agent）🆕
 真正的 Agent——飞书数据库持久化记忆。记住口味+预算，自动避开重复食材，多用户数据隔离。
 
-### 旅行规划助手（Chatbot）⭐ 已上架
+### 儿童康复家庭训练助手（Chatbot）⭐ 已上架
 3画像×3模式，RAG苏州知识库，五维评测体系。
-→ [Dify Marketplace 在线体验](https://marketplace.dify.ai/template/jz226/%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92%E5%8A%A9%E6%89%8B?templateId=388c0d68-d5ba-4547-b095-a98ac74b0e19&creationType=templates)
+→ [Dify Marketplace 在线体验](https://marketplace.dify.ai/template/jz226/%E5%84%BF%E7%AB%A5%E5%BA%B7%E5%A4%8D%E5%AE%B6%E5%BA%AD%E8%AE%AD%E7%BB%83%E5%8A%A9%E6%89%8B?templateId=1b5be078-e95e-4393-9220-519788421b77&creationType=templates)
 
 ### 儿童康复家庭训练助手（Chatbot）
 昆山小白杨实习项目。康复师指令→30秒出家长版方案。
