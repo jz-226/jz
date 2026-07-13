@@ -11,7 +11,7 @@
 
 ### 旅行规划助手（Chatbot）⭐ 已上架
 3画像×3模式，RAG苏州知识库，五维评测体系。
-→ [Dify Marketplace 在线体验](https://marketplace.dify.ai/template/jz226/旅行规划助手)
+→ [Dify Marketplace 在线体验](https://marketplace.dify.ai/template/jz226/%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92%E5%8A%A9%E6%89%8B?templateId=388c0d68-d5ba-4547-b095-a98ac74b0e19&creationType=templates)
 
 ### 儿童康复家庭训练助手（Chatbot）
 昆山小白杨实习项目。康复师指令→30秒出家长版方案。
