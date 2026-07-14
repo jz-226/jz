@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OfferPilot - AI Offer Operating System</title>
+<style>
+:root{--bg:#050510;--card:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.08);--text:#e8e8f0;--muted:#8888a0;--accent:#7c5cfc;--green:#3fb950}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"Inter","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.hero{padding:120px 0 80px;text-align:center;position:relative}
+.hero::after{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;background:radial-gradient(circle,rgba(124,92,252,0.12),transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
+.hero h1{font-size:clamp(2.5rem,8vw,4.5rem);font-weight:800;letter-spacing:-2px;background:linear-gradient(135deg,#c4b5fd,#7c5cfc,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .tagline{font-size:1.3rem;color:var(--muted);margin-top:16px}
+.hero .sub{margin-top:32px;font-size:0.95rem;color:var(--muted);max-width:600px;margin-left:auto;margin-right:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;padding:60px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .3s}
+.card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.card .icon{font-size:2rem;margin-bottom:16px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:0.9rem}
+.cta{text-align:center;padding:80px 0 120px}
+.cta h2{font-size:2rem;margin-bottom:16px}
+.cta p{color:var(--muted);margin-bottom:32px}
+.footer{text-align:center;padding:40px 0;color:var(--muted);font-size:0.85rem;border-top:1px solid var(--border)}
+@media(max-width:768px){.hero{padding:80px 0 60px}}
+</style>
+</head>
+<body>
+
+<section class="hero container">
+  <h1>OfferPilot</h1>
+  <p class="tagline">AI Offer Operating System</p>
+  <p class="sub">不是聊天机器人。不是学习计划生成器。<br>一个陪你从目标设定走到拿到 Offer 的 AI 操作系统。</p>
+</section>
+
+<div class="container">
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h3>Goal-First 架构</h3>
+      <p>设定目标 → 持续追踪 → 动态调整。产品永远围绕目标运行，而不是围绕对话运行。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>实时 Offer Score</h3>
+      <p>分析你的能力模型与目标岗位 JD 的差距，给出动态的"拿到 Offer 成功率"评分。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔄</div>
+      <h3>每日主动陪伴</h3>
+      <p>不是等你来聊天。每天主动问你"今天做了什么让你离目标更近的事"。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>成长全记录</h3>
+      <p>从第一个项目到第一次面试，你的整个成长过程被永久保存。回头看是一本人生档案。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>多 Agent 协作</h3>
+      <p>招聘分析 Agent、能力评估 Agent、计划调整 Agent——多个 Agent 协作，而非单一 Chatbot。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔌</div>
+      <h3>模型无关架构</h3>
+      <p>支持 GPT、Claude、DeepSeek、Gemini。通过 Model Router 自动选择最适合当前任务的模型。</p>
+    </div>
+  </div>
+</div>
+
+<section class="cta container">
+  <h2>ChatGPT 给你答案。<br>OfferPilot 帮你走到终点。</h2>
+  <p>2027秋招进行中。不是 Demo，是你在用的产品。</p>
+</section>
+
+<footer class="footer container">
+  <p>OfferPilot · AI Offer Operating System · 2026</p>
+</footer>
+
+</body>
+</html>
