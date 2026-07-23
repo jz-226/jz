@@ -1,0 +1,8 @@
+<stdin>:17: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+Image: 1915x1079
+Top (0-200px): density 7%
+Upper-mid (200-500px): density 19%
+Lower-mid (500-800px): density 21%
+Bottom (800-1079px): density 17%
+
+(OCR not available)
