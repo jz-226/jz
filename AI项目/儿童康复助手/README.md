@@ -2,7 +2,7 @@
 
 昆山小白杨实习项目。康复师输入专业指令 → 30 秒自动生成家长版每日训练方案。含危险动作拦截 + 游戏化引导 + 每日打卡表。
 
-📦 **在线体验**：https://marketplace.dify.ai/template/jz226/儿童康复家庭训练助手
+📦 **在线体验**：https://marketplace.dify.ai/template/jz226/儿童康复家庭训练助手?templateId=1b5be078-e95e-4393-9220-519788421b77
 
 🛠 技术栈：Dify + DeepSeek V4 + Prompt Engineering
 

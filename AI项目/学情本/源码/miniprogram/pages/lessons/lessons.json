@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "备课管理",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "lesson-card": "/components/lesson-card/lesson-card"
+  }
+}

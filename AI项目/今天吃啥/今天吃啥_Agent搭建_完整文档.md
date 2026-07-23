@@ -233,4 +233,4 @@ Body：
 
 ---
 
-> 下一步：你发飞书 App ID 和 App Secret 给我 → 我帮你把 HTTP 节点配好 → 你导入 Dify 就能跑。
+> 下一步：你发飞书 App Secret（已隐藏）

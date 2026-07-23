@@ -1,0 +1,51 @@
+<!-- pages/lessons/lessons.wxml -->
+<view class="container">
+  <!-- 筛选条件 -->
+  <view class="filter-box">
+    <picker
+      mode="selector"
+      range="{{filterOptions}}"
+      range-key="label"
+      value="{{filterIndex}}"
+      bindchange="onFilterChange"
+    >
+      <view class="picker filter-picker">
+        <text>{{filterOptions[filterIndex].label}}</text>
+        <text class="arrow">↓</text>
+      </view>
+    </picker>
+    <picker
+      mode="date"
+      value="{{selectedDate}}"
+      bindchange="onDateChange"
+    >
+      <view class="picker date-picker">
+        <text>{{selectedDate || '选择日期'}}</text>
+        <text class="icon">📅</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 课程列表 -->
+  <view class="lesson-list" wx:if="{{lessons.length > 0}}">
+    <lesson-card
+      wx:for="{{lessons}}"
+      wx:key="_id"
+      lesson="{{item}}"
+      studentName="{{item.studentName}}"
+      bindtap="onLessonTap"
+    />
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:else>
+    <text class="empty-icon">📚</text>
+    <text class="empty-text">还没有备课记录</text>
+    <text class="empty-tip">点击下方按钮创建课程</text>
+  </view>
+
+  <!-- 添加按钮 -->
+  <view class="fab" bindtap="onAdd">
+    <text class="fab-icon">+</text>
+  </view>
+</view>

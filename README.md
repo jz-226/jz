@@ -20,16 +20,19 @@
 Next.js + TypeScript + Supabase + DeepSeek。14 个页面，150+ 岗位选择，AI 分析 + 测验 + 成长路线 + 多档案系统。
 
 ### 今天吃啥 Agent ⭐
-飞书数据库持久化记忆。记住口味+预算，自动避开重复食材，多用户数据隔离。
+Dify Marketplace 已上架。飞书数据库持久化记忆。记住口味+预算，自动避开重复食材，多用户数据隔离。
+→ [在线体验](https://marketplace.dify.ai/template/jz226/今天吃啥?templateId=4159a5dd-9021-4798-b20e-410b51ece8e9)
 
 ### 旅行规划助手 ⭐
 3画像×3模式，RAG苏州知识库，五维评测体系，Token成本模型。
+→ [Dify Marketplace](https://marketplace.dify.ai/user/jz226)
 
 ### 儿童康复家庭训练助手 ⭐
-昆山小白杨实习项目。康复师输入专业指令→30秒出家长版每日训练方案。
+Dify Marketplace 已上架。昆山小白杨实习项目。康复师输入专业指令→30秒出家长版每日训练方案。
+→ [在线体验](https://marketplace.dify.ai/template/jz226/儿童康复家庭训练助手?templateId=1b5be078-e95e-4393-9220-519788421b77)
 
 ### 姜记学情本
-家教场景学生管理工具，微信原生开发。
+家教场景学生管理工具，微信原生开发。含源码（`学情本/源码/`）。
 
 → 每个项目详细文档见 AI项目/ 目录
 
@@ -56,3 +59,5 @@ Next.js + TypeScript + Supabase + DeepSeek。14 个页面，150+ 岗位选择，
 ## 📮 联系
 
 18621691272 · 2175546440@qq.com · 苏州
+# jz
+姜梓的作品集 | AI Agent项目 +小程序 + 从0到1全链路 | 2027届

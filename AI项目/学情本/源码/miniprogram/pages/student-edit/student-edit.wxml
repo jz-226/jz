@@ -1,0 +1,101 @@
+<!-- pages/student-edit/student-edit.wxml -->
+<view class="container">
+  <view class="form-card">
+    <!-- 姓名 -->
+    <view class="form-group">
+      <view class="form-label-box">
+        <text class="form-star">*</text>
+        <text class="form-label">学生姓名</text>
+      </view>
+      <view class="input-wrapper">
+        <input
+          class="form-input"
+          placeholder="请输入学生姓名"
+          placeholder-class="input-placeholder"
+          value="{{form.name}}"
+          bindinput="onNameInput"
+          maxlength="20"
+        />
+      </view>
+    </view>
+
+    <!-- 年级 -->
+    <view class="form-group">
+      <view class="form-label-box">
+        <text class="form-star">*</text>
+        <text class="form-label">所在年级</text>
+      </view>
+      <picker
+        mode="selector"
+        range="{{grades}}"
+        value="{{gradeIndex}}"
+        bindchange="onGradeChange"
+      >
+        <view class="picker-box">
+          <text wx:if="{{form.grade}}" class="picker-value">{{form.grade}}</text>
+          <text wx:else class="picker-placeholder">请选择年级</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 科目 -->
+    <view class="form-group">
+      <view class="form-label-box">
+        <text class="form-label">辅导科目</text>
+      </view>
+      <view class="subject-list">
+        <view
+          class="subject-tag {{item.selected ? 'selected' : ''}}"
+          wx:for="{{subjects}}"
+          wx:key="name"
+          bindtap="onSubjectTap"
+          data-index="{{index}}"
+        >
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="form-group">
+      <view class="form-label-box">
+        <text class="form-label">家长联系方式</text>
+      </view>
+      <view class="input-wrapper">
+        <input
+          class="form-input"
+          type="number"
+          placeholder="手机号码或微信号"
+          placeholder-class="input-placeholder"
+          value="{{form.phone}}"
+          bindinput="onPhoneInput"
+          maxlength="30"
+        />
+      </view>
+    </view>
+
+    <!-- 备注 -->
+    <view class="form-group">
+      <view class="form-label-box">
+        <text class="form-label">备注</text>
+      </view>
+      <view class="input-wrapper">
+        <textarea
+          class="form-textarea"
+          placeholder="如：性格特点、学习习惯、薄弱科目、上课时间偏好..."
+          placeholder-class="input-placeholder"
+          value="{{form.notes}}"
+          bindinput="onNotesInput"
+          maxlength="500"
+        />
+      </view>
+      <text class="char-count">{{form.notes.length}}/500</text>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="submit-box">
+    <button class="btn-save" bindtap="onSubmit">保存学生信息</button>
+  </view>
+</view>

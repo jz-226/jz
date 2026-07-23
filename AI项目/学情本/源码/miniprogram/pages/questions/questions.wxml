@@ -1,0 +1,55 @@
+<!-- pages/questions/questions.wxml -->
+<view class="container">
+  <!-- 筛选条件 -->
+  <view class="filter-box">
+    <picker
+      mode="selector"
+      range="{{statusFilters}}"
+      range-key="label"
+      value="{{statusIndex}}"
+      bindchange="onStatusChange"
+    >
+      <view class="picker filter-picker">
+        <text>{{statusFilters[statusIndex].label}}</text>
+        <text class="arrow">↓</text>
+      </view>
+    </picker>
+    <picker
+      mode="selector"
+      range="{{subjectFilters}}"
+      range-key="label"
+      value="{{subjectIndex}}"
+      bindchange="onSubjectChange"
+    >
+      <view class="picker filter-picker">
+        <text>{{subjectFilters[subjectIndex].label}}</text>
+        <text class="arrow">↓</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 问题列表 -->
+  <view class="question-list" wx:if="{{questions.length > 0}}">
+    <question-item
+      wx:for="{{questions}}"
+      wx:key="_id"
+      question="{{item}}"
+      studentName="{{item.studentName}}"
+      showActions="{{true}}"
+      bindtap="onQuestionTap"
+      bind:statuschange="onStatusChange2"
+    />
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:else>
+    <text class="empty-icon">📝</text>
+    <text class="empty-text">还没有问题记录</text>
+    <text class="empty-tip">点击下方按钮记录问题</text>
+  </view>
+
+  <!-- 添加按钮 -->
+  <view class="fab" bindtap="onAdd">
+    <text class="fab-icon">+</text>
+  </view>
+</view>

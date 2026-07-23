@@ -2,7 +2,7 @@
 
 真正的 AI Agent —— 飞书多维表格持久化记忆。记住用户口味+预算，自动避开重复食材，多用户数据隔离。
 
-📦 **在线体验**：https://marketplace.dify.ai/template/jz226/今天吃啥
+📦 **在线体验**：https://marketplace.dify.ai/template/jz226/今天吃啥?templateId=4159a5dd-9021-4798-b20e-410b51ece8e9
 
 🛠 技术栈：Dify Workflow + DeepSeek V4 + 飞书 API
 

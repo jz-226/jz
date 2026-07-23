@@ -1,0 +1,36 @@
+<!-- pages/students/students.wxml -->
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="search-box">
+    <input
+      class="search-input"
+      placeholder="搜索学生姓名"
+      value="{{keyword}}"
+      bindinput="onSearch"
+    />
+  </view>
+
+  <!-- 学生列表 -->
+  <view class="student-list" wx:if="{{students.length > 0}}">
+    <student-card
+      wx:for="{{students}}"
+      wx:key="_id"
+      student="{{item}}"
+      showStats="{{true}}"
+      stats="{{item.stats}}"
+      bindtap="onStudentTap"
+    />
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:else>
+    <text class="empty-icon">👥</text>
+    <text class="empty-text">还没有添加学生</text>
+    <text class="empty-tip">点击下方按钮添加第一个学生</text>
+  </view>
+
+  <!-- 添加按钮 -->
+  <view class="fab" bindtap="onAdd">
+    <text class="fab-icon">+</text>
+  </view>
+</view>

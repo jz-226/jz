@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/students/students",
+    "pages/student-detail/student-detail",
+    "pages/student-edit/student-edit",
+    "pages/lessons/lessons",
+    "pages/lesson-edit/lesson-edit",
+    "pages/questions/questions",
+    "pages/question-edit/question-edit",
+    "pages/summaries/summaries",
+    "pages/summary-edit/summary-edit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4A90D9",
+    "navigationBarTitleText": "姜记学情本",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#4A90D9",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/students/students",
+        "text": "学生"
+      },
+      {
+        "pagePath": "pages/lessons/lessons",
+        "text": "备课"
+      },
+      {
+        "pagePath": "pages/questions/questions",
+        "text": "错题"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

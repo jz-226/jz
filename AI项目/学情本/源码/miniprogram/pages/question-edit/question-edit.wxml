@@ -1,0 +1,104 @@
+<!-- pages/question-edit/question-edit.wxml -->
+<view class="container">
+  <view class="form">
+    <!-- 学生 -->
+    <view class="form-group">
+      <text class="form-label required">学生</text>
+      <picker
+        mode="selector"
+        range="{{students}}"
+        range-key="name"
+        value="{{studentIndex}}"
+        bindchange="onStudentChange"
+      >
+        <view class="picker">
+          <text wx:if="{{form.studentId}}">{{selectedStudentName}}</text>
+          <text wx:else class="picker-placeholder">请选择学生</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 科目 -->
+    <view class="form-group">
+      <text class="form-label required">科目</text>
+      <picker
+        mode="selector"
+        range="{{subjects}}"
+        value="{{subjectIndex}}"
+        bindchange="onSubjectChange"
+      >
+        <view class="picker">
+          <text wx:if="{{form.subject}}">{{form.subject}}</text>
+          <text wx:else class="picker-placeholder">请选择科目</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 知识点 -->
+    <view class="form-group">
+      <text class="form-label">知识点</text>
+      <input
+        class="form-input"
+        placeholder="例如：分数加减法"
+        value="{{form.knowledgePoint}}"
+        bindinput="onKnowledgePointInput"
+      />
+    </view>
+
+    <!-- 问题内容 -->
+    <view class="form-group">
+      <text class="form-label required">问题内容</text>
+      <textarea
+        class="form-textarea large"
+        placeholder="请描述问题内容..."
+        value="{{form.content}}"
+        bindinput="onContentInput"
+      />
+    </view>
+
+    <!-- 错误原因 -->
+    <view class="form-group">
+      <text class="form-label">错误原因分析</text>
+      <textarea
+        class="form-textarea"
+        placeholder="分析为什么会出错..."
+        value="{{form.wrongReason}}"
+        bindinput="onWrongReasonInput"
+      />
+    </view>
+
+    <!-- 正确解法 -->
+    <view class="form-group">
+      <text class="form-label">正确解法</text>
+      <textarea
+        class="form-textarea"
+        placeholder="正确的解题思路和方法..."
+        value="{{form.correctAnswer}}"
+        bindinput="onCorrectAnswerInput"
+      />
+    </view>
+
+    <!-- 状态 -->
+    <view class="form-group">
+      <text class="form-label">状态</text>
+      <view class="status-list">
+        <view
+          class="status-tag {{item.value === form.status ? 'selected' : ''}}"
+          wx:for="{{statusOptions}}"
+          wx:key="value"
+          bindtap="onStatusTap"
+          data-value="{{item.value}}"
+        >
+          <text class="status-icon">{{item.icon}}</text>
+          <text>{{item.label}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="submit-box">
+    <button class="btn-primary" bindtap="onSubmit">保存</button>
+    <button class="btn-default" wx:if="{{id}}" bindtap="onDelete">删除</button>
+  </view>
+</view>

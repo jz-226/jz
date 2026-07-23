@@ -1,0 +1,28 @@
+<!-- components/lesson-card/lesson-card.wxml -->
+<view class="lesson-card" bindtap="onTap">
+  <view class="date-box">
+    <text class="date-day">{{day}}</text>
+    <text class="date-week">{{weekDay}}</text>
+  </view>
+  <view class="content">
+    <view class="header">
+      <text class="student-name">{{studentName}}</text>
+      <text class="subject">{{lesson.subject}}</text>
+      <view class="status-badge status-{{lesson.status}}">
+        {{statusText}}
+      </view>
+    </view>
+    <view class="objectives" wx:if="{{lesson.objectives && lesson.objectives.length > 0}}">
+      <text class="objective-label">教学目标:</text>
+      <view class="objective-list">
+        <text wx:for="{{lesson.objectives}}" wx:key="*this" class="objective-item">• {{item}}</text>
+      </view>
+    </view>
+    <view class="knowledge-points" wx:if="{{lesson.knowledgePoints && lesson.knowledgePoints.length > 0}}">
+      <text class="tag tag-primary" wx:for="{{lesson.knowledgePoints}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+  <view class="arrow">
+    <text class="icon">›</text>
+  </view>
+</view>

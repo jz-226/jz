@@ -1,0 +1,309 @@
+/* pages/index/index.wxss */
+.container {
+  padding: 0 0 40rpx;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* 头部 */
+.header {
+  background: linear-gradient(135deg, #4A90D9 0%, #357ABD 100%);
+  padding: 40rpx 30rpx 60rpx;
+  border-radius: 0 0 30rpx 30rpx;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting-text {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.today-date {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 统计卡片 */
+.stats-section {
+  margin-top: -40rpx;
+  padding: 0 20rpx;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
+}
+
+.stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rpx;
+  border-radius: 16rpx;
+  transition: all 0.2s;
+}
+
+.stat-card:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+.stat-icon {
+  font-size: 48rpx;
+  margin-bottom: 12rpx;
+}
+
+.stat-number {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 本周课程统计 */
+.week-stats {
+  margin-top: 24rpx;
+  padding: 0 10rpx;
+}
+
+.week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.week-title {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.week-progress-text {
+  font-size: 24rpx;
+  color: #4A90D9;
+}
+
+.progress-bar {
+  height: 10rpx;
+  background: #f0f0f0;
+  border-radius: 5rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4A90D9, #5C6BC0);
+  border-radius: 5rpx;
+  transition: width 0.3s ease;
+}
+
+/* 区块 */
+.section {
+  margin-top: 30rpx;
+  padding: 0 20rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding: 0 10rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-more {
+  font-size: 26rpx;
+  color: #4A90D9;
+}
+
+/* 今日课程 */
+.today-lessons {
+  background: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.lesson-item:last-child {
+  border-bottom: none;
+}
+
+.lesson-item:active {
+  background: #f9f9f9;
+}
+
+.lesson-time {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #4A90D9;
+  width: 100rpx;
+  flex-shrink: 0;
+}
+
+.lesson-info {
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.lesson-student {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6rpx;
+}
+
+.lesson-subject {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.lesson-status {
+  font-size: 22rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  flex-shrink: 0;
+}
+
+.lesson-status.status-pending {
+  background: #fff3e0;
+  color: #ff9800;
+}
+
+.lesson-status.status-completed {
+  background: #e8f5e9;
+  color: #4caf50;
+}
+
+/* 最近错题 */
+.recent-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.question-item-simple {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+
+.question-item-simple:active {
+  background: #f9f9f9;
+}
+
+.question-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.question-student {
+  font-size: 26rpx;
+  color: #666;
+  margin-right: 16rpx;
+}
+
+.question-subject {
+  font-size: 22rpx;
+  color: #4A90D9;
+  background: #e3f2fd;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  margin-right: auto;
+}
+
+.question-status {
+  font-size: 22rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+.question-status.status-pending {
+  background: #fff3e0;
+  color: #ff9800;
+}
+
+.question-status.status-explained {
+  background: #e3f2fd;
+  color: #2196f3;
+}
+
+.question-status.status-mastered {
+  background: #e8f5e9;
+  color: #4caf50;
+}
+
+.question-content {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.question-time {
+  margin-top: 12rpx;
+}
+
+.tag {
+  font-size: 22rpx;
+  color: #4A90D9;
+  background: #e3f2fd;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+/* 空状态 */
+.empty-tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 60rpx 40rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #999;
+}

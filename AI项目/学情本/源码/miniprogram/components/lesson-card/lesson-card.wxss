@@ -1,0 +1,123 @@
+/* components/lesson-card/lesson-card.wxss */
+
+.lesson-card {
+  display: flex;
+  align-items: stretch;
+  padding: 20rpx;
+  background-color: var(--white);
+  border-radius: 16rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.date-box {
+  width: 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1rpx solid var(--border-color);
+  margin-right: 16rpx;
+  padding-right: 16rpx;
+}
+
+.date-day {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.date-week {
+  font-size: 22rpx;
+  color: var(--text-secondary);
+}
+
+.content {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.student-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-right: 12rpx;
+}
+
+.subject {
+  font-size: 24rpx;
+  color: var(--primary-color);
+  margin-right: 12rpx;
+}
+
+.status-badge {
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+}
+
+.status-pending {
+  background-color: #fff3e0;
+  color: #ff9800;
+}
+
+.status-completed {
+  background-color: #e8f5e9;
+  color: #4caf50;
+}
+
+.objectives {
+  margin-bottom: 12rpx;
+}
+
+.objective-label {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.objective-list {
+  font-size: 26rpx;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.objective-item {
+  display: block;
+}
+
+.knowledge-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6rpx 12rpx;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+}
+
+.tag-primary {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.arrow {
+  width: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 32rpx;
+  color: var(--text-placeholder);
+}

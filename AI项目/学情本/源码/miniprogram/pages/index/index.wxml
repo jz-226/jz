@@ -1,0 +1,108 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <!-- 顶部日期和问候 -->
+  <view class="header">
+    <view class="greeting">
+      <text class="greeting-text">姜记学情本</text>
+      <text class="today-date">{{todayDisplay}}</text>
+    </view>
+  </view>
+
+  <!-- 统计卡片 -->
+  <view class="stats-section">
+    <view class="stats-grid">
+      <view class="stat-card stat-students" bindtap="goStudents">
+        <view class="stat-icon">👥</view>
+        <view class="stat-number">{{stats.studentsCount}}</view>
+        <view class="stat-label">学生</view>
+      </view>
+      <view class="stat-card stat-lessons" bindtap="goLessons">
+        <view class="stat-icon">📅</view>
+        <view class="stat-number">{{stats.pendingLessons}}</view>
+        <view class="stat-label">待上课</view>
+      </view>
+      <view class="stat-card stat-questions" bindtap="goQuestions">
+        <view class="stat-icon">❓</view>
+        <view class="stat-number">{{stats.pendingQuestions}}</view>
+        <view class="stat-label">待讲解</view>
+      </view>
+    </view>
+    <!-- 本周课程统计 -->
+    <view class="week-stats" wx:if="{{stats.weekTotal > 0}}">
+      <view class="week-header">
+        <text class="week-title">本周课程</text>
+        <text class="week-progress-text">{{stats.weekCompleted}}/{{stats.weekTotal}} 已完成</text>
+      </view>
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{weekProgress}}%;"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 今日课程 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">今日课程</text>
+      <text class="section-more" bindtap="goLessons">查看全部 ›</text>
+    </view>
+
+    <view class="today-lessons" wx:if="{{todayLessons.length > 0}}">
+      <view
+        class="lesson-item"
+        wx:for="{{todayLessons}}"
+        wx:key="_id"
+        bindtap="goLessonEdit"
+        data-lesson="{{item}}"
+      >
+        <view class="lesson-time">{{item.time}}</view>
+        <view class="lesson-info">
+          <view class="lesson-student">{{item.studentName}}</view>
+          <view class="lesson-subject">{{item.subject}}</view>
+        </view>
+        <view class="lesson-status status-{{item.status}}">
+          {{item.status === 'pending' ? '待上课' : '已完成'}}
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-tip" wx:else>
+      <text class="empty-icon">📅</text>
+      <text class="empty-text">今天没有课程安排</text>
+    </view>
+  </view>
+
+  <!-- 最近错题 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">最近错题</text>
+      <text class="section-more" bindtap="goQuestions">查看全部 ›</text>
+    </view>
+
+    <view class="recent-questions" wx:if="{{recentQuestions.length > 0}}">
+      <view
+        class="question-item-simple"
+        wx:for="{{recentQuestions}}"
+        wx:key="_id"
+        bindtap="goQuestionEdit"
+        data-question="{{item}}"
+      >
+        <view class="question-header">
+          <view class="question-student">{{item.studentName}}</view>
+          <view class="question-subject">{{item.subject}}</view>
+          <view class="question-status status-{{item.status}}">
+            {{item.status === 'pending' ? '待讲解' : item.status === 'explained' ? '已讲解' : '已掌握'}}
+          </view>
+        </view>
+        <view class="question-content">{{item.content}}</view>
+        <view class="question-time" wx:if="{{item.knowledgePoint}}">
+          <text class="tag">{{item.knowledgePoint}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-tip" wx:else>
+      <text class="empty-icon">✅</text>
+      <text class="empty-text">暂无错题记录</text>
+    </view>
+  </view>
+</view>

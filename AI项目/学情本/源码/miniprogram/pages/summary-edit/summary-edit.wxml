@@ -1,0 +1,117 @@
+<!-- pages/summary-edit/summary-edit.wxml -->
+<view class="container">
+  <view class="form">
+    <!-- 关联课程 -->
+    <view class="form-group">
+      <text class="form-label required">关联课程</text>
+      <picker
+        mode="selector"
+        range="{{lessons}}"
+        range-key="displayText"
+        value="{{lessonIndex}}"
+        bindchange="onLessonChange"
+      >
+        <view class="picker">
+          <text wx:if="{{form.lessonId}}">{{selectedLessonText}}</text>
+          <text wx:else class="picker-placeholder">请选择课程</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 学生显示 -->
+    <view class="form-group" wx:if="{{studentName}}">
+      <text class="form-label">学生</text>
+      <view class="display-box">
+        <text class="display-text">{{studentName}}</text>
+      </view>
+    </view>
+
+    <!-- 表现评分 -->
+    <view class="form-group">
+      <text class="form-label required">学生表现评分</text>
+      <view class="score-box">
+        <view class="score-item">
+          <text class="score-label">理解度</text>
+          <view class="score-stars">
+            <text
+              wx:for="{{stars}}"
+              wx:key="*this"
+              wx:for-item="star"
+              class="star {{star + 1 <= form.understanding ? 'active' : ''}}"
+              bindtap="onScoreTap"
+              data-type="understanding"
+              data-value="{{star + 1}}"
+            >★</text>
+          </view>
+        </view>
+        <view class="score-item">
+          <text class="score-label">专注度</text>
+          <view class="score-stars">
+            <text
+              wx:for="{{stars}}"
+              wx:key="*this"
+              wx:for-item="star"
+              class="star {{star + 1 <= form.focus ? 'active' : ''}}"
+              bindtap="onScoreTap"
+              data-type="focus"
+              data-value="{{star + 1}}"
+            >★</text>
+          </view>
+        </view>
+        <view class="score-item">
+          <text class="score-label">完成度</text>
+          <view class="score-stars">
+            <text
+              wx:for="{{stars}}"
+              wx:key="*this"
+              wx:for-item="star"
+              class="star {{star + 1 <= form.completion ? 'active' : ''}}"
+              bindtap="onScoreTap"
+              data-type="completion"
+              data-value="{{star + 1}}"
+            >★</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 今日收获 -->
+    <view class="form-group">
+      <text class="form-label">今日收获</text>
+      <textarea
+        class="form-textarea"
+        placeholder="学生今天有什么进步和收获..."
+        value="{{form.achievements}}"
+        bindinput="onAchievementsInput"
+      />
+    </view>
+
+    <!-- 待改进 -->
+    <view class="form-group">
+      <text class="form-label">待改进</text>
+      <textarea
+        class="form-textarea"
+        placeholder="需要加强的地方..."
+        value="{{form.improvements}}"
+        bindinput="onImprovementsInput"
+      />
+    </view>
+
+    <!-- 下次课计划 -->
+    <view class="form-group">
+      <text class="form-label">下次课计划</text>
+      <textarea
+        class="form-textarea"
+        placeholder="下次上课的重点内容..."
+        value="{{form.nextPlan}}"
+        bindinput="onNextPlanInput"
+      />
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="submit-box">
+    <button class="btn-primary" bindtap="onSubmit">保存总结</button>
+    <button class="btn-default" wx:if="{{id}}" bindtap="onDelete">删除</button>
+  </view>
+</view>

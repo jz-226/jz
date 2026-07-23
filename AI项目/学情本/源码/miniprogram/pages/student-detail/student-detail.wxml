@@ -1,0 +1,84 @@
+<!-- pages/student-detail/student-detail.wxml -->
+<view class="container">
+  <!-- 学生基本信息 -->
+  <view class="card">
+    <view class="avatar-box">
+      <view class="avatar" style="background-color: {{avatarColor}}">
+        <text class="avatar-text">{{initial}}</text>
+      </view>
+    </view>
+    <view class="info-box">
+      <text class="name">{{student.name}}</text>
+      <view class="meta">
+        <text class="grade">{{student.grade}}</text>
+        <text class="subjects">{{subjectsText}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计数据 -->
+  <view class="stats-grid">
+    <view class="stat-card">
+      <text class="stat-number">{{stats.questionsCount}}</text>
+      <text class="stat-label">问题记录</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-number">{{stats.lessonsCount}}</text>
+      <text class="stat-label">课程数</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-number">{{stats.summariesCount}}</text>
+      <text class="stat-label">课后总结</text>
+    </view>
+  </view>
+
+  <!-- 基本信息 -->
+  <view class="card" wx:if="{{student.phone || student.notes}}">
+    <view class="section-title">基本信息</view>
+    <view class="detail-item" wx:if="{{student.phone}}">
+      <text class="label">家长联系方式</text>
+      <text class="value phone" bindtap="onPhoneTap">{{student.phone}}</text>
+    </view>
+    <view class="detail-item" wx:if="{{student.notes}}">
+      <text class="label">备注</text>
+      <text class="value">{{student.notes}}</text>
+    </view>
+  </view>
+
+  <!-- 最近问题 -->
+  <view class="card">
+    <view class="section-header">
+      <text class="section-title">最近问题</text>
+      <view class="section-action" bindtap="onViewQuestions">查看全部</view>
+    </view>
+    <view wx:if="{{recentQuestions.length > 0}}">
+      <view class="question-preview" wx:for="{{recentQuestions}}" wx:key="_id" bindtap="onQuestionTap" data-id="{{item._id}}">
+        <text class="question-status status-{{item.status}}">{{statusText[item.status]}}</text>
+        <text class="question-content">{{item.content}}</text>
+      </view>
+    </view>
+    <view class="empty-tip" wx:else>暂无问题记录</view>
+  </view>
+
+  <!-- 最近课程 -->
+  <view class="card">
+    <view class="section-header">
+      <text class="section-title">最近课程</text>
+      <view class="section-action" bindtap="onViewLessons">查看全部</view>
+    </view>
+    <view wx:if="{{recentLessons.length > 0}}">
+      <view class="lesson-preview" wx:for="{{recentLessons}}" wx:key="_id" bindtap="onLessonTap" data-id="{{item._id}}">
+        <text class="lesson-date">{{item.date}}</text>
+        <text class="lesson-subject">{{item.subject}}</text>
+        <text class="lesson-status status-{{item.status}}">{{item.status === 'completed' ? '已完成' : '待上课'}}</text>
+      </view>
+    </view>
+    <view class="empty-tip" wx:else>暂无课程记录</view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <button class="btn-action" bindtap="onEdit">编辑信息</button>
+    <button class="btn-action btn-danger" bindtap="onDelete">删除学生</button>
+  </view>
+</view>

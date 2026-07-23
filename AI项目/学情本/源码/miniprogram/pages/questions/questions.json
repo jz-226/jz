@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "问题记录",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "question-item": "/components/question-item/question-item"
+  }
+}

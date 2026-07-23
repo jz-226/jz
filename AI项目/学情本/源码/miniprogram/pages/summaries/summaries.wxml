@@ -1,0 +1,52 @@
+<!-- pages/summaries/summaries.wxml -->
+<view class="container">
+  <!-- 总结列表 -->
+  <view class="summary-list" wx:if="{{summaries.length > 0}}">
+    <view class="summary-card" wx:for="{{summaries}}" wx:key="_id" bindtap="onSummaryTap" data-id="{{item._id}}">
+      <view class="header">
+        <view class="student-info">
+          <text class="student-name">{{item.studentName}}</text>
+          <text class="lesson-date">{{item.lessonDate}}</text>
+        </view>
+      </view>
+      <view class="scores">
+        <view class="score-item">
+          <text class="score-label">理解度</text>
+          <view class="score-stars">
+            <text wx:for="{{stars}}" wx:key="*this" wx:for-item="star" class="star {{star < item.understanding ? 'active' : ''}}">★</text>
+          </view>
+        </view>
+        <view class="score-item">
+          <text class="score-label">专注度</text>
+          <view class="score-stars">
+            <text wx:for="{{stars}}" wx:key="*this" wx:for-item="star" class="star {{star < item.focus ? 'active' : ''}}">★</text>
+          </view>
+        </view>
+        <view class="score-item">
+          <text class="score-label">完成度</text>
+          <view class="score-stars">
+            <text wx:for="{{stars}}" wx:key="*this" wx:for-item="star" class="star {{star < item.completion ? 'active' : ''}}">★</text>
+          </view>
+        </view>
+      </view>
+      <view class="content-preview" wx:if="{{item.achievements}}">
+        <text class="preview-text">{{item.achievements}}</text>
+      </view>
+      <view class="footer">
+        <text class="time">{{item.createTime}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:else>
+    <text class="empty-icon">📋</text>
+    <text class="empty-text">还没有课后总结</text>
+    <text class="empty-tip">上完课后记录总结</text>
+  </view>
+
+  <!-- 添加按钮 -->
+  <view class="fab" bindtap="onAdd">
+    <text class="fab-icon">+</text>
+  </view>
+</view>

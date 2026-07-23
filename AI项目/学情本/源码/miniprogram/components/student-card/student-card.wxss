@@ -1,0 +1,74 @@
+/* components/student-card/student-card.wxss */
+
+.student-card {
+  display: flex;
+  align-items: center;
+  padding: 24rpx;
+  background-color: var(--white);
+  border-radius: 16rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+}
+
+.avatar-text {
+  font-size: 32rpx;
+  color: var(--white);
+  font-weight: bold;
+}
+
+.info {
+  flex: 1;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 8rpx;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: var(--text-secondary);
+}
+
+.grade {
+  margin-right: 16rpx;
+}
+
+.subjects {
+  color: var(--primary-color);
+}
+
+.stats {
+  display: flex;
+  margin-top: 12rpx;
+}
+
+.stat-item {
+  font-size: 22rpx;
+  color: var(--text-placeholder);
+  margin-right: 20rpx;
+}
+
+.arrow {
+  width: 40rpx;
+  text-align: center;
+}
+
+.icon {
+  font-size: 32rpx;
+  color: var(--text-placeholder);
+}

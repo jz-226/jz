@@ -1,0 +1,20 @@
+<!-- components/student-card/student-card.wxml -->
+<view class="student-card" bindtap="onTap">
+  <view class="avatar" style="background-color: {{avatarColor}}">
+    <text class="avatar-text">{{initial}}</text>
+  </view>
+  <view class="info">
+    <view class="name">{{student.name}}</view>
+    <view class="meta">
+      <text class="grade">{{student.grade}}</text>
+      <text class="subjects">{{subjectsText}}</text>
+    </view>
+    <view class="stats" wx:if="{{showStats}}">
+      <text class="stat-item">问题 {{stats.questionsCount || 0}}</text>
+      <text class="stat-item">课程 {{stats.lessonsCount || 0}}</text>
+    </view>
+  </view>
+  <view class="arrow">
+    <text class="icon">›</text>
+  </view>
+</view>

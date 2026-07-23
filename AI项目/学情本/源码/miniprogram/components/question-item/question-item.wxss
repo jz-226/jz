@@ -1,0 +1,105 @@
+/* components/question-item/question-item.wxss */
+
+.question-item {
+  background-color: var(--white);
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.student-info {
+  display: flex;
+  align-items: center;
+}
+
+.student-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-right: 12rpx;
+}
+
+.subject {
+  font-size: 24rpx;
+  color: var(--primary-color);
+}
+
+.status-badge {
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+}
+
+.status-pending {
+  background-color: #fff3e0;
+  color: #ff9800;
+}
+
+.status-explained {
+  background-color: #e3f2fd;
+  color: #2196f3;
+}
+
+.status-mastered {
+  background-color: #e8f5e9;
+  color: #4caf50;
+}
+
+.content {
+  margin-bottom: 16rpx;
+}
+
+.question-content {
+  font-size: 28rpx;
+  color: var(--text-color);
+  line-height: 1.5;
+  margin-bottom: 12rpx;
+}
+
+.knowledge-point {
+  margin-top: 8rpx;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6rpx 12rpx;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+}
+
+.tag-primary {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time {
+  font-size: 22rpx;
+  color: var(--text-placeholder);
+}
+
+.actions {
+  display: flex;
+  gap: 12rpx;
+}
+
+.action-btn {
+  font-size: 22rpx;
+  padding: 6rpx 12rpx;
+  border-radius: 6rpx;
+  background-color: var(--bg-color);
+  color: var(--text-secondary);
+}

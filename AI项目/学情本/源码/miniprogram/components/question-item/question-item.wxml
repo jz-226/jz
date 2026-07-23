@@ -1,0 +1,26 @@
+<!-- components/question-item/question-item.wxml -->
+<view class="question-item" bindtap="onTap">
+  <view class="header">
+    <view class="student-info">
+      <text class="student-name">{{studentName}}</text>
+      <text class="subject">{{question.subject}}</text>
+    </view>
+    <view class="status-badge status-{{question.status}}">
+      {{statusText}}
+    </view>
+  </view>
+  <view class="content">
+    <view class="question-content">{{question.content}}</view>
+    <view class="knowledge-point" wx:if="{{question.knowledgePoint}}">
+      <text class="tag tag-primary">{{question.knowledgePoint}}</text>
+    </view>
+  </view>
+  <view class="footer">
+    <text class="time">{{timeText}}</text>
+    <view class="actions" wx:if="{{showActions}}">
+      <view class="action-btn" catchtap="onStatusChange" data-status="pending">待讲解</view>
+      <view class="action-btn" catchtap="onStatusChange" data-status="explained">已讲解</view>
+      <view class="action-btn" catchtap="onStatusChange" data-status="mastered">已掌握</view>
+    </view>
+  </view>
+</view>

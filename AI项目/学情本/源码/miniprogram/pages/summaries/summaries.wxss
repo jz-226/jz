@@ -1,0 +1,121 @@
+/* pages/summaries/summaries.wxss */
+
+.container {
+  padding: 24rpx;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.summary-list {
+  padding-bottom: 120rpx;
+}
+
+.summary-card {
+  background-color: var(--white);
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.student-info {
+  display: flex;
+  align-items: center;
+}
+
+.student-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-right: 16rpx;
+}
+
+.lesson-date {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+}
+
+.scores {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.score-item {
+  flex: 1;
+  text-align: center;
+}
+
+.score-label {
+  font-size: 22rpx;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.score-stars {
+  display: flex;
+  justify-content: center;
+}
+
+.star {
+  font-size: 24rpx;
+  color: #ddd;
+}
+
+.star.active {
+  color: #ffc107;
+}
+
+.content-preview {
+  padding: 12rpx;
+  background-color: var(--bg-color);
+  border-radius: 8rpx;
+  margin-bottom: 16rpx;
+}
+
+.preview-text {
+  font-size: 26rpx;
+  color: var(--text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time {
+  font-size: 22rpx;
+  color: var(--text-placeholder);
+}
+
+.empty-state {
+  padding: 100rpx 40rpx;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: var(--text-secondary);
+  margin-bottom: 12rpx;
+}
+
+.empty-tip {
+  font-size: 24rpx;
+  color: var(--text-placeholder);
+}

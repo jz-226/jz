@@ -1,0 +1,139 @@
+<!-- pages/lesson-edit/lesson-edit.wxml -->
+<view class="container">
+  <view class="form">
+    <!-- 学生 -->
+    <view class="form-group">
+      <text class="form-label required">学生</text>
+      <picker
+        mode="selector"
+        range="{{students}}"
+        range-key="name"
+        value="{{studentIndex}}"
+        bindchange="onStudentChange"
+      >
+        <view class="picker">
+          <text wx:if="{{form.studentId}}">{{selectedStudentName}}</text>
+          <text wx:else class="picker-placeholder">请选择学生</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 科目 -->
+    <view class="form-group">
+      <text class="form-label required">科目</text>
+      <picker
+        mode="selector"
+        range="{{subjects}}"
+        value="{{subjectIndex}}"
+        bindchange="onSubjectChange"
+      >
+        <view class="picker">
+          <text wx:if="{{form.subject}}">{{form.subject}}</text>
+          <text wx:else class="picker-placeholder">请选择科目</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 上课日期 -->
+    <view class="form-group">
+      <text class="form-label required">上课日期</text>
+      <picker
+        mode="date"
+        value="{{form.date}}"
+        bindchange="onDateChange"
+      >
+        <view class="picker">
+          <text wx:if="{{form.date}}">{{form.date}}</text>
+          <text wx:else class="picker-placeholder">请选择日期</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 状态 -->
+    <view class="form-group">
+      <text class="form-label">状态</text>
+      <view class="status-list">
+        <view
+          class="status-tag {{item.value === form.status ? 'selected' : ''}}"
+          wx:for="{{statusOptions}}"
+          wx:key="value"
+          bindtap="onStatusTap"
+          data-value="{{item.value}}"
+        >
+          {{item.label}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 教学目标 -->
+    <view class="form-group">
+      <text class="form-label">教学目标</text>
+      <view class="objective-list">
+        <view class="objective-item" wx:for="{{form.objectives}}" wx:key="index">
+          <input
+            class="objective-input"
+            placeholder="输入教学目标"
+            value="{{item}}"
+            bindinput="onObjectiveInput"
+            data-index="{{index}}"
+          />
+          <view class="remove-btn" bindtap="onRemoveObjective" data-index="{{index}}">×</view>
+        </view>
+        <view class="add-btn" bindtap="onAddObjective">+ 添加目标</view>
+      </view>
+    </view>
+
+    <!-- 知识点 -->
+    <view class="form-group">
+      <text class="form-label">知识点</text>
+      <view class="point-list">
+        <view class="point-item" wx:for="{{form.knowledgePoints}}" wx:key="index">
+          <input
+            class="point-input"
+            placeholder="输入知识点"
+            value="{{item}}"
+            bindinput="onPointInput"
+            data-index="{{index}}"
+          />
+          <view class="remove-btn" bindtap="onRemovePoint" data-index="{{index}}">×</view>
+        </view>
+        <view class="add-btn" bindtap="onAddPoint">+ 添加知识点</view>
+      </view>
+    </view>
+
+    <!-- 练习题 -->
+    <view class="form-group">
+      <text class="form-label">练习题</text>
+      <view class="exercise-list">
+        <view class="exercise-item" wx:for="{{form.exercises}}" wx:key="index">
+          <textarea
+            class="exercise-textarea"
+            placeholder="输入练习题内容"
+            value="{{item.content}}"
+            bindinput="onExerciseInput"
+            data-index="{{index}}"
+          />
+          <view class="remove-btn exercise-remove" bindtap="onRemoveExercise" data-index="{{index}}">×</view>
+        </view>
+        <view class="add-btn" bindtap="onAddExercise">+ 添加练习题</view>
+      </view>
+    </view>
+
+    <!-- 备注 -->
+    <view class="form-group">
+      <text class="form-label">备注</text>
+      <textarea
+        class="form-textarea"
+        placeholder="其他需要记录的内容..."
+        value="{{form.notes}}"
+        bindinput="onNotesInput"
+      />
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="submit-box">
+    <button class="btn-primary" bindtap="onSubmit">保存课程</button>
+    <button class="btn-default" wx:if="{{id}}" bindtap="onDelete">删除课程</button>
+  </view>
+</view>
