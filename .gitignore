@@ -6,4 +6,6 @@
 *.blend
 *.mov
 
-# 例外：保留必要的小文件
+# 例外：作品集站点必需的视频素材（GitHub Pages 单文件上限 100MB）
+!assets/offerpilot-showcase.mp4
+!assets/tutor-create-course.mp4
