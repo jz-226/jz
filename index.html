@@ -1,285 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<style>
-:root {
-  --bg: #0a0a14; --card: rgba(255,255,255,0.04);
-  --border: rgba(255,255,255,0.08); --text: #e8e6f0;
-  --muted: #8b88a0; --accent: #8b5cf6;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  background:var(--bg); color:var(--text);
-  font-family:"Inter","PingFang SC","Microsoft YaHei",sans-serif;
-  line-height:1.7; overflow-x:hidden;
-}
-
-/* ====== Canvas Background ====== */
-#bgCanvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
-
-/* ====== Hero ====== */
-.hero {
-  position:relative; z-index:1; min-height:100vh;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; padding:0 20px;
-}
-.hero-bg {
-  position:absolute; inset:0; z-index:-1;
-  background:linear-gradient(135deg, #1a0533 0%, #0d1b3e 30%, #0a1628 60%, #12062e 100%);
-  background-size:400% 400%; animation:bgShift 20s ease infinite;
-}
-@keyframes bgShift {
-  0%,100% { background-position:0% 50%; }
-  50% { background-position:100% 50%; }
-}
-.hero h1 {
-  font-family:"Space Grotesk",sans-serif; font-size:clamp(2.5rem, 8vw, 5.5rem);
-  font-weight:700; letter-spacing:-2px; line-height:1.1; margin-bottom:20px;
-  background:linear-gradient(135deg, #c4b5fd, #8b5cf6, #67e8f9);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-  animation:fadeIn 1s ease;
-}
-.hero .typed-wrap { font-size:clamp(1rem, 3vw, 1.5rem); color:var(--muted); height:2em; }
-.hero .typed-wrap .typed-cursor { color:var(--accent); }
-.hero .scroll-hint { position:absolute; bottom:40px; color:var(--muted); font-size:0.8rem; animation:bounce 2s infinite; }
-@keyframes fadeIn { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
-
-/* ====== Container ====== */
-.container { position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:0 24px 80px; }
-
-/* ====== Nav ====== */
-.nav { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:50px; position:sticky; top:20px; z-index:10; }
-.nav button {
-  background:rgba(255,255,255,0.04); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
-  border:1px solid var(--border); color:var(--muted); padding:10px 22px;
-  border-radius:50px; cursor:pointer; font-size:0.9rem; font-weight:500;
-  transition:all .3s; font-family:"Inter",sans-serif;
-}
-.nav button:hover { border-color:var(--accent); color:var(--text); }
-.nav button.active { background:rgba(139,92,246,0.2); border-color:var(--accent); color:#fff; }
-
-/* ====== Grid ====== */
-.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:24px; }
-.card {
-  perspective:1000px; transform-style:preserve-3d; cursor:pointer;
-  opacity:0; transform:translateY(40px); transition:opacity .6s ease, transform .6s ease;
-}
-.card.visible { opacity:1; transform:translateY(0); }
-.card-inner {
-  background:var(--card); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
-  border:1px solid var(--border); border-radius:20px; overflow:hidden;
-  transition:all .3s ease; position:relative;
-}
-.card-inner::after {
-  content:''; position:absolute; inset:0; border-radius:20px; opacity:0;
-  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(139,92,246,0.15) 0%, transparent 60%);
-  transition:opacity .3s; pointer-events:none; z-index:1;
-}
-.card:hover .card-inner::after { opacity:1; }
-.card-img { width:100%; height:260px; object-fit:cover; display:block; background:#111; }
-.card-video { width:100%; height:260px; background:#000; }
-.card-video video { width:100%; height:100%; object-fit:cover; display:block; }
-.card-body { padding:20px; position:relative; z-index:2; flex:1; display:flex; flex-direction:column; }
-.tag { display:inline-block; font-size:0.7rem; padding:3px 10px; border-radius:20px; margin-bottom:10px; font-weight:500; }
-.tag-visual { background:rgba(244,114,182,0.15); color:#f472b6; }
-.tag-agent  { background:rgba(139,92,246,0.15); color:#a78bfa; }
-.tag-video  { background:rgba(52,211,153,0.15); color:#34d399; }
-.tag-other  { background:rgba(251,191,36,0.15); color:#fbbf24; }
-.card-body h3 { font-family:"Space Grotesk",sans-serif; font-size:1.1rem; margin-bottom:6px; font-weight:600; }
-.card-body p { color:var(--muted); font-size:0.85rem; }
-.card-body .hint { color:var(--accent); font-size:0.72rem; margin-top:8px; opacity:0.7; }
-
-/* ====== Modal ====== */
-.modal {
-  position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.8);
-  backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
-  display:none; align-items:center; justify-content:center; padding:20px;
-}
-.modal.show { display:flex; }
-.modal-content {
-  max-width:1000px; width:100%; max-height:90vh; overflow-y:auto;
-  background:rgba(20,20,40,0.9); border:1px solid rgba(255,255,255,0.1);
-  border-radius:24px; display:grid; grid-template-columns:1fr 1fr; gap:0;
-}
-.modal .close {
-  position:fixed; top:24px; right:32px; width:44px; height:44px; border-radius:50%;
-  background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15);
-  color:#fff; font-size:1.2rem; cursor:pointer; z-index:101;
-  display:flex; align-items:center; justify-content:center; transition:all .2s;
-}
-.modal .close:hover { background:rgba(255,255,255,0.18); }
-.modal-left { border-radius:24px 0 0 24px; overflow-y:auto; max-height:80vh; background:#000; }
-.modal-left img, .modal-left video { width:100%; display:block; object-fit:contain; min-height:300px; background:#111; }
-.modal-right { padding:40px; display:flex; flex-direction:column; overflow-y:auto; max-height:80vh; }
-.modal-right h2 { font-family:"Space Grotesk",sans-serif; font-size:1.8rem; margin-bottom:12px; }
-.modal-right .desc { color:var(--muted); line-height:1.8; margin-bottom:24px; flex:1; }
-.modal-right .modal-links { display:flex; gap:12px; flex-wrap:wrap; }
-.modal-right .modal-links a {
-  padding:10px 24px; border-radius:50px; font-size:0.9rem; font-weight:500;
-  text-decoration:none; background:rgba(139,92,246,0.2); border:1px solid var(--accent);
-  color:#c4b5fd; transition:all .2s;
-}
-.modal-right .modal-links a:hover { background:rgba(139,92,246,0.35); text-decoration:none; }
-
-@media (max-width:768px) {
-  .grid { grid-template-columns:1fr; }
-  .modal-content { grid-template-columns:1fr; }
-  .modal-left { border-radius:24px 24px 0 0; max-height:350px; overflow-y:auto; background:#000; }
-  .modal-left img, .modal-left video { width:100%; display:block; min-height:250px; object-fit:contain; }
-  .hero h1 { font-size:2.2rem; }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="姜梓的个人作品集：AI 产品、AI 运营、应用开发与视觉系统。" />
+  <title>姜梓 / Selected Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="interactions.css" />
+  <link rel="stylesheet" href="case-extra.css" />
 </head>
 <body>
+  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+  <header class="nav"><a class="logo" href="#top">JZ<span>/</span>26</a><nav><a href="#work">作品</a><a href="#profile">关于我</a><a href="#visual">视觉实验</a></nav><a class="contact" href="mailto:2175564440@qq.com">2175564440@qq.com ↗</a></header>
+  <main id="top">
+    <section class="intro wrap">
+      <div class="intro-copy"><p class="kicker">姜梓 / JIANG ZI</p><h1>我把问题，<br /><span>做成可以被使用的东西。</span></h1><p class="lede">数字媒体艺术专业大三学生，专注 AI 产品、AI 运营和应用开发。喜欢从真实场景出发，把用户洞察、视觉系统、AI 工作流和前端实现接在一起。</p><div class="intro-links"><a class="button dark" href="#work">看我的作品 ↓</a><a class="underlink" href="https://github.com/jz-226" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+      <div class="intro-visual"><div class="visual-label">THE WORK LOOP<br /><b>OBSERVE · SHAPE · SHIP</b></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><button class="loop-label loop-observe" data-loop="observe">01 / OBSERVE<br /><small>看见真实问题</small></button><button class="loop-label loop-shape" data-loop="shape">02 / SHAPE<br /><small>做出可用方案</small></button><button class="loop-label loop-ship" data-loop="ship">03 / SHIP<br /><small>交付并验证</small></button><div class="loop-panel" id="loopPanel"><span>NOW SELECTED</span><strong id="loopTitle">观察真实问题</strong><small id="loopCopy">从用户处境开始，而不是从一个漂亮界面开始。</small></div><div class="float-card float-main"><span>01</span><strong>OfferPilot</strong><small>AI career growth agent</small></div><div class="float-card float-side"><span>02</span><strong>Wind Tunnel</strong><small>AI × operations</small></div><div class="float-card float-bottom"><span>03</span><strong>姜记学情本</strong><small>shipped mini program</small></div><div class="sphere" id="sphere" aria-hidden="true"></div></div>
+    </section>
+    <section class="marquee"><div>PRODUCT THINKING · AI WORKFLOW · FRONTEND BUILD · VISUAL SYSTEM · SHIPPED PRODUCTS · </div></section>
 
-<canvas id="bgCanvas"></canvas>
+    <section class="work wrap" id="work"><div class="section-top"><p class="kicker">01 — SELECTED WORK</p><p class="section-note">点击项目进入完整案例。每个案例都包含真实界面、交互演示和我的具体工作。</p></div>
+      <article class="feature feature-blue reveal" data-case="offerpilot"><div class="feature-image offerpilot-image"><img class="offerpilot-hero" src="assets/offerpilot-hero.jpg" alt="OfferPilot 产品与界面展示" /><button class="play" data-video="assets/offerpilot-showcase.mp4">观看产品演示 <span>▶</span></button><button class="case-trigger" data-case="offerpilot">打开完整案例 <span>↗</span></button></div><div class="feature-text"><p class="project-index">01 / AI PRODUCT</p><h2>OfferPilot</h2><p class="project-sub">AI 职业成长 Agent</p><p>输入目标岗位，AI 分析人岗差距，生成个性化成长路线，再用每日测验推进 readiness。一个从“我想去哪”走到“我准备好了”的完整产品闭环。</p><div class="facts"><span><b>角色</b>产品 / 设计 / 开发</span><span><b>技术</b>Next.js · Supabase · DeepSeek</span><span><b>状态</b>已上线 Vercel</span></div><div class="feature-actions"><a class="button dark" href="https://offerpilot-kappa.vercel.app/" target="_blank" rel="noreferrer">打开产品 ↗</a><a class="underlink" href="https://github.com/jz-226/offerpilot" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></article>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <h1>Explore. Create.<br>Build with AI.</h1>
-  <div class="typed-wrap"><span id="typed"></span></div>
-  <div class="scroll-hint">Scroll down</div>
-</section>
+      <article class="feature feature-orange reveal" data-case="wind"><div class="feature-text"><p class="project-index">02 / AI OPERATIONS</p><h2>Marketing<br />Wind Tunnel</h2><p class="project-sub">让营销方案先被攻击一次</p><p>输入一个营销方案，十个 AI 消费者生成质疑；运营者拖拽、回应、修复，AI 评分后进入进化舱，最后输出“能不能上线”的风险报告。</p><div class="facts"><span><b>角色</b>创意 / 产品 / 前端 / Prompt</span><span><b>技术</b>Next.js · React · Framer Motion</span><span><b>状态</b>AI 开发者大赛 · AI+运营赛道</span></div><div class="feature-actions"><a class="button orange" href="https://www.modelscope.cn/studios/jiangzi226/Marketing-Wind-Tunnel" target="_blank" rel="noreferrer">打开 Demo ↗</a></div></div><div class="feature-image wind-image"><div class="wind-grid"><img src="assets/1.png" alt="营销方案输入页" /><img src="assets/4.png" alt="营销碰撞报告" /><img src="assets/6.png" alt="运营决策台" /></div><button class="play" data-wind="true">查看流程 <span>→</span></button><button class="case-trigger" data-case="wind">打开完整案例 <span>↗</span></button></div></article>
 
-<div class="container">
-  <nav class="nav" id="nav">
-    <button class="active" data-cat="all">All</button>
-    <button data-cat="visual">Visual Design</button>
-    <button data-cat="agent">AI Agent</button>
-  </nav>
-  <div class="grid" id="grid"></div>
-</div>
+      <article class="feature feature-blue feature-tutor reveal" data-case="tutor"><div class="feature-image tutor-image"><div class="tutor-screens"><img src="assets/屏幕截图 2026-06-18 003259.jpg" alt="姜记学情本首页" /><img src="assets/屏幕截图 2026-06-18 003313.jpg" alt="姜记学情本学生档案" /><img src="assets/tutor-create-course.jpg" alt="姜记学情本创建课程" /></div><img class="qr" src="assets/tutor-qr.jpg" alt="姜记学情本小程序二维码" /><button class="case-trigger" data-case="tutor">打开完整案例 <span>↗</span></button></div><div class="feature-text"><p class="project-index">03 / SHIPPED MINI PROGRAM</p><h2>姜记学情本</h2><p class="project-sub">给家教老师的学生管理工具</p><p>学生档案、备课、错题、总结四个模块，围绕“待讲解 → 已讲解 → 已掌握”的状态流转，帮助老师把每一次课后的信息留下来。</p><div class="facts"><span><b>角色</b>独立产品 / 交互 / 开发</span><span><b>技术</b>原生微信小程序 · 本地存储</span><span><b>状态</b>已上线</span></div><div class="tutor-actions"><p class="scan-note">扫码体验小程序</p><button class="video-inline" data-video="assets/tutor-create-course.mp4">观看创建课程录屏 ↗</button></div></div></article>
+    </section>
 
-<div class="modal" id="modal">
-  <button class="close" id="modalClose">X</button>
-  <div class="modal-content" id="modalContent"></div>
-</div>
+    <section class="profile wrap" id="profile"><div><p class="kicker">02 — ABOUT ME</p><h2>不只做界面，<br /><span>也把它交付出去。</span></h2></div><div class="profile-copy"><p>我是姜梓，数字媒体艺术专业大三学生。我的优势不在于只会一种工具，而在于能从问题定义开始，完成产品结构、交互表达、AI 逻辑和可运行的前端实现。</p><div class="profile-row"><div><b>AI 产品</b><span>目标、流程、指标、迭代</span></div><div><b>AI 运营</b><span>用户反馈、实验、决策</span></div><div><b>应用开发</b><span>Next.js、React、小程序</span></div></div><a class="button dark" href="mailto:2175564440@qq.com">联系我 ↗</a></div></section>
 
-<script>
-(function(){
-"use strict";
-
-// ====== DATA ======
-var data = [
-  {id:1,title:"铺首衔环 信息可视化",cat:"visual",desc:"东方创意之星国赛金奖 · 省特金奖。苏北鲁南传统门饰的视觉化呈现。",full:"以苏北鲁南地区传统民居门饰\"铺首衔环\"为研究对象，通过信息可视化设计手法，系统梳理其历史演变、地域分布、纹样分类与文化内涵。作品获东方创意之星创新设计大赛国赛金奖、江苏省特金奖。",img:"images/door-knocker/work_01.jpg",gallery:["images/door-knocker/work_01.jpg","images/door-knocker/work_02.jpg","images/door-knocker/work_03.jpg","images/door-knocker/work_04.jpg","images/door-knocker/work_05.jpg"],vid:"",link:""},
-  {id:2,title:"元气派 IP形象设计",cat:"visual",desc:"全国大学生数字媒体科技作品竞赛省三等奖。原创卡通IP系统。",full:"原创卡通IP形象\"元气派\"，包含角色设定、表情包系统、衍生品设计等完整IP生态。获全国大学生数字媒体科技作品及创意竞赛江苏省三等奖。",img:"images/yuanqi/pic_01.jpg",gallery:["images/yuanqi/pic_01.jpg","images/yuanqi/pic_02.jpg","images/yuanqi/pic_03.jpg"],vid:"",link:""},
-  {id:3,title:"海洋文化创意大赛",cat:"visual",desc:"探索海洋文化与现代视觉设计的融合表达。",full:"以海洋生态与文化为主题，将深海意象与现代平面设计语言结合。作品包括海报、系列插画等多个视觉载体。",img:"images/ocean/secret.jpg",gallery:["images/ocean/secret.jpg","images/ocean/robot.jpg","images/ocean/deepsea.jpg"],vid:"",link:""},
-  {id:4,title:"东海土特产包装设计",cat:"visual",desc:"东海县包装设计大赛铜奖。地域文化 x 现代包装。",full:"为东海县地方特产设计系列包装盒，将地域文化元素与现代包装设计手法融合。多款包装设计方案展示。获东海县土特产设计包装大赛铜奖。",img:"images/donghai/packaging_01.jpg",gallery:["images/donghai/packaging_01.jpg","images/donghai/packaging_02.png","images/donghai/packaging_03.jpg","images/donghai/packaging_04.jpg","images/donghai/packaging_05.png","images/donghai/packaging_06.png"],vid:"",link:""},
-  {id:5,title:"旅行规划助手 AI Agent",cat:"agent",desc:"3画像x3模式。Dify+DeepSeek+RAG。Dify Marketplace已上架。",full:"基于多画像匹配的AI旅行规划Agent。3种用户画像(学生/白领/老人) x 3种场景模式，搭载苏州本地RAG知识库+4层Prompt架构+五维评测体系。",img:"images/travel_planner.jpg",gallery:[],vid:"",link:"https://marketplace.dify.ai/template/jz226/%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92%E5%8A%A9%E6%89%8B?templateId=388c0d68-d5ba-4547-b095-a98ac74b0e19&creationType=templates"},
-  {id:6,title:"儿童康复家庭训练 Agent",cat:"agent",desc:"昆山小白杨实习项目。康复师指令 -> AI生成家长版每日方案。",full:"基于昆山小白杨健康管理有限公司实习场景开发。康复师输入训练指令 -> AI自动翻译成家长版每日方案，含游戏化引导+安全提醒+打卡表+反馈问卷。从真实业务需求出发的AI Agent产品。",img:"images/cert/putonghua.jpg",gallery:[],vid:"",link:""},
-  {id:7,title:"姜记学情本 微信小程序",cat:"agent",desc:"面向家教场景的学生管理工具。已上线微信。",full:"从自身家教需求出发，完成问题定义->产品设计->原生开发->上线运营的完整闭环。4大功能模块+错题状态流转+Dashboard数据看板。微信原生开发。",img:"images/cert/putonghua.jpg",gallery:[],vid:"",link:""}
-];
-
-var labels={visual:"Visual Design",agent:"AI Agent",video:"Video",other:"Other"};
-var tagCss={visual:"tag-visual",agent:"tag-agent",video:"tag-video",other:"tag-other"};
-
-// ====== TYPED.JS ======
-new Typed("#typed",{strings:["Visual Designer.","AI Creator.","Video Storyteller."],typeSpeed:60,backSpeed:30,backDelay:2000,startDelay:500,loop:true,showCursor:true});
-
-// ====== BACKGROUND PARTICLES ======
-(function(){
-  var c=document.getElementById("bgCanvas"),ctx=c.getContext("2d"),w,h,particles=[];
-  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight;}
-  resize();window.addEventListener("resize",resize);
-  for(var i=0;i<80;i++) particles.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+0.5,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3});
-  function draw(){
-    ctx.clearRect(0,0,w,h);
-    for(var i=0;i<particles.length;i++){
-      var p=particles[i];ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle="rgba(139,92,246,"+(0.15+Math.sin(Date.now()*0.001+i)*0.1)+")";
-      ctx.fill();p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
-    }
-    // grid lines
-    ctx.strokeStyle="rgba(255,255,255,0.02)";ctx.lineWidth=0.5;
-    var gs=80;
-    for(var x=gs;x<w;x+=gs){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke();}
-    for(var y=gs;y<h;y+=gs){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke();}
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-// ====== RENDER CARDS ======
-var grid=document.getElementById("grid");
-var currentFilter="all";
-
-function renderCards(filter){
-  var items=filter==="all"?data:data.filter(function(d){return d.cat===filter;});
-  var oldCards=grid.querySelectorAll(".card");
-  oldCards.forEach(function(c){c.style.opacity="0";c.style.transform="translateY(20px)";});
-
-  setTimeout(function(){
-    if(!items.length){grid.innerHTML='<div style="text-align:center;padding:60px;color:var(--muted);grid-column:1/-1">Coming soon</div>';return;}
-    grid.innerHTML=items.map(function(d,i){
-      var pic=d.vid?'<div class="card-video"><video preload="metadata"><source src="'+d.vid+'" type="video/mp4"></video></div>':'<img class="card-img" src="'+d.img+'" alt="'+d.title+'" loading="lazy">';
-      return '<div class="card" data-id="'+d.id+'" style="transition-delay:'+(i*0.08)+'s"><div class="card-inner">'+pic+'<div class="card-body"><span class="tag '+(tagCss[d.cat]||"tag-other")+'">'+(labels[d.cat]||d.cat)+'</span><h3>'+d.title+'</h3><p>'+d.desc+'</p><span class="hint">Click to view details</span></div></div></div>';
-    }).join("");
-
-    // Intersection Observer
-    var cards=grid.querySelectorAll(".card");
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target);}});
-    },{threshold:0.1});
-    cards.forEach(function(c){obs.observe(c);});
-
-    // 3D tilt + click
-    cards.forEach(function(card){
-      var inner=card.querySelector(".card-inner");
-      card.addEventListener("mousemove",function(e){
-        if(window.innerWidth<768)return;
-        var rect=card.getBoundingClientRect();
-        var x=e.clientX-rect.left,y=e.clientY-rect.top;
-        var rx=(y-rect.height/2)/10,ry=-(x-rect.width/2)/10;
-        inner.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)";
-        inner.style.setProperty("--mx",(x/rect.width*100)+"%");
-        inner.style.setProperty("--my",(y/rect.height*100)+"%");
-      });
-      card.addEventListener("mouseleave",function(){inner.style.transform="rotateX(0) rotateY(0)";});
-      card.addEventListener("click",function(){openModal(parseInt(card.dataset.id));});
-    });
-  },300);
-}
-
-// ====== MODAL ======
-var modal=document.getElementById("modal");
-var modalContent=document.getElementById("modalContent");
-
-function openModal(id){
-  var d=data.find(function(x){return x.id===id;});if(!d)return;
-  var imgs=d.gallery&&d.gallery.length>0?d.gallery:[d.img];
-  var mediaHTML=imgs.map(function(src){return '<img src="'+src+'" alt="'+d.title+'" loading="lazy">';}).join("");
-  if(d.vid)mediaHTML+='<video controls style="width:100%;display:block"><source src="'+d.vid+'" type="video/mp4"></video>';
-  modalContent.innerHTML='<div class="modal-left">'+mediaHTML+'</div><div class="modal-right"><span class="tag '+(tagCss[d.cat]||"tag-other")+'">'+(labels[d.cat]||d.cat)+'</span><h2>'+d.title+'</h2><p class="desc">'+d.full+'</p>'+(d.link?'<div class="modal-links"><a href="'+d.link+'" target="_blank">View Project</a></div>':'')+'</div>';
-  modal.classList.add("show");document.body.style.overflow="hidden";
-}
-function closeModal(){modal.classList.remove("show");document.body.style.overflow="";}
-document.getElementById("modalClose").addEventListener("click",closeModal);
-modal.addEventListener("click",function(e){if(e.target===modal)closeModal();});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal();});
-
-// ====== NAV ======
-document.getElementById("nav").addEventListener("click",function(e){
-  var b=e.target.closest("button");if(!b)return;
-  document.querySelectorAll(".nav button").forEach(function(x){x.classList.remove("active");});
-  b.classList.add("active");
-  currentFilter=b.dataset.cat;
-  renderCards(currentFilter);
-});
-
-// ====== INIT ======
-renderCards("all");
-
-})();
-</script>
+    <section class="visual wrap" id="visual"><div class="section-top"><p class="kicker">03 — VISUAL EXPERIMENTS</p><p class="section-note">品牌、3D、包装和信息可视化，是我建立视觉语言的另一条线。</p></div><div class="visual-grid"><figure><img src="assets/第一张.jpg" alt="元气派 3D IP 与包装设计" /><figcaption>元气派 / 3D IP & packaging</figcaption></figure><figure><img src="assets/df2342527399a08b7c66ee7efb7ea24c.png" alt="东海大米包装视觉" /><figcaption>东海大米 / packaging system</figcaption></figure><figure><img src="assets/作品_05.jpg" alt="中国铺首衔环信息可视化" /><figcaption>中国铺首衔环 / information visualization</figcaption></figure></div></section>
+  </main>
+  <footer class="wrap footer"><span>© 2026 姜梓</span><span>AI PRODUCT · AI OPERATIONS · FDE</span><a href="mailto:2175564440@qq.com">2175564440@qq.com ↗</a></footer>
+  <div class="video-modal" id="videoModal" aria-hidden="true"><button class="modal-close" id="modalClose">×</button><video id="modalVideo" controls playsinline></video></div>
+  <div class="case-drawer" id="caseDrawer" aria-hidden="true"><button class="drawer-close" id="drawerClose">×</button><div class="drawer-nav"><span>CASE STUDY / <b id="drawerCount">01</b></span><span id="drawerType">AI PRODUCT</span></div><div class="drawer-content"><p class="kicker" id="drawerKicker"></p><h2 id="drawerTitle"></h2><p class="drawer-lede" id="drawerLead"></p><div class="drawer-meta" id="drawerMeta"></div><div class="drawer-sections" id="drawerSections"></div><div class="drawer-links" id="drawerLinks"></div></div></div>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script><script src="app.js"></script>
 </body>
 </html>
