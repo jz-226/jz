@@ -4,6 +4,14 @@
 
 ---
 
+## 🚀 作品集在线入口
+
+👉 **[点击进入我的作品集网站 ↗](https://jz-226.github.io/jz/index.html)**
+
+完整展示：AI 职业成长 Agent · AI 营销风洞 · 家教学情本小程序 · 视觉设计
+
+---
+
 ## 🤖 AI 项目
 
 ### 今天吃啥（Agent）⭐ 已上架 Dify Marketplace
