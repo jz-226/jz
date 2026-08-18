@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230">
+  <defs>
+    <radialGradient id="wwg" cx="45%" cy="35%" r="85%">
+      <stop offset="0%" stop-color="#8F7A63"/>
+      <stop offset="60%" stop-color="#6B5844"/>
+      <stop offset="100%" stop-color="#493A2C"/>
+    </radialGradient>
+  </defs>
+  <!-- 尾巴 -->
+  <path d="M40 190 Q24 176 20 156 Q18 146 28 148 Q38 152 48 172" fill="url(#wwg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 狼头 -->
+  <path d="M92 34 Q84 18 100 14 Q118 10 124 26 Q132 24 138 32 Q142 46 134 54 Q150 62 152 78 Q150 96 138 104 Q122 116 100 114 Q78 116 62 104 Q50 96 48 78 Q50 62 66 54 Q58 46 62 32 Q68 24 76 26 Q82 10 92 20 Z" fill="url(#wwg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 尖耳朵 -->
+  <path d="M88 26 L74 6 L102 20 Z" fill="url(#wwg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M112 20 L120 6 L128 26 Z" fill="url(#wwg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 吻部 -->
+  <path d="M88 88 Q96 104 112 88 L112 98 Q100 112 88 98 Z" fill="#8F7A63" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="100" cy="102" rx="6" ry="4" fill="#2A2119"/>
+  <!-- 龇牙 -->
+  <path d="M92 88 L108 88 L104 96 L96 96 Z" fill="#FFF8EC" stroke="#2A2119" stroke-width="3" stroke-linejoin="round"/>
+  <!-- 眼 -->
+  <ellipse cx="78" cy="58" rx="7" ry="8" fill="#F0C75E" stroke="#2A2119" stroke-width="4"/>
+  <ellipse cx="122" cy="58" rx="7" ry="8" fill="#F0C75E" stroke="#2A2119" stroke-width="4"/>
+  <circle cx="79" cy="59" r="3" fill="#2A2119"/>
+  <circle cx="121" cy="59" r="3" fill="#2A2119"/>
+  <path d="M66 46 L90 50 M134 46 L110 50" stroke="#2A2119" stroke-width="4" stroke-linecap="round"/>
+  <!-- 躯干(前倾) -->
+  <path d="M70 116 Q64 150 76 172 Q84 188 100 188 Q116 188 124 172 Q136 150 130 116 Q116 128 100 128 Q84 128 70 116 Z" fill="url(#wwg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 破布腰带 -->
+  <path d="M74 168 Q100 160 126 168 L124 176 Q100 184 76 176 Z" fill="#59402A" stroke="#2A2119" stroke-width="3.5"/>
+  <!-- 双臂利爪 -->
+  <path d="M66 128 L40 144 Q34 148 38 154 L64 142" fill="url(#wwg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M36 152 L30 160 M40 158 L36 166 M46 162 L44 170" stroke="#2A2119" stroke-width="4" stroke-linecap="round"/>
+  <path d="M134 128 L160 144 Q166 148 162 154 L136 142" fill="url(#wwg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M164 152 L170 160 M160 158 L164 166 M154 162 L156 170" stroke="#2A2119" stroke-width="4" stroke-linecap="round"/>
+  <!-- 腿 -->
+  <path d="M80 184 L74 208 Q74 216 84 216 L96 216 L98 188 Z" fill="url(#wwg)" stroke="#2A2119" stroke-width="5"/>
+  <path d="M120 184 L126 208 Q126 216 116 216 L104 216 L102 188 Z" fill="url(#wwg)" stroke="#2A2119" stroke-width="5"/>
+  <!-- 脚爪 -->
+  <path d="M74 216 L70 224 M82 216 L82 224 M90 216 L94 224" stroke="#2A2119" stroke-width="4" stroke-linecap="round"/>
+</svg>

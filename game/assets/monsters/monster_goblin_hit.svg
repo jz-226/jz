@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 190">
+  <defs>
+    <radialGradient id="gbg" cx="45%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#7FA968"/>
+      <stop offset="60%" stop-color="#527A4B"/>
+      <stop offset="100%" stop-color="#3A5C36"/>
+    </radialGradient>
+  </defs>
+  <!-- 后仰耳朵 -->
+  <path d="M40 60 L16 44 Q12 40 22 38 L52 54 Q56 60 52 64 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="5"/>
+  <path d="M160 60 L184 44 Q188 40 178 38 L148 54 Q144 60 148 64 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="5"/>
+  <!-- 头(后仰) -->
+  <path d="M56 44 Q52 16 100 12 Q148 16 144 44 Q150 80 132 102 Q116 118 100 118 Q84 118 68 102 Q50 80 56 44 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 受击星星 -->
+  <path d="M32 30 L34 36 L40 38 L34 40 L32 46 L30 40 L24 38 L30 36 Z" fill="#F0C75E" stroke="#2A2119" stroke-width="2.5"/>
+  <!-- 挤闭的眼 -->
+  <path d="M70 74 L92 72 M130 74 L108 72" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <!-- 大鼻 -->
+  <ellipse cx="100" cy="88" rx="8" ry="6" fill="#3A5C36" stroke="#2A2119" stroke-width="4"/>
+  <!-- 疼痛嘴 -->
+  <path d="M80 102 Q100 94 120 102" stroke="#2A2119" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- 双手护头,棍子掉落 -->
+  <rect x="130" y="120" width="7" height="52" rx="3" fill="#59402A" stroke="#2A2119" stroke-width="4" transform="rotate(58 133 146)"/>
+  <!-- 身体后缩 -->
+  <path d="M80 120 L74 158 Q74 172 100 172 Q126 172 126 158 L120 120 Q110 130 100 130 Q90 130 80 120 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 后退线 -->
+  <path d="M24 140 L8 146 M26 156 L12 164" stroke="#7FA968" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+</svg>

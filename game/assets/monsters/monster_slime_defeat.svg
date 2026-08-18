@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+  <defs>
+    <radialGradient id="slg" cx="45%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#8FC98A"/>
+      <stop offset="55%" stop-color="#5E9558"/>
+      <stop offset="100%" stop-color="#416B3B"/>
+    </radialGradient>
+  </defs>
+  <!-- 融成一滩 -->
+  <ellipse cx="100" cy="128" rx="74" ry="22" fill="url(#slg)" stroke="#2A2119" stroke-width="6"/>
+  <path d="M30 126 Q40 112 70 114 Q84 106 100 112 Q118 104 132 114 Q162 112 170 126 Q150 140 100 142 Q50 140 30 126 Z" fill="url(#slg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- X 眼 -->
+  <path d="M62 106 L86 122 M86 106 L62 122 M114 106 L138 122 M138 106 L114 122" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <!-- 晕眩圈 -->
+  <ellipse cx="100" cy="84" rx="16" ry="10" fill="none" stroke="#8FC98A" stroke-width="3"/>
+  <circle cx="100" cy="80" r="3" fill="#2A2119" opacity=".6"/>
+  <!-- 飞溅滴 -->
+  <ellipse cx="40" cy="140" rx="6" ry="4" fill="#5E9558" stroke="#2A2119" stroke-width="2"/>
+  <ellipse cx="158" cy="138" rx="5" ry="3.5" fill="#5E9558" stroke="#2A2119" stroke-width="2"/>
+</svg>

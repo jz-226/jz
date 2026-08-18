@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 190">
+  <defs>
+    <radialGradient id="gbg" cx="45%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#7FA968"/>
+      <stop offset="60%" stop-color="#527A4B"/>
+      <stop offset="100%" stop-color="#3A5C36"/>
+    </radialGradient>
+  </defs>
+  <!-- 摊倒的大头 -->
+  <path d="M40 96 Q34 64 82 60 Q132 64 126 96 Q134 132 112 150 Q96 164 82 164 Q66 164 54 150 Q34 132 40 96 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 瘫软耳朵 -->
+  <path d="M36 92 L14 78 Q10 74 18 72 L44 84" fill="url(#gbg)" stroke="#2A2119" stroke-width="4"/>
+  <path d="M130 92 L152 78 Q156 74 148 72 L122 84" fill="url(#gbg)" stroke="#2A2119" stroke-width="4"/>
+  <!-- X 眼 -->
+  <path d="M64 88 L86 104 M86 88 L64 104 M114 88 L136 104 M136 88 L114 104" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <!-- 大鼻 -->
+  <ellipse cx="100" cy="108" rx="8" ry="6" fill="#3A5C36" stroke="#2A2119" stroke-width="4"/>
+  <!-- 晕眩圈 -->
+  <ellipse cx="100" cy="60" rx="14" ry="8" fill="none" stroke="#7FA968" stroke-width="3"/>
+  <circle cx="100" cy="57" r="2.5" fill="#2A2119" opacity=".6"/>
+  <!-- 掉落木棍 -->
+  <rect x="140" y="110" width="7" height="56" rx="3" fill="#59402A" stroke="#2A2119" stroke-width="4" transform="rotate(-14 143 138)"/>
+  <!-- 短身体 -->
+  <path d="M84 158 L80 176 Q80 186 100 186 Q120 186 120 176 L118 158 Q110 166 100 166 Q90 166 84 158 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+</svg>

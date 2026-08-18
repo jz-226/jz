@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220">
+  <!-- 荒原天空 -->
+  <rect width="640" height="220" fill="#8A8070"/>
+  <!-- 远处山 -->
+  <path d="M0 140 L90 84 L180 140 M280 132 L380 70 L480 132 M520 140 L600 92 L640 130 L640 220 L0 220 Z" fill="#6E6655" stroke="#2A2119" stroke-width="3" opacity=".9"/>
+  <!-- 乱石地面 -->
+  <path d="M0 176 Q160 168 320 174 Q480 168 640 176 L640 220 L0 220 Z" fill="#756B5A" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M60 180 L100 176 L90 200 L50 204 Z" fill="#8A8070" stroke="#2A2119" stroke-width="3"/>
+  <path d="M520 178 L560 172 L570 200 L520 204 Z" fill="#8A8070" stroke="#2A2119" stroke-width="3"/>
+  <!-- 枯树 -->
+  <path d="M300 176 L300 110 Q300 96 292 86 M300 130 L280 116 M300 118 L322 104 M296 88 L284 74" stroke="#4A443A" stroke-width="7" stroke-linecap="round"/>
+  <!-- 枯树2 -->
+  <path d="M470 176 L470 130 Q470 120 462 114 M470 146 L486 136" stroke="#4A443A" stroke-width="5" stroke-linecap="round"/>
+  <!-- 秃鹫 -->
+  <path d="M360 66 Q372 56 384 66 Q396 56 408 66" stroke="#2A2119" stroke-width="3" fill="none"/>
+  <circle cx="384" cy="62" r="3" fill="#2A2119"/>
+  <!-- 风沙线 -->
+  <path d="M40 200 Q120 194 200 200" stroke="#C7AA72" stroke-width="2" fill="none" opacity=".5"/>
+</svg>

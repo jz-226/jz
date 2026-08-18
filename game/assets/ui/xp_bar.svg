@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 56" preserveAspectRatio="none">
+  <!-- XP 条外框:木框 + 鎏金边(内芯透明,经验从 CSS 透出) -->
+  <rect x="5" y="5" width="310" height="46" rx="10" fill="#402D1C" stroke="#2A2119" stroke-width="6"/>
+  <rect x="10" y="10" width="300" height="36" rx="7" fill="none" stroke="#D9A441" stroke-width="2.5"/>
+  <path d="M16 16 L304 16" stroke="#F0C75E" stroke-width="3" opacity=".35"/>
+</svg>

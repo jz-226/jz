@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220">
+  <!-- 熔岩暗夜 -->
+  <rect width="640" height="220" fill="#2B1A14"/>
+  <!-- 火山 -->
+  <path d="M160 176 L300 52 L440 176 Z" fill="#3E2C1C" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M290 62 Q300 56 310 62 L308 88 L292 88 Z" fill="#5E221E" stroke="#2A2119" stroke-width="3"/>
+  <!-- 熔岩流 -->
+  <path d="M300 88 L296 176 M308 88 L312 176" stroke="#F08A3C" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+  <path d="M282 120 Q300 118 318 122" stroke="#D96A2B" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+  <!-- 岩浆地面 -->
+  <path d="M0 176 Q160 168 320 174 Q480 168 640 176 L640 220 L0 220 Z" fill="#3A1512" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M60 184 L120 180 L100 216 L40 220 Z M500 178 L580 174 L560 216 L480 218 Z" fill="#2B1A14" stroke="#2A2119" stroke-width="3"/>
+  <path d="M0 190 Q160 184 320 190 Q480 184 640 190" stroke="#D96A2B" stroke-width="3" fill="none" opacity=".6"/>
+  <!-- 火星 -->
+  <circle cx="380" cy="120" r="2.5" fill="#F0C75E" opacity=".9"/>
+  <circle cx="420" cy="96" r="2" fill="#F08A3C" opacity=".8"/>
+  <circle cx="200" cy="130" r="2" fill="#F08A3C" opacity=".7"/>
+  <!-- 远处乱石 -->
+  <path d="M560 150 L600 120 L640 146 L640 176 L560 176 Z" fill="#3E2C1C" stroke="#2A2119" stroke-width="3"/>
+</svg>

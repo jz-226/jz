@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <!-- 东方·水墨村落背景(最底层氛围场景) -->
+  <defs>
+    <linearGradient id="skyE" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DCE9DE"/>
+      <stop offset="55%" stop-color="#C6DEC8"/>
+      <stop offset="82%" stop-color="#A9CFC2"/>
+      <stop offset="100%" stop-color="#8CBEAC"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 天空 -->
+  <rect width="1600" height="900" fill="url(#skyE)"/>
+
+  <!-- 红日 -->
+  <circle cx="1140" cy="470" r="120" fill="#D97750" opacity=".2"/>
+  <circle cx="1140" cy="470" r="78" fill="#D97750" opacity=".9"/>
+
+  <!-- 归鸟 -->
+  <g stroke="#33543F" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M1030 330 L1042 320 L1054 330"/>
+    <path d="M1068 348 L1078 340 L1088 348"/>
+    <path d="M1210 300 L1218 292 L1226 300"/>
+  </g>
+
+  <!-- 水墨远山(三层) -->
+  <path d="M0 540 Q240 460 480 540 T960 520 T1440 545 L1600 520 L1600 900 L0 900 Z" fill="#9FBFA6" opacity=".55"/>
+  <path d="M0 610 Q260 535 540 610 T1100 590 L1600 605 L1600 900 L0 900 Z" fill="#77A088" opacity=".65"/>
+  <path d="M0 675 Q300 615 580 678 T1160 655 L1600 675 L1600 900 L0 900 Z" fill="#507A64" opacity=".8"/>
+
+  <!-- 佛塔(左) -->
+  <g fill="#39463A">
+    <rect x="150" y="700" width="200" height="16"/>
+    <rect x="196" y="596" width="108" height="104"/>
+    <path d="M168 612 L332 612 L316 592 L184 592 Z"/>
+    <rect x="212" y="528" width="76" height="64"/>
+    <path d="M188 544 L312 544 L300 528 L200 528 Z"/>
+    <rect x="228" y="468" width="44" height="60"/>
+    <path d="M204 484 L296 484 L288 472 L212 472 Z"/>
+    <rect x="234" y="440" width="32" height="32"/>
+    <path d="M216 452 L284 452 L278 442 L222 442 Z"/>
+    <path d="M242 440 L250 404 L258 440 Z"/>
+    <!-- 灯火 -->
+    <rect x="240" y="618" width="20" height="24" fill="#E8DCA8"/>
+    <rect x="232" y="540" width="14" height="18" fill="#E8DCA8"/>
+  </g>
+
+  <!-- 楼阁(中右) -->
+  <g fill="#39463A">
+    <rect x="540" y="640" width="120" height="60"/>
+    <rect x="552" y="640" width="8" height="60"/>
+    <rect x="640" y="640" width="8" height="60"/>
+    <path d="M520 656 L680 656 L662 636 L538 636 Z"/>
+    <path d="M536 616 L664 616 L646 600 L554 600 Z"/>
+    <path d="M560 600 L640 600 L600 566 Z"/>
+    <rect x="596" y="660" width="30" height="32" fill="#E8DCA8"/>
+  </g>
+
+  <!-- 溪水 -->
+  <path d="M0 770 Q400 744 800 770 T1600 766 L1600 812 L0 812 Z" fill="#93C6B4" opacity=".55"/>
+
+  <!-- 拱桥 -->
+  <g fill="#33453A" opacity=".95">
+    <path d="M980 792 Q1100 724 1220 792 L1220 808 Q1100 742 980 808 Z"/>
+    <rect x="1025" y="800" width="10" height="12"/>
+    <rect x="1075" y="790" width="10" height="22"/>
+    <rect x="1130" y="790" width="10" height="22"/>
+    <rect x="1180" y="800" width="10" height="12"/>
+  </g>
+
+  <!-- 薄雾带 -->
+  <ellipse cx="640" cy="700" rx="560" ry="22" fill="#EAF2E6" opacity=".4"/>
+  <ellipse cx="1250" cy="640" rx="460" ry="18" fill="#EAF2E6" opacity=".35"/>
+  <ellipse cx="300" cy="786" rx="420" ry="16" fill="#EAF2E6" opacity=".3"/>
+
+  <!-- 前景山 + 松 -->
+  <path d="M0 812 Q260 776 540 814 T1160 796 L1600 812 L1600 900 L0 900 Z" fill="#33453A"/>
+  <g fill="#2A3A30">
+    <path d="M60 820 L110 734 L160 820 Z"/>
+    <path d="M120 822 L130 766 L140 822 Z"/>
+    <path d="M1460 826 L1520 740 L1580 826 Z"/>
+    <path d="M1540 830 L1550 774 L1560 830 Z"/>
+  </g>
+</svg>

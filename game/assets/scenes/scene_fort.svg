@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220">
+  <!-- 阴天 -->
+  <rect width="640" height="220" fill="#6E6655"/>
+  <!-- 天空裂缝 -->
+  <path d="M0 60 Q100 50 200 62 Q320 46 440 60 Q560 50 640 58" stroke="#4A443A" stroke-width="3" fill="none"/>
+  <!-- 地面 -->
+  <path d="M0 176 Q160 168 320 174 Q480 168 640 176 L640 220 L0 220 Z" fill="#8A8070" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 木墙 -->
+  <path d="M120 176 L120 84 L520 84 L520 176" fill="#59402A" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M120 92 L520 92 M120 112 L520 112 M120 132 L520 132 M120 152 L520 152" stroke="#2A2119" stroke-width="3"/>
+  <!-- 尖桩 -->
+  <path d="M120 84 L132 66 L144 84 M164 84 L176 66 L188 84 M452 84 L464 66 L476 84 M496 84 L508 66 L520 84" fill="#4E4433" stroke="#2A2119" stroke-width="4"/>
+  <!-- 大门 -->
+  <path d="M290 176 L290 108 Q290 92 320 92 Q350 92 350 108 L350 176" fill="#3E2C1C" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M308 176 L308 112 M332 176 L332 112" stroke="#2A2119" stroke-width="3"/>
+  <ellipse cx="344" cy="140" rx="4" ry="6" fill="#D9A441" stroke="#2A2119" stroke-width="2"/>
+  <!-- 火把 -->
+  <path d="M200 84 L200 52 M200 84 L204 84" stroke="#4E4433" stroke-width="4"/>
+  <path d="M196 48 Q200 36 204 48 Q208 42 210 50 Q204 56 200 52 Q196 56 190 50 Q192 42 196 48 Z" fill="#F08A3C" stroke="#2A2119" stroke-width="2"/>
+  <path d="M440 84 L440 52 M440 84 L444 84" stroke="#4E4433" stroke-width="4"/>
+  <path d="M436 48 Q440 36 444 48 Q448 42 450 50 Q444 56 440 52 Q436 56 430 50 Q432 42 436 48 Z" fill="#F08A3C" stroke="#2A2119" stroke-width="2"/>
+</svg>

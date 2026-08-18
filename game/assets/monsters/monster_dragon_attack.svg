@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 230">
+  <defs>
+    <radialGradient id="drg" cx="40%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#8CC27A"/>
+      <stop offset="55%" stop-color="#4E8A4A"/>
+      <stop offset="100%" stop-color="#2C5230"/>
+    </radialGradient>
+  </defs>
+  <!-- 怒展双翼 -->
+  <path d="M80 76 L18 24 Q10 18 24 20 L66 44 M64 62 L28 44 Q20 42 30 44 L72 58 M72 92 L40 90 Q30 92 42 94 L82 94" fill="#2C5230" stroke="#2A2119" stroke-width="6"/>
+  <path d="M160 76 L222 24 Q230 18 216 20 L174 44 M176 62 L212 44 Q220 42 210 44 L168 58 M168 92 L200 90 Q210 92 198 94 L158 94" fill="#2C5230" stroke="#2A2119" stroke-width="6"/>
+  <!-- 前扑的头(喷火) -->
+  <path d="M88 40 Q82 20 118 16 Q154 18 150 40 Q162 56 156 72 Q146 92 118 92 Q90 92 82 72 Q76 56 88 40 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 角冠 -->
+  <path d="M84 34 L68 8 Q66 4 74 6 L88 26 M102 26 L102 4 Q102 0 108 2 L110 26 M156 34 L172 8 Q174 4 166 6 L152 26 M138 26 L138 4 Q138 0 132 2 L130 26" fill="#C9C0AC" stroke="#2A2119" stroke-width="5"/>
+  <!-- 怒眼 -->
+  <path d="M92 46 L108 52 M148 46 L132 52" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="102" cy="58" rx="9" ry="8" fill="#F0C75E" stroke="#2A2119" stroke-width="4"/>
+  <ellipse cx="138" cy="58" rx="9" ry="8" fill="#F0C75E" stroke="#2A2119" stroke-width="4"/>
+  <path d="M104 60 L103 61 M136 60 L137 61" stroke="#2A2119" stroke-width="3" stroke-linecap="round"/>
+  <!-- 喷火巨口 -->
+  <path d="M88 84 Q116 110 148 84" fill="#2C4230" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M98 90 L96 102 M110 94 L110 104 M132 90 L134 102" stroke="#FFF8EC" stroke-width="5" stroke-linecap="round"/>
+  <!-- 火焰吐息 -->
+  <path d="M118 96 Q124 88 132 92 Q138 80 146 84 Q152 72 160 78 Q150 92 158 100 Q146 104 138 98 Q132 108 118 96 Z" fill="#F08A3C" stroke="#2A2119" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M132 90 Q136 82 142 84" fill="#F0C75E" stroke="#2A2119" stroke-width="2"/>
+  <!-- 前倾身体 -->
+  <path d="M92 92 Q84 116 92 138 L150 138 Q158 116 150 92 Q128 106 120 106 Q100 106 92 92 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="5"/>
+  <path d="M78 136 Q66 170 82 196 Q90 214 118 214 Q148 214 156 196 Q170 170 160 136 Q140 150 120 150 Q100 150 78 136 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="7" stroke-linejoin="round"/>
+  <!-- 黄金胸徽 -->
+  <path d="M104 152 L110 164 L122 166 L114 176 L116 188 L104 182 L92 188 L94 176 L86 166 L98 164 Z" fill="#D9A441" stroke="#2A2119" stroke-width="4"/>
+  <!-- 尾后甩 -->
+  <path d="M72 192 Q44 200 30 186 Q20 174 34 166 Q44 176 58 170" fill="url(#drg)" stroke="#2A2119" stroke-width="6"/>
+  <!-- 腿 -->
+  <path d="M94 206 L86 218 Q84 226 96 226 L114 226 L116 212 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="6"/>
+  <path d="M146 206 L154 218 Q156 226 144 226 L126 226 L124 212 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="6"/>
+</svg>

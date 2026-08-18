@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <!-- 西幻·暮色村庄背景(最底层氛围场景) -->
+  <defs>
+    <linearGradient id="skyW" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A2440"/>
+      <stop offset="42%" stop-color="#3A3A6A"/>
+      <stop offset="70%" stop-color="#7E5C7E"/>
+      <stop offset="86%" stop-color="#C98B5A"/>
+      <stop offset="100%" stop-color="#E8B878"/>
+    </linearGradient>
+    <radialGradient id="sunW" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFE3A8" stop-opacity=".95"/>
+      <stop offset="50%" stop-color="#F4B060" stop-opacity=".5"/>
+      <stop offset="100%" stop-color="#F4B060" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 天空 -->
+  <rect width="1600" height="900" fill="url(#skyW)"/>
+
+  <!-- 星 -->
+  <g fill="#FFF2D8" opacity=".8">
+    <circle cx="140" cy="90" r="3"/><circle cx="320" cy="150" r="2.2"/>
+    <circle cx="520" cy="70" r="2.8"/><circle cx="700" cy="180" r="2"/>
+    <circle cx="880" cy="90" r="3"/><circle cx="1050" cy="140" r="2.4"/>
+    <circle cx="1220" cy="60" r="2"/><circle cx="1380" cy="110" r="3"/>
+    <circle cx="1500" cy="200" r="2.2"/><circle cx="240" cy="230" r="2"/>
+    <circle cx="760" cy="235" r="2.4"/><circle cx="980" cy="205" r="2"/>
+    <circle cx="620" cy="120" r="2"/><circle cx="1520" cy="260" r="2.6"/>
+  </g>
+
+  <!-- 落日余晖 -->
+  <circle cx="1120" cy="720" r="220" fill="url(#sunW)"/>
+
+  <!-- 远山 -->
+  <path d="M0 640 Q180 570 400 630 T820 610 T1240 650 L1600 610 L1600 900 L0 900 Z" fill="#33405C" opacity=".85"/>
+  <!-- 近山 -->
+  <path d="M0 700 Q280 640 560 705 T1120 665 L1600 705 L1600 900 L0 900 Z" fill="#27304A" opacity=".9"/>
+
+  <!-- 城堡(左) -->
+  <g fill="#1E2740">
+    <!-- 主堡 -->
+    <path d="M300 680 L300 300 L400 300 L400 680 Z"/>
+    <!-- 城齿 -->
+    <path d="M300 300 L300 276 L314 276 L314 300 L326 300 L326 276 L340 276 L340 300 L352 300 L352 276 L366 276 L366 300 L378 300 L378 276 L392 276 L392 300 L400 300 Z"/>
+    <!-- 左圆塔 -->
+    <path d="M240 680 L240 360 L300 360 L300 680 Z"/>
+    <path d="M236 360 L304 360 L292 306 L248 306 Z"/>
+    <!-- 右圆塔 -->
+    <path d="M400 680 L400 360 L460 360 L460 680 Z"/>
+    <path d="M396 360 L464 360 L452 306 L408 306 Z"/>
+    <!-- 塔尖旗 -->
+    <path d="M426 306 L426 252 L468 262 L426 272 Z" fill="#C25E4F"/>
+    <!-- 窗口火光 -->
+    <g fill="#FFD98A">
+      <rect x="336" y="380" width="28" height="42" rx="5"/>
+      <rect x="264" y="442" width="20" height="28" rx="4"/>
+      <rect x="416" y="442" width="20" height="28" rx="4"/>
+    </g>
+  </g>
+
+  <!-- 村庄小屋 -->
+  <g fill="#1E2740">
+    <path d="M620 700 L620 620 L700 620 L700 700 Z"/>
+    <path d="M608 620 L712 620 L684 578 L636 578 Z"/>
+    <rect x="648" y="650" width="18" height="24" fill="#FFD98A"/>
+
+    <path d="M740 695 L740 625 L820 625 L820 695 Z"/>
+    <path d="M728 625 L832 625 L806 583 L754 583 Z"/>
+    <rect x="768" y="652" width="18" height="24" fill="#FFD98A"/>
+    <rect x="782" y="664" width="16" height="31" fill="#161D30"/>
+
+    <path d="M880 690 L880 600 L970 600 L970 690 Z"/>
+    <path d="M866 600 L984 600 L952 556 L898 556 Z"/>
+    <rect x="912" y="622" width="22" height="30" fill="#FFD98A"/>
+    <rect x="942" y="622" width="22" height="30" fill="#FFD98A"/>
+
+    <path d="M1000 700 L1000 640 L1060 640 L1060 700 Z"/>
+    <path d="M992 640 L1068 640 L1052 610 L1008 610 Z"/>
+    <rect x="1018" y="662" width="16" height="22" fill="#FFD98A"/>
+  </g>
+
+  <!-- 风车(右) -->
+  <g fill="#1E2740">
+    <path d="M1280 700 L1270 500 L1410 500 L1400 700 Z"/>
+    <path d="M1262 500 L1418 500 L1396 452 L1284 452 Z"/>
+    <rect x="1330" y="560" width="30" height="40" fill="#FFD98A"/>
+    <!-- 扇叶 -->
+    <g stroke="#1E2740" stroke-width="16" stroke-linecap="round">
+      <line x1="1340" y1="452" x2="1258" y2="330"/>
+      <line x1="1340" y1="452" x2="1422" y2="330"/>
+      <line x1="1340" y1="452" x2="1340" y2="300"/>
+      <line x1="1340" y1="452" x2="1340" y2="600"/>
+    </g>
+    <circle cx="1340" cy="452" r="15"/>
+  </g>
+
+  <!-- 地平暖雾 -->
+  <path d="M0 760 Q300 738 620 762 T1240 754 L1600 760 L1600 788 L0 788 Z" fill="#E8C890" opacity=".12"/>
+
+  <!-- 前景山丘 + 松林 -->
+  <path d="M0 820 Q200 780 430 825 T840 810 T1260 830 L1600 810 L1600 900 L0 900 Z" fill="#141A2C"/>
+  <g fill="#141A2C">
+    <path d="M70 830 L120 750 L170 830 Z"/>
+    <path d="M150 835 L160 778 L170 835 Z"/>
+    <path d="M1450 840 L1510 746 L1570 840 Z"/>
+    <path d="M1545 845 L1555 788 L1565 845 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 170" preserveAspectRatio="none">
+  <defs>
+    <radialGradient id="sg" cx="50%" cy="35%" r="85%">
+      <stop offset="0%" stop-color="#8A8070"/>
+      <stop offset="60%" stop-color="#6E6655"/>
+      <stop offset="100%" stop-color="#524B40"/>
+    </radialGradient>
+  </defs>
+  <!-- 石板外框 -->
+  <path d="M12 14 Q130 8 248 16 L252 30 Q258 92 248 154 Q238 163 128 164 Q28 165 12 152 Q6 94 12 14 Z" fill="url(#sg)" stroke="#2A2119" stroke-width="7"/>
+  <!-- 石缝裂纹 -->
+  <path d="M34 40 L52 52 L48 76 L66 92 M170 46 L190 60 L182 84 L198 98 M90 120 L110 128 L104 148 M150 130 L170 138" stroke="#3E3A30" stroke-width="2.2" fill="none" opacity=".55"/>
+  <path d="M20 96 Q130 88 244 100" stroke="#3E3A30" stroke-width="2" fill="none" opacity=".3"/>
+</svg>

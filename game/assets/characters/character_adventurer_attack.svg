@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 240">
+  <defs>
+    <radialGradient id="adc" cx="45%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#F2DFAF"/>
+      <stop offset="55%" stop-color="#E7D1A3"/>
+      <stop offset="100%" stop-color="#C7AA72"/>
+    </radialGradient>
+    <linearGradient id="adt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D9A441"/>
+      <stop offset="100%" stop-color="#A9742B"/>
+    </linearGradient>
+    <radialGradient id="adh" cx="45%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#4A6B3C"/>
+      <stop offset="60%" stop-color="#31492C"/>
+      <stop offset="100%" stop-color="#223621"/>
+    </radialGradient>
+  </defs>
+  <!-- 地面阴影(稍右前移) -->
+  <ellipse cx="94" cy="228" rx="60" ry="9" fill="#0E1410" opacity=".4"/>
+  <!-- 披风后扬(两层) -->
+  <path d="M76 66 Q36 100 28 156 Q26 174 44 166 Q60 154 80 126 L78 66 Z" fill="#7A2A24" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M78 68 Q98 100 106 140 Q110 156 100 160 Q90 150 82 128 L78 68 Z" fill="#A03A2E" stroke="#2A2119" stroke-width="4"/>
+  <!-- 后腿(蹬地) -->
+  <path d="M100 168 L112 198 Q114 206 102 206 L90 206 L86 172 Z" fill="#2E4629" stroke="#2A2119" stroke-width="5"/>
+  <path d="M112 206 L122 212 Q124 218 112 218 L92 218 L90 206 Z" fill="#59402A" stroke="#2A2119" stroke-width="4"/>
+  <!-- 前腿(跨步) -->
+  <path d="M80 168 L68 200 Q66 208 78 208 L90 208 L94 174 Z" fill="#2E4629" stroke="#2A2119" stroke-width="5"/>
+  <path d="M68 208 L58 214 Q56 220 68 220 L88 220 L90 208 Z" fill="#59402A" stroke="#2A2119" stroke-width="4"/>
+  <!-- 躯干(前倾) -->
+  <path d="M70 114 Q62 138 72 156 Q80 170 90 170 Q100 170 108 156 Q118 138 110 114 Q98 122 90 122 Q82 122 70 114 Z" fill="url(#adt)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M90 122 L90 150" stroke="#8A5A1A" stroke-width="3"/>
+  <path d="M72 148 Q90 142 108 148 L106 154 Q90 160 74 154 Z" fill="#59402A" stroke="#2A2119" stroke-width="3.5"/>
+  <rect x="84" y="144" width="12" height="10" rx="2" fill="#F0C75E" stroke="#2A2119" stroke-width="3"/>
+  <!-- 左臂(后摆平衡) -->
+  <path d="M70 120 L52 132 Q46 136 52 140 L72 128" fill="#3E5A33" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="52" cy="140" r="6" fill="url(#adc)" stroke="#2A2119" stroke-width="3"/>
+  <!-- 右臂(挥剑) -->
+  <path d="M108 118 L132 94 Q138 88 146 94 L126 118" fill="#3E5A33" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="144" cy="94" r="6" fill="url(#adc)" stroke="#2A2119" stroke-width="3"/>
+  <!-- 剑(挥至左上前方) -->
+  <path d="M148 96 L120 22 L128 18 L156 92 Z" fill="#D9DDE3" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="136" y="90" width="16" height="9" rx="3" fill="#D9A441" stroke="#2A2119" stroke-width="3" transform="rotate(-38 144 95)"/>
+  <path d="M148 96 L134 102 L132 96 L146 90 Z" fill="#59402A" stroke="#2A2119" stroke-width="3"/>
+  <path d="M138 46 L146 60" stroke="#FFF" stroke-width="2.5" opacity=".7"/>
+  <!-- 剑光弧线 -->
+  <path d="M36 20 Q66 6 96 20" stroke="#FFF7DD" stroke-width="7" fill="none" opacity=".8" stroke-linecap="round"/>
+  <path d="M42 36 Q70 24 96 38" stroke="#FFF7DD" stroke-width="4" fill="none" opacity=".5" stroke-linecap="round"/>
+  <!-- 冲刺线 -->
+  <path d="M18 78 L2 72 M20 96 L4 98" stroke="#E7D1A3" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+  <!-- 兜帽(前倾) -->
+  <path d="M60 48 Q54 20 92 10 Q130 22 124 50 Q136 70 132 92 Q124 114 92 116 Q62 114 54 92 Q50 70 60 48 Z" fill="url(#adh)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M92 12 Q84 2 72 2 L82 -4 Q92 -6 96 2 Z" fill="url(#adh)" stroke="#2A2119" stroke-width="3"/>
+  <!-- 兜帽阴影 -->
+  <path d="M64 68 Q92 58 120 68 Q120 88 92 92 Q64 88 64 68 Z" fill="#18251F" opacity=".5"/>
+  <!-- 脸 -->
+  <ellipse cx="92" cy="78" rx="20" ry="16" fill="url(#adc)" stroke="#2A2119" stroke-width="4"/>
+  <!-- 眉(怒目) -->
+  <path d="M72 72 L86 74 M114 72 L100 74" stroke="#2A2119" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- 眼(瞪视) -->
+  <ellipse cx="81" cy="79" rx="4.5" ry="5" fill="#FFF8EC" stroke="#2A2119" stroke-width="3"/>
+  <ellipse cx="103" cy="79" rx="4.5" ry="5" fill="#FFF8EC" stroke="#2A2119" stroke-width="3"/>
+  <circle cx="82" cy="80" r="2" fill="#2A2119"/>
+  <circle cx="102" cy="80" r="2" fill="#2A2119"/>
+  <!-- 嘴(呐喊) -->
+  <path d="M84 90 Q92 97 100 90" stroke="#2A2119" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

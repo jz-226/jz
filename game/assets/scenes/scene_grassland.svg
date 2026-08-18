@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220">
+  <!-- 天空 -->
+  <rect width="640" height="220" fill="#CDBB93"/>
+  <!-- 远处草坡 -->
+  <path d="M0 150 Q120 118 220 140 Q320 110 420 138 Q520 118 640 146 L640 220 L0 220 Z" fill="#7FA968" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 近处地面 -->
+  <path d="M0 178 Q160 168 320 176 Q480 168 640 178 L640 220 L0 220 Z" fill="#527A4B" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 小村屋 -->
+  <path d="M92 156 L92 128 Q92 118 108 112 L132 98 Q144 92 152 100 L176 112 Q192 120 192 130 L192 156 Z" fill="#59402A" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M92 130 L192 130" stroke="#2A2119" stroke-width="4"/>
+  <rect x="118" y="136" width="20" height="20" fill="#3E2C1C" stroke="#2A2119" stroke-width="3"/>
+  <path d="M152 108 L180 122 L150 122 Z" fill="#8A6D3F" stroke="#2A2119" stroke-width="3"/>
+  <!-- 木栅栏 -->
+  <path d="M330 172 L330 158 M350 172 L350 158 M370 172 L370 158" stroke="#59402A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M322 166 L378 166 M322 160 L378 160" stroke="#59402A" stroke-width="5" stroke-linecap="round"/>
+  <!-- 小花 -->
+  <circle cx="470" cy="170" r="4" fill="#C25E4F" stroke="#2A2119" stroke-width="2"/>
+  <circle cx="560" cy="166" r="4" fill="#F0C75E" stroke="#2A2119" stroke-width="2"/>
+  <!-- 云 -->
+  <path d="M420 54 Q440 40 466 48 Q486 40 506 52 Q520 60 506 68 L420 68 Q408 62 420 54 Z" fill="#F2E8CF" stroke="#2A2119" stroke-width="3"/>
+</svg>

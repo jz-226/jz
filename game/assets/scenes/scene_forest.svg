@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220">
+  <!-- 森林暮色 -->
+  <rect width="640" height="220" fill="#2E4629"/>
+  <!-- 远处树影 -->
+  <path d="M0 140 Q40 60 90 118 Q120 40 170 112 Q210 48 250 116 Q300 30 340 110 Q390 44 430 118 Q480 40 520 112 Q570 50 600 120 Q620 80 640 128 L640 220 L0 220 Z" fill="#223621" stroke="#2A2119" stroke-width="3" opacity=".9"/>
+  <!-- 近地 -->
+  <path d="M0 176 Q160 168 320 174 Q480 168 640 176 L640 220 L0 220 Z" fill="#3A5C36" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 大树 -->
+  <path d="M84 176 L84 84 Q84 64 102 58 L122 52 Q142 48 152 60 L164 84 L164 176 Z" fill="#59402A" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="122" cy="40" rx="46" ry="30" fill="#3E6B38" stroke="#2A2119" stroke-width="4"/>
+  <ellipse cx="160" cy="58" rx="30" ry="22" fill="#4E7A44" stroke="#2A2119" stroke-width="4"/>
+  <!-- 树2 -->
+  <path d="M540 176 L540 96 Q540 76 558 70 L576 64 Q594 60 602 72 L612 96 L612 176 Z" fill="#59402A" stroke="#2A2119" stroke-width="4"/>
+  <ellipse cx="576" cy="52" rx="44" ry="30" fill="#3E6B38" stroke="#2A2119" stroke-width="4"/>
+  <!-- 地面蘑菇 -->
+  <path d="M290 172 L290 162 M296 166 L296 172" stroke="#F2E8CF" stroke-width="3"/>
+  <ellipse cx="293" cy="158" rx="9" ry="6" fill="#C25E4F" stroke="#2A2119" stroke-width="3"/>
+  <!-- 飞鸟 -->
+  <path d="M200 60 Q210 52 220 60 Q230 52 240 60" stroke="#2A2119" stroke-width="3" fill="none"/>
+</svg>

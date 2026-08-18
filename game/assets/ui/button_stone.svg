@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 84" preserveAspectRatio="none">
+  <defs>
+    <radialGradient id="bs" cx="50%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#8A8070"/>
+      <stop offset="60%" stop-color="#6E6655"/>
+      <stop offset="100%" stop-color="#4B453B"/>
+    </radialGradient>
+  </defs>
+  <!-- 石按钮外框 -->
+  <rect x="7" y="7" width="206" height="70" rx="8" fill="url(#bs)" stroke="#2A2119" stroke-width="7"/>
+  <!-- 顶面受光 -->
+  <rect x="14" y="13" width="192" height="12" rx="4" fill="#9A9080" opacity=".4"/>
+  <!-- 石纹 -->
+  <path d="M22 38 L40 46 L34 60 M96 34 L118 44 L110 62 M168 38 L192 48" stroke="#3E3A30" stroke-width="2" fill="none" opacity=".5"/>
+</svg>

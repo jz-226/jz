@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+  <defs>
+    <radialGradient id="slg" cx="45%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#8FC98A"/>
+      <stop offset="55%" stop-color="#5E9558"/>
+      <stop offset="100%" stop-color="#416B3B"/>
+    </radialGradient>
+  </defs>
+  <!-- 跃起拉伸的身体 -->
+  <path d="M62 152 C50 100 60 52 84 34 Q90 18 100 20 Q112 18 116 34 C140 52 150 100 138 152 C136 160 120 164 100 164 C80 164 64 160 62 152 Z" fill="url(#slg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 底部水花 -->
+  <ellipse cx="100" cy="158" rx="44" ry="8" fill="#3A5C36" opacity=".5"/>
+  <!-- 运动线 -->
+  <path d="M36 76 L16 70 M34 94 L12 96 M162 76 L184 70 M164 94 L188 96" stroke="#8FC98A" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+  <!-- 巨口 -->
+  <path d="M72 96 Q100 138 128 96" fill="#2C4230" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M80 102 L84 114 M92 108 L94 118 M108 108 L106 118 M120 102 L116 114" stroke="#FFF8EC" stroke-width="4" stroke-linecap="round"/>
+  <!-- 怒眼 -->
+  <path d="M70 72 L90 80 M130 72 L110 80" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="80" cy="84" rx="10" ry="8" fill="#FFF8EC" stroke="#2A2119" stroke-width="4"/>
+  <ellipse cx="120" cy="84" rx="10" ry="8" fill="#FFF8EC" stroke="#2A2119" stroke-width="4"/>
+  <circle cx="82" cy="86" r="4.5" fill="#2A2119"/>
+  <circle cx="118" cy="86" r="4.5" fill="#2A2119"/>
+</svg>

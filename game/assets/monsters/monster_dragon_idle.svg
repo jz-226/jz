@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 230">
+  <defs>
+    <radialGradient id="drg" cx="40%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#8CC27A"/>
+      <stop offset="55%" stop-color="#4E8A4A"/>
+      <stop offset="100%" stop-color="#2C5230"/>
+    </radialGradient>
+  </defs>
+  <!-- 左翼(展开) -->
+  <path d="M84 74 L28 30 Q20 24 30 24 L70 46 M70 60 L34 44 Q26 42 36 42 L76 56 M76 92 L44 92 Q34 94 44 96 L84 96" fill="#2C5230" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M70 62 L40 58 L70 74" fill="#4E8A4A" stroke="#2A2119" stroke-width="4"/>
+  <!-- 右翼(展开) -->
+  <path d="M156 74 L212 30 Q220 24 210 24 L170 46 M170 60 L206 44 Q214 42 204 42 L164 56 M164 92 L196 92 Q206 94 196 96 L156 96" fill="#2C5230" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M170 62 L200 58 L170 74" fill="#4E8A4A" stroke="#2A2119" stroke-width="4"/>
+  <!-- 尾部 -->
+  <path d="M70 190 Q40 198 26 184 Q16 172 30 164 Q40 176 54 168 Q40 160 48 154" fill="url(#drg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 三角尾尖 -->
+  <path d="M48 154 L30 146 L46 140 Z" fill="#2C5230" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 角冠 -->
+  <path d="M88 36 L74 12 Q72 8 80 10 L94 30 M104 30 L104 8 Q104 4 110 6 L112 30 M152 36 L166 12 Q168 8 160 10 L146 30 M136 30 L136 8 Q136 4 130 6 L128 30" fill="#C9C0AC" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 头 -->
+  <path d="M92 40 Q88 22 120 20 Q152 22 148 40 Q158 54 154 70 Q146 88 120 90 Q94 88 86 70 Q82 54 92 40 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 龙角短刺 -->
+  <path d="M104 24 L98 40 M136 24 L142 40" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <!-- 眼 -->
+  <path d="M96 48 L112 54 M144 48 L128 54" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="106" cy="60" rx="9" ry="8" fill="#F0C75E" stroke="#2A2119" stroke-width="4"/>
+  <ellipse cx="134" cy="60" rx="9" ry="8" fill="#F0C75E" stroke="#2A2119" stroke-width="4"/>
+  <path d="M108 62 L107 63 M132 62 L133 63" stroke="#2A2119" stroke-width="3" stroke-linecap="round"/>
+  <!-- 鼻翼 -->
+  <path d="M114 68 Q120 74 126 68" fill="#2C5230" stroke="#2A2119" stroke-width="3"/>
+  <!-- 大口獠牙 -->
+  <path d="M92 84 Q120 104 148 84" fill="#416B3B" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M104 90 L102 102 M116 94 L116 104 M136 90 L138 102" stroke="#FFF8EC" stroke-width="5" stroke-linecap="round"/>
+  <!-- 颈 -->
+  <path d="M94 90 Q88 110 92 130 L148 130 Q152 110 146 90" fill="url(#drg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 躯干 -->
+  <path d="M80 130 Q70 164 84 190 Q92 210 120 210 Q148 210 156 190 Q170 164 160 130 Q140 144 120 144 Q100 144 80 130 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="7" stroke-linejoin="round"/>
+  <!-- 黄金胸口徽记 -->
+  <path d="M106 150 L112 162 L124 164 L116 174 L118 186 L106 180 L94 186 L96 174 L88 164 L100 162 Z" fill="#D9A441" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M106 160 L110 168 L118 168 L112 174 L114 181 L106 177 L98 181 L100 174 L94 168 L102 168 Z" fill="#F0C75E"/>
+  <!-- 腹甲鳞 -->
+  <path d="M100 168 L120 168 M96 178 L124 178" stroke="#3A6B3E" stroke-width="3" fill="none" opacity=".7"/>
+  <!-- 短翼前臂 -->
+  <path d="M86 128 L64 116 Q56 112 60 120 L82 136" fill="url(#drg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M154 128 L176 116 Q184 112 180 120 L158 136" fill="url(#drg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 腿 -->
+  <path d="M96 204 L88 216 Q86 224 98 224 L116 224 L118 210 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="6"/>
+  <path d="M144 204 L152 216 Q154 224 142 224 L124 224 L122 210 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="6"/>
+  <!-- 爪 -->
+  <path d="M90 224 L84 234 M100 224 L98 234 M110 224 L112 234 M130 224 L128 234 M140 224 L142 234 M150 224 L156 234" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+</svg>
