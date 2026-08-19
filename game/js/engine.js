@@ -662,11 +662,19 @@ async function localApi(path, opts = {}) {
     return { ok: true, theme: Store.getUser().theme, message: "设置已保存" };
   }
 
-  // ── 账号(网页版单机档,登录/注册仅作兼容,不再创建新档) ──
+  // ── 账号 ──
+  // 登录/注册:网页版不提供内置账号,由 cloud.js 走 TapTap 登录;
+  // 退出/查登录态:有 cloud.js 时委派给它(清云端 token / 反映登录态),否则维持单机语义。
   if (cleanPath === "/api/auth/register") return { ok: true, message: "单机存档,无需账号", user_id: 1 };
   if (cleanPath === "/api/auth/login") return { ok: true, message: "单机存档,无需账号", user_id: 1 };
-  if (cleanPath === "/api/auth/logout") return { ok: true, message: "已退出" };
-  if (cleanPath === "/api/auth/me") return { logged_in: false };
+  if (cleanPath === "/api/auth/logout") {
+    if (window.CloudSync) window.CloudSync.logout();
+    return { ok: true, message: "已退出" };
+  }
+  if (cleanPath === "/api/auth/me") {
+    if (window.CloudSync) return window.CloudSync.authMe();
+    return { logged_in: false };
+  }
 
   // ── 测评 ──
   if (cleanPath === "/api/assessment/start") {

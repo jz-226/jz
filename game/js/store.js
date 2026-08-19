@@ -49,16 +49,20 @@ const Store = {
       try { this._s = JSON.parse(raw); } catch (e) { this._s = null; }
     }
     if (!this._s) this._s = this._default();
+    // 旧档(云存档上线前)没有 updated_at 字段,读档时补一个,否则云端时间比较会失效
+    if (typeof this._s.updated_at !== "number") this._s.updated_at = Date.now();
     return this._s;
   },
 
   persist() {
+    this._s.updated_at = Date.now();   // 每次落盘都标记"我更新了",云端比较这个时间戳
     try { localStorage.setItem(SAVE_KEY, JSON.stringify(this._s)); } catch (e) { /* 内存兜底 */ }
   },
 
   _default() {
     return {
       v: 1,
+      updated_at: Date.now(),   // epoch 毫秒,云同步冲突仲裁用(本地/云端同一把尺子)
       user: {
         id: 1, username: "", nickname: "冒险者", avatar: "adventurer",
         target_score: 425, daily_minutes: 20, theme: "western",
