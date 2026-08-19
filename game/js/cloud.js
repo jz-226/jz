@@ -64,6 +64,22 @@
         href: String(location.href || "").slice(0, 200),
         origin: String(location.origin || "").slice(0, 100),
       };
+      // 诊断浮层:页面上直接显示探针结果(打开一眼可见,不用看后端日志)
+      try {
+        const banner = document.createElement("div");
+        banner.textContent =
+          "probe tap=" + (t ? "YES" : "no") +
+          " login=" + (payload.hasTapLogin ? "Y" : "n") +
+          " env=" + (payload.hasTapEnv ? "Y" : "n") +
+          " CloudSave=" + (payload.hasCloudSaveManager ? "Y" : "n") +
+          " tt=" + (payload.hasTT ? "Y" : "n") +
+          " tapKeys=[" + payload.tapKeys + "] ua=" + payload.ua;
+        banner.style.cssText =
+          "position:fixed;top:0;left:0;right:0;z-index:999999;" +
+          "background:rgba(17,17,17,.92);color:#0f0;font:9px/1.5 monospace;" +
+          "padding:2px 5px;word-break:break-all;pointer-events:none;";
+        document.body.appendChild(banner);
+      } catch (e) { /* 显示失败不影响 */ }
       fetch(cfg.api + "/probe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
