@@ -153,15 +153,20 @@
     return ACCOUNTS_HOST + "/oauth2/v1/authorize?" + p.toString();
   }
 
-  async function loginWithCode(code) {
-    const res = await api("/auth/taptap", { method: "POST", body: JSON.stringify({ code }) });
+  // 登录成功后统一收尾:存 token → 同步昵称 → 合并云端档。授权码 / 扫码两条路共用。
+  async function finishLogin(res) {
     token = res.token;
     try { localStorage.setItem(TOKEN_KEY, token); } catch (e) {}
     // 登录态 trick:username 一设,app.js 的设置页自动显示"已登录 @昵称"+ 退出按钮
     Store.patchUser({ username: res.user.nickname });
     // 首次同步:合并云端档与本地(空默认档会直接接管云端档,有真实进度则上传)
     Store.load();
-    await applyMerge(res.save);
+    return applyMerge(res.save);
+  }
+
+  async function loginWithCode(code) {
+    const res = await api("/auth/taptap", { method: "POST", body: JSON.stringify({ code }) });
+    await finishLogin(res);
     return res;
   }
 
@@ -201,7 +206,7 @@
       b.className = "btn btn-small";
       b.textContent = "TapTap 登录";
       b.style.marginLeft = "10px";
-      b.addEventListener("click", () => { location.href = loginUrl(); });
+      b.addEventListener("click", startDeviceLogin);
       start.parentNode.insertBefore(b, start.nextSibling);
     }
     // 设置页:账号行的"退出登录"按钮前插一个
@@ -212,9 +217,117 @@
       b.className = "btn btn-small";
       b.style.marginLeft = "8px";
       b.textContent = "TapTap 登录";
-      b.addEventListener("click", () => { location.href = loginUrl(); });
+      b.addEventListener("click", startDeviceLogin);
       logoutBtn.parentNode.insertBefore(b, logoutBtn);
     }
+  }
+
+  // ── 扫码登录(设备码模式)─────────────────────────────────
+  // 网页重定向登录在 TapTap 需要回调白名单 + 浏览器会话,网页内嵌环境里不稳;
+  // 设备码模式完全绕开:后端出二维码,手机 TapTap 扫码授权,前端轮询换 token。
+  let deviceOverlay = null;
+  let deviceTimer = null;
+
+  function showToast(msg) {
+    let el = document.getElementById("cloud-toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "cloud-toast";
+      el.style.cssText =
+        "position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:99999;" +
+        "background:rgba(0,0,0,.85);color:#fff;padding:10px 18px;border-radius:20px;" +
+        "font-size:14px;max-width:80vw;text-align:center;pointer-events:none;";
+      document.body.appendChild(el);
+    }
+    el.textContent = msg;
+    el.style.display = "block";
+    clearTimeout(el._t);
+    el._t = setTimeout(() => { el.style.display = "none"; }, 4000);
+  }
+
+  function closeDeviceOverlay() {
+    clearInterval(deviceTimer);
+    if (deviceOverlay) { deviceOverlay.remove(); deviceOverlay = null; }
+  }
+
+  function showDeviceOverlay(info) {
+    closeDeviceOverlay();
+    const o = document.createElement("div");
+    o.style.cssText =
+      "position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99990;" +
+      "display:flex;align-items:center;justify-content:center;";
+    o.addEventListener("click", (e) => { if (e.target === o) closeDeviceOverlay(); });
+    const card = document.createElement("div");
+    card.style.cssText =
+      "background:#fff;color:#222;border-radius:16px;padding:22px 26px;" +
+      "max-width:320px;width:80vw;text-align:center;position:relative;box-sizing:border-box;";
+    const close = document.createElement("button");
+    close.textContent = "×";
+    close.style.cssText =
+      "position:absolute;top:4px;right:12px;font-size:22px;line-height:1;" +
+      "border:none;background:none;cursor:pointer;color:#888;padding:4px;";
+    close.addEventListener("click", closeDeviceOverlay);
+    const title = document.createElement("div");
+    title.textContent = "TapTap 登录";
+    title.style.cssText = "font-size:18px;font-weight:bold;margin-bottom:12px;";
+    const qr = document.createElement("img");
+    qr.src = info.qrcode_svg;
+    qr.alt = "登录二维码";
+    qr.style.cssText = "width:180px;height:180px;margin:0 auto 12px;display:block;";
+    const tip = document.createElement("div");
+    tip.textContent = "用手机 TapTap 扫一扫,或点下面链接在手机上授权";
+    tip.style.cssText = "font-size:13px;color:#666;margin-bottom:8px;line-height:1.5;";
+    const link = document.createElement("a");
+    link.href = info.verification_url;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "在手机上打开授权链接";
+    link.style.cssText = "color:#2f6fed;font-size:14px;word-break:break-all;display:inline-block;";
+    const status = document.createElement("div");
+    status.id = "cloud-device-status";
+    status.textContent = "等待授权…";
+    status.style.cssText = "margin-top:12px;font-size:13px;color:#888;";
+    card.append(close, title, qr, tip, link, status);
+    o.appendChild(card);
+    document.body.appendChild(o);
+    deviceOverlay = o;
+  }
+
+  async function startDeviceLogin() {
+    if (!cfg.client_id) { showToast("未配置 TapTap Client ID"); return; }
+    let start;
+    try {
+      start = await api("/auth/taptap-device/start", { method: "POST" });
+    } catch (e) {
+      showToast("无法开始登录:" + (e.message || ""));
+      return;
+    }
+    showDeviceOverlay(start);
+    const iv = Math.max(2, Number(start.interval) || 2) * 1000;
+    deviceTimer = setInterval(async () => {
+      try {
+        const r = await api("/auth/taptap-device/poll", {
+          method: "POST",
+          body: JSON.stringify({ pending_id: start.pending_id }),
+        });
+        if (r.token) {
+          clearInterval(deviceTimer);
+          await finishLogin(r);
+          closeDeviceOverlay();
+          showToast("登录成功");
+          setTimeout(() => location.reload(), 300);
+        } else if (r.pending) {
+          const st = document.getElementById("cloud-device-status");
+          if (st) st.textContent = "等待授权…(请在手机上确认)";
+        } else if (r.expired) {
+          clearInterval(deviceTimer);
+          closeDeviceOverlay();
+          showToast(r.message || "登录已过期");
+        }
+      } catch (e) {
+        /* 网络抖动:不打断轮询,下一拍再试 */
+      }
+    }, iv);
   }
 
   // ── 启动 ──────────────────────────────────────────────
@@ -279,7 +392,7 @@
 
   // 暴露给 engine.js(退出登录 / 登录态查询)与调试
   window.CloudSync = {
-    boot, loginUrl, logout, authMe, sync,
+    boot, loginUrl, logout, authMe, sync, startDeviceLogin, showToast,
     status: () => ({ loggedIn: loggedIn(), dirty, api: cfg.api, client_id: cfg.client_id }),
   };
 
