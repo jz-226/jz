@@ -38,6 +38,41 @@
   const cfg = loadConfig();
   const ACCOUNTS_HOST = cfg.is_cn ? "https://accounts.tapapis.cn" : "https://accounts.tapapis.com";
 
+  // ── 运行环境探针(诊断用,上线后移除)──────────────────────────────
+  // TapTap 客户端内打开的 H5 游戏会注入全局 tap 运行时(有 tap.login +
+  // CloudSaveManager → 可静默登录 + 官方免费云存档);纯浏览器没有。
+  // 页面加载即发一次到后端 /probe 日志,用于判定接入路线。失败静默,不影响游戏。
+  function sendProbe() {
+    try {
+      let probeId = "";
+      try { probeId = localStorage.getItem("wordquest_probe_id") || ""; } catch (e) {}
+      if (!probeId) {
+        probeId = "p" + Math.random().toString(36).slice(2) + Date.now().toString(36);
+        try { localStorage.setItem("wordquest_probe_id", probeId); } catch (e) {}
+      }
+      const t = (typeof window.tap !== "undefined") ? window.tap : null;
+      const payload = {
+        probe_id: probeId,
+        hasTap: t !== null,
+        hasTapLogin: !!(t && typeof t.login === "function"),
+        hasTapEnv: !!(t && t.env),
+        hasTapSDK: typeof window.TapSDK !== "undefined",
+        hasCloudSaveManager: typeof window.CloudSaveManager !== "undefined",
+        hasTT: typeof window.tt !== "undefined",
+        tapKeys: t ? Object.keys(t).join(",") : "",
+        ua: String(navigator.userAgent || "").slice(0, 200),
+        href: String(location.href || "").slice(0, 200),
+        origin: String(location.origin || "").slice(0, 100),
+      };
+      fetch(cfg.api + "/probe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).catch(() => {});
+    } catch (e) { /* 探针失败不影响游戏 */ }
+  }
+  sendProbe();
+
   let token = "";
   let dirty = false;     // 有未上传的本地改动
   let timer = null;      // 防抖定时器
