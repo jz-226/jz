@@ -77,6 +77,7 @@
   // ── 上传 / 拉取 ───────────────────────────────────────
   async function upload() {
     if (!loggedIn()) return;
+    if (!hasRealProgress(Store._s)) return;   // 空默认档不上传,防把脏档传到云上
     dirty = false;
     try {
       const res = await api("/save", { method: "PUT", body: JSON.stringify({ save: Store._s }) });
@@ -106,10 +107,15 @@
       return "idle";
     }
     if (!hasRealProgress(Store._s)) {
-      Store._s = remote;
-      saveLocalDirect();
-      lastRemoteTs = remote.updated_at || 0;
-      return "download";
+      // 空本地:云端有真档才接管;云端也是空档 → 两边都空,无事可做。
+      // (若直接下载,而云端档又是空的,boot 会判定 download → reload → 又下载 → 死循环)
+      if (hasRealProgress(remote)) {
+        Store._s = remote;
+        saveLocalDirect();
+        lastRemoteTs = remote.updated_at || 0;
+        return "download";
+      }
+      return "idle";
     }
     const localTs = Store._s.updated_at || 0;
     const remoteTs = remote.updated_at || 0;
@@ -133,6 +139,7 @@
 
   function flush() {
     if (!loggedIn() || !dirty) return;
+    dirty = false;   // 先摘脏标记:pagehide 与 visibilitychange 会双触发,防重复发送
     // keepalive:页面即将关闭也能把请求发出去(约 64KB 上限,兜底只覆盖最后几秒,主力靠防抖)
     api("/save", { method: "PUT", body: JSON.stringify({ save: Store._s }), keepalive: true })
       .catch((e) => console.warn("[cloud] 退出前上传失败", e.message || e));
