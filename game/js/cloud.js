@@ -14,9 +14,12 @@
   "use strict";
 
   // ── 配置 ──────────────────────────────────────────────
+  // api/client_id 已为线上烤死(玩家无法自己设 localStorage);
+  // 本地联调仍可用 wordquest_cfg 覆盖。
+  // ⚠ 测试期 api 指向临时隧道,正式部署后必须换成 https://你的域名/api/v1 再重建!
   const DEFAULT_CFG = {
-    api: "",          // 后端地址(/api/v1),部署后填 https://你的域名/api/v1
-    client_id: "",    // TapTap Client ID,开发者中心开启登录服务后获取
+    api: "https://undefined-constraints-somebody-reggae.trycloudflare.com/api/v1",
+    client_id: "vkwho3mjyajginmmca",
     is_cn: true,      // 中国大陆区(true) / 海外(false)
   };
   const TOKEN_KEY = "wordquest_token_v1";
