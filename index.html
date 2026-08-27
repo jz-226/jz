@@ -98,13 +98,21 @@
       </div>
     </section>
 
-    <section class="playground" id="playground" aria-label="Agent Playground">
+    <section class="playground" id="playground" aria-label="Agent Dispatch 游戏">
       <div class="playground-inner shell reveal">
-        <div class="playground-head"><p>04 / AGENT PLAYGROUND</p><span>SELECT A TASK, THEN RUN IT</span></div>
-        <div class="playground-grid">
-          <div class="play-choices" role="group" aria-label="选择任务"><button class="play-choice active" data-play="product">产品需求拆解</button><button class="play-choice" data-play="code">代码审查</button><button class="play-choice" data-play="automation">自动化流程</button></div>
-          <div class="agent-stage" id="agentStage"><div class="agent-node node-input">INPUT</div><div class="agent-link"></div><div class="agent-node node-reason">REASON</div><div class="agent-link"></div><div class="agent-node node-output">OUTPUT</div><p id="agentResult">选择一个任务，观察 Agent 如何把模糊输入变成可执行结果。</p></div>
-          <div class="play-control"><p id="playPrompt">“帮我把一个模糊想法变成能被验证的产品路径。”</p><button id="runAgent" class="run-agent">RUN AGENT <span>↗</span></button><small id="agentStatus">IDLE / WAITING FOR INPUT</small></div>
+        <div class="playground-head"><p>04 / AGENT DISPATCH</p><span>THREE MOVES · ONE SHIPPED OUTCOME</span></div>
+        <div class="dispatch-game" id="dispatchGame">
+          <div class="dispatch-hud"><p id="dispatchRound">ROUND 01 / 03</p><div><span>PROGRESS <b id="statProgress">00</b></span><span>QUALITY <b id="statQuality">00</b></span><span>RISK <b id="statRisk">00</b></span></div></div>
+          <div class="dispatch-board">
+            <article class="mission-card" id="missionCard"><p id="missionType">INCOMING BRIEF</p><h2 id="missionTitle">一次很重要的功能要在今晚交付。</h2><p id="missionBody">选一位 Agent 先处理它。三次选择后，看看你的交付会变成什么样。</p><span id="missionTag">WAITING FOR DISPATCH</span></article>
+            <div class="dispatch-tools" role="group" aria-label="选择 Agent">
+              <button class="dispatch-tool codex-tool" data-agent="codex"><img src="assets/codex-icon.svg" alt=""><span>CODEX</span><small>BUILD FAST</small></button>
+              <button class="dispatch-tool claude-tool" data-agent="claude"><img src="assets/claude-code-icon.png" alt=""><span>CLAUDE CODE</span><small>MAP CONTEXT</small></button>
+              <button class="dispatch-tool cursor-tool" data-agent="cursor"><img src="assets/cursor-icon.png" alt=""><span>CURSOR</span><small>EDIT PRECISELY</small></button>
+            </div>
+            <div class="dispatch-feedback" id="dispatchFeedback" aria-live="polite"><span class="feedback-signal">●</span><p id="feedbackLabel">CHOOSE AN AGENT</p><h3 id="feedbackTitle">Ready to dispatch.</h3><p id="feedbackBody">每次选择都会立即改变这次交付的走向。</p></div>
+          </div>
+          <div class="dispatch-footer"><p id="dispatchLog">SYSTEM / 等待第一条指令</p><button id="restartDispatch" class="restart-dispatch">NEW RUN <span>↻</span></button></div>
         </div>
       </div>
     </section>
