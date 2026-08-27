@@ -37,6 +37,8 @@ Dify Marketplace 已上架。昆山小白杨实习项目。康复师输入专业
 ### 早八在逃 — 3D 潜行撤离游戏（TapTap 测试版已上线）
 Unity 2022 LTS + URP + NavMesh。午夜校园主题的潜行、搜刮与撤离游戏：收集时间碎片，躲开巡夜者，在早八以前打开晨门离开。
 
+→ [前往 TapTap 测试版](https://tap.cn/lRKlLAoXX)
+
 → 每个项目详细文档见 AI项目/ 目录
 
 ## 🎨 视觉设计
