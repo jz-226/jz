@@ -76,17 +76,13 @@
     </section>
 
     <section class="toolchain shell reveal" id="toolchain" aria-label="AI 工具链">
-      <div class="toolchain-head"><p class="index-label">03 / AI TOOLCHAIN</p><p>把工具当作真实工作流的一部分：理解代码库、拆解任务、持续迭代，再将结果接回产品。</p></div>
-      <div class="toolchain-grid">
-        <div class="tool-list" role="tablist" aria-label="工具链">
-          <button class="tool-card active" role="tab" aria-selected="true" data-tool="codex" data-title="Codex" data-line="从仓库到可交付的改动。" data-detail="用终端、代码审查与任务上下文推进实际项目：定位问题、改动实现、验证并交付。" data-code="$ codex implement --scope portfolio\n✓ inspect repository\n✓ build interaction\n✓ verify and ship"><span>01</span><b>Codex</b><small>CODE / TERMINAL / DELIVERY</small></button>
-          <button class="tool-card" role="tab" aria-selected="false" data-tool="claude" data-title="Claude Code" data-line="先理解全局，再落到一个改动。" data-detail="用于研究代码结构、厘清复杂依赖与迭代方案；让长上下文的理解最终落到可读、可运行的实现上。" data-code="$ claude analyze --project\n✓ map system context\n✓ compare approaches\n✓ implement with intent"><span>02</span><b>Claude Code</b><small>RESEARCH / CONTEXT / REFACTOR</small></button>
-          <button class="tool-card" role="tab" aria-selected="false" data-tool="n8n" data-title="n8n" data-line="把重复的动作变成可复用的流程。" data-detail="将触发条件、内容处理与通知串成自动化流程，让运营或产品工作少依赖手工复制与状态追踪。" data-code="$ n8n run workflow\n✓ trigger event\n✓ transform content\n✓ notify and log"><span>03</span><b>n8n</b><small>AUTOMATION / WORKFLOW / OPS</small></button>
-        </div>
-        <div class="tool-terminal" aria-live="polite"><p class="terminal-title" id="toolTitle">TOOL / CODEX</p><h2 id="toolLine">从仓库到可交付的改动。</h2><p id="toolDetail">用终端、代码审查与任务上下文推进实际项目：定位问题、改动实现、验证并交付。</p><pre id="toolCode">$ codex implement --scope portfolio
-✓ inspect repository
-✓ build interaction
-✓ verify and ship</pre></div>
+      <div class="toolchain-head"><p class="index-label">03 / AI TOOL FIELD</p><p>拖动鼠标穿过图标。它们会被推开、碎成像素，再回到各自的工作位置。</p></div>
+      <div class="tool-sandbox" id="toolSandbox" aria-label="可互动的 AI 工具图标场">
+        <p class="sandbox-label">MOVE THROUGH THE FIELD / ICONS REASSEMBLE WHEN YOU LEAVE</p>
+        <button class="tool-orb orb-codex" data-tool-name="CODEX" aria-label="Codex 图标"><span class="tool-cube">&lt;/&gt;</span><b>CODEX</b><small>BUILD</small><span class="pixel-field" aria-hidden="true"></span></button>
+        <button class="tool-orb orb-claude" data-tool-name="CLAUDE CODE" aria-label="Claude Code 图标"><span class="tool-cube">✦</span><b>CLAUDE<br>CODE</b><small>REASON</small><span class="pixel-field" aria-hidden="true"></span></button>
+        <button class="tool-orb orb-n8n" data-tool-name="n8n" aria-label="n8n 图标"><span class="tool-cube">∿</span><b>n8n</b><small>FLOW</small><span class="pixel-field" aria-hidden="true"></span></button>
+        <p class="sandbox-readout" id="sandboxReadout">FIELD STATUS / STABLE</p>
       </div>
     </section>
 
