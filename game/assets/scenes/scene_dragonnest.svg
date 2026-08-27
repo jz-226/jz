@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220">
+  <!-- 龙巢暗空 -->
+  <rect width="640" height="220" fill="#241C26"/>
+  <!-- 阴云 -->
+  <path d="M0 46 Q80 34 160 44 Q260 30 360 44 Q470 30 560 42 Q610 38 640 46 L640 58 Q520 50 420 58 Q300 46 200 58 Q100 48 0 58 Z" fill="#3A3038" stroke="#2A2119" stroke-width="3"/>
+  <!-- 山巅 -->
+  <path d="M0 176 L120 96 L240 176 M420 176 L540 96 L640 176" fill="#332A30" stroke="#2A2119" stroke-width="4"/>
+  <!-- 高台地面 -->
+  <path d="M180 176 Q320 160 460 176 L460 220 L180 220 Z" fill="#4A3B44" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 白骨 -->
+  <path d="M200 176 L200 160 L212 152 L212 176 M228 176 L228 162 L240 154 L240 176" fill="#E7D1A3" stroke="#2A2119" stroke-width="3"/>
+  <ellipse cx="330" cy="166" rx="34" ry="10" fill="none" stroke="#E7D1A3" stroke-width="4" opacity=".7"/>
+  <!-- 金币堆 -->
+  <path d="M400 168 Q430 156 470 168 L470 176 L400 176 Z" fill="#A87E2F" stroke="#2A2119" stroke-width="3"/>
+  <circle cx="412" cy="166" r="6" fill="#D9A441" stroke="#2A2119" stroke-width="2.5"/>
+  <circle cx="436" cy="162" r="6" fill="#F0C75E" stroke="#2A2119" stroke-width="2.5"/>
+  <circle cx="458" cy="166" r="6" fill="#D9A441" stroke="#2A2119" stroke-width="2.5"/>
+  <!-- 龙爪痕 -->
+  <path d="M280 172 L272 150 M288 172 L286 152 M296 172 L300 152" stroke="#2A2119" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+</svg>

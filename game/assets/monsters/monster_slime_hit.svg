@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+  <defs>
+    <radialGradient id="slg" cx="45%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#8FC98A"/>
+      <stop offset="55%" stop-color="#5E9558"/>
+      <stop offset="100%" stop-color="#416B3B"/>
+    </radialGradient>
+  </defs>
+  <!-- 被砸扁的史莱姆 -->
+  <path d="M34 130 C30 76 52 58 88 54 Q96 48 100 52 Q108 48 112 54 C148 58 170 76 166 130 C164 142 134 150 100 150 C66 150 36 142 34 130 Z" fill="url(#slg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 受击星星 -->
+  <path d="M26 44 L29 51 L36 54 L29 57 L26 64 L23 57 L16 54 L23 51 Z" fill="#F0C75E" stroke="#2A2119" stroke-width="2.5"/>
+  <path d="M168 34 L170 39 L175 41 L170 43 L168 48 L166 43 L161 41 L166 39 Z" fill="#F0C75E" stroke="#2A2119" stroke-width="2.5"/>
+  <!-- 挤闭的眼 -->
+  <path d="M64 92 L88 88 M136 92 L112 88" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <!-- 苦脸 -->
+  <path d="M88 118 Q100 112 112 118" stroke="#2A2119" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- 裂痕 -->
+  <path d="M96 56 L100 72 L94 82" stroke="#3A5C36" stroke-width="3" fill="none"/>
+</svg>

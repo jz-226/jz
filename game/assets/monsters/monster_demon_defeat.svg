@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250">
+  <defs>
+    <radialGradient id="dmg" cx="45%" cy="40%" r="85%">
+      <stop offset="0%" stop-color="#B0564C"/>
+      <stop offset="55%" stop-color="#8E3A32"/>
+      <stop offset="100%" stop-color="#5E221E"/>
+    </radialGradient>
+  </defs>
+  <!-- 瘫倒的身体 -->
+  <ellipse cx="104" cy="190" rx="64" ry="26" fill="url(#dmg)" stroke="#2A2119" stroke-width="6"/>
+  <path d="M44 182 Q38 172 58 166 Q74 160 92 164 Q108 156 126 164 Q150 166 166 174 Q176 180 168 188 Q154 200 120 202 Q72 204 52 192 Q42 188 44 182 Z" fill="url(#dmg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 垂落翅膀 -->
+  <path d="M34 180 L16 168 Q12 164 20 164 L38 174" fill="#5E221E" stroke="#2A2119" stroke-width="4"/>
+  <path d="M170 180 L188 168 Q192 164 184 164 L166 174" fill="#5E221E" stroke="#2A2119" stroke-width="4"/>
+  <!-- 侧倒的头 -->
+  <path d="M64 156 Q56 136 74 130 Q94 124 102 140 Q112 130 118 140 Q122 154 114 160 Q128 168 128 182 Q126 198 112 204 Q94 212 76 204 Q60 196 58 180 Q56 166 64 162 Q56 162 64 156 Z" fill="url(#dmg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- X 眼 -->
+  <path d="M80 162 L98 176 M98 162 L80 176 M124 162 L142 176 M142 162 L124 176" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <!-- 垂落巨角 -->
+  <path d="M62 148 L48 128 M138 148 L152 128" stroke="#C9C0AC" stroke-width="5" stroke-linecap="round"/>
+  <!-- 晕眩圈 -->
+  <ellipse cx="152" cy="142" rx="14" ry="8" fill="none" stroke="#B0564C" stroke-width="3"/>
+  <circle cx="152" cy="139" r="2.5" fill="#2A2119" opacity=".6"/>
+</svg>

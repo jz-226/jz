@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="vt-wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7A5A34"/>
+      <stop offset="100%" stop-color="#402D1C"/>
+    </linearGradient>
+    <linearGradient id="vt-gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0C75E"/>
+      <stop offset="100%" stop-color="#B8892F"/>
+    </linearGradient>
+  </defs>
+  <!-- 上盖 -->
+  <path d="M6 34 Q6 24 20 22 Q32 17 44 22 Q58 24 58 34 Z" fill="url(#vt-wood)" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 箱体 -->
+  <path d="M8 34 L8 52 Q8 56 12 56 L52 56 Q56 56 56 52 L56 34 Z" fill="url(#vt-wood)" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 盖缝 -->
+  <path d="M6 34 L58 34" stroke="#2A2119" stroke-width="4"/>
+  <!-- 金属包边 -->
+  <path d="M8 34 L8 52 M56 34 L56 52" stroke="#B8892F" stroke-width="5" fill="none"/>
+  <path d="M8 52 L56 52" stroke="#2A2119" stroke-width="4"/>
+  <!-- 锁扣 -->
+  <rect x="27" y="36" width="10" height="12" rx="2" fill="url(#vt-gold)" stroke="#2A2119" stroke-width="3"/>
+  <rect x="30.5" y="40" width="3" height="6" rx="1" fill="#2A2119"/>
+  <!-- 木板线 -->
+  <path d="M20 44 L44 44 M20 51 L44 51" stroke="#3E2C1C" stroke-width="2"/>
+</svg>

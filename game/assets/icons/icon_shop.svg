@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 行商摊位 -->
+  <path d="M8 44 L16 22 L48 22 L56 44 Z" fill="#527A4B" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 檐篷条纹 -->
+  <path d="M16 22 L56 22 M12 30 L52 30 M10 37 L54 37" stroke="#3E5C38" stroke-width="2" opacity=".55"/>
+  <!-- 布沿 -->
+  <path d="M8 44 L56 44 L54 50 L10 50 Z" fill="#C7AA72" stroke="#2A2119" stroke-width="3.5" stroke-linejoin="round"/>
+  <!-- 柜台 -->
+  <rect x="18" y="50" width="28" height="8" rx="2" fill="#59402A" stroke="#2A2119" stroke-width="3"/>
+  <!-- 货品 -->
+  <circle cx="24" cy="46" r="3.5" fill="#D9A441" stroke="#2A2119" stroke-width="2"/>
+  <circle cx="34" cy="46" r="3.5" fill="#C25E4F" stroke="#2A2119" stroke-width="2"/>
+  <rect x="39" y="41" width="4" height="7" rx="1" fill="#4C78A8" stroke="#2A2119" stroke-width="2"/>
+</svg>

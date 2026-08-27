@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 170" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="pl" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3E2220"/><stop offset="100%" stop-color="#1E1210"/></linearGradient>
+  </defs>
+  <rect x="6" y="6" width="248" height="158" rx="10" fill="url(#pl)" stroke="#C9992B" stroke-width="5"/>
+  <rect x="13" y="13" width="234" height="144" rx="6" fill="none" stroke="#C9992B" stroke-width="2" opacity=".6"/>
+  <path d="M26 26 L234 26 L234 144 L26 144 Z" fill="none" stroke="#2A2119" stroke-width="2" opacity=".5"/>
+  <path d="M40 40 L220 40 M40 130 L220 130" stroke="#2A2119" stroke-width="3" opacity=".35"/>
+  <!-- 回纹角饰(四方连续暗纹) -->
+  <g fill="none" stroke="#E8BC4A" stroke-width="2" opacity=".65">
+    <path d="M18 38 L18 18 L38 18"/>
+    <path d="M242 38 L242 18 L222 18"/>
+    <path d="M18 132 L18 152 L38 152"/>
+    <path d="M242 132 L242 152 L222 152"/>
+  </g>
+  <g fill="#E8BC4A" opacity=".85">
+    <rect x="16" y="16" width="5" height="5"/>
+    <rect x="239" y="16" width="5" height="5"/>
+    <rect x="16" y="149" width="5" height="5"/>
+    <rect x="239" y="149" width="5" height="5"/>
+  </g>
+  <!-- 漆面磨损缺口 -->
+  <g fill="#1E1210" opacity=".7">
+    <path d="M60 6 L65 1 L70 6 Z"/>
+    <path d="M150 6 L155 1 L160 6 Z"/>
+    <path d="M100 164 L105 169 L110 164 Z"/>
+    <path d="M5 90 L1 94 L5 98 Z"/>
+    <path d="M255 60 L259 64 L255 68 Z"/>
+  </g>
+  <!-- 细金丝流线(漆器阴刻) -->
+  <path d="M70 60 Q110 54 150 62 T210 58 M70 110 Q120 104 170 112 T210 108" stroke="#C9992B" stroke-width="1.4" fill="none" opacity=".4"/>
+</svg>

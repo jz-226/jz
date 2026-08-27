@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="fl" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#F0C75E"/>
+      <stop offset="45%" stop-color="#D96A2B"/>
+      <stop offset="100%" stop-color="#A83A22"/>
+    </radialGradient>
+  </defs>
+  <!-- 外焰 -->
+  <path d="M32 6 C44 20 54 28 52 42 C50 54 40 60 32 60 C24 60 14 54 12 42 C10 28 20 20 32 6 Z" fill="url(#fl)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 内焰 -->
+  <path d="M32 20 C38 28 42 34 41 42 C40 50 36 53 32 53 C28 53 24 50 23 42 C22 34 26 28 32 20 Z" fill="#FFF8EC" opacity=".85"/>
+  <!-- 底部火舌 -->
+  <path d="M24 58 Q28 52 32 56 Q36 52 40 58" stroke="#2A2119" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>

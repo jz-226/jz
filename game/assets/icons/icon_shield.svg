@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="shg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B675C"/>
+      <stop offset="100%" stop-color="#4A463D"/>
+    </linearGradient>
+  </defs>
+  <!-- 盾牌 -->
+  <path d="M32 8 L52 14 L52 34 Q52 48 32 56 Q12 48 12 34 L12 14 Z" fill="url(#shg)" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 鎏金边 -->
+  <path d="M32 14 L47 18 L47 34 Q47 45 32 51 Q17 45 17 34 L17 18 Z" fill="none" stroke="#D9A441" stroke-width="2.5"/>
+  <!-- 纹章星 -->
+  <path d="M32 24 L35 31 L42 31 L36 36 L38 43 L32 39 L26 43 L28 36 L22 31 L29 31 Z" fill="#D9A441" stroke="#2A2119" stroke-width="2" stroke-linejoin="round"/>
+  <!-- 高光 -->
+  <path d="M20 20 L28 18" stroke="#9A958C" stroke-width="3" stroke-linecap="round"/>
+</svg>

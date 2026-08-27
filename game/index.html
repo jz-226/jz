@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Word Quest Web Build · V1.0.3 · TapTap 网页游戏 -->
+<title>四级背词 RPG · 单词远征</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ═══════ 顶部 HUD ═══════ -->
+  <header id="hud" class="hud hidden">
+    <div class="hud-left">
+      <span id="hud-avatar" class="hud-avatar"><img src="assets/characters/character_adventurer_idle.svg" alt="冒险者"></span>
+      <span id="hud-nick" class="hud-nick">冒险者</span>
+      <span id="hud-level" class="hud-level">Lv.1</span>
+    </div>
+    <div class="hud-right">
+      <span class="hud-stat" title="生命"><img src="assets/icons/icon_heart.svg" alt="生命"> <b id="hud-hp">100</b></span>
+      <span class="hud-stat" title="攻击"><img src="assets/icons/icon_sword.svg" alt="攻击"> <b id="hud-atk">10</b></span>
+      <span class="hud-stat gold" title="金币"><img src="assets/icons/icon_gold.svg" alt="金币"> <b id="hud-gold">0</b></span>
+      <div class="hud-xp" title="经验">
+        <div id="hud-xp-fill" class="xp-fill" style="width:0%"></div>
+        <span id="hud-xp-text" class="xp-text">0/100</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════ 视图容器 ═══════ -->
+  <main id="views">
+
+    <!-- ── 欢迎 ── -->
+    <section class="view" id="view-welcome">
+      <div class="hero">
+        <div class="hero-title">
+          <h1>单词远征</h1>
+          <p class="sub">CET-4 四级背词 RPG</p>
+        </div>
+        <div class="hero-emblem"><img src="assets/characters/character_adventurer_idle.svg" alt="冒险者"></div>
+        <p class="hero-desc">
+          单词化作怪物,答题即是挥剑。<br>
+          在黑暗奇幻的世界里,用词汇之力,击穿六重关卡,直面四级之龙。
+        </p>
+        <div class="hero-feats">
+          <span>战斗背词</span><span>等级成长</span>
+          <span>六大关域</span><span>终极 Boss</span>
+        </div>
+        <button id="btn-start" class="btn btn-hero">开始远征</button>
+</div>
+    </section>
+
+    <!-- ── 目标设置 ── -->
+    <section class="view" id="view-onboarding">
+      <div class="panel center narrow">
+        <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_map.svg" alt="">远征契约</h2>
+        <p class="panel-desc">立下目标、写下名字,接着闯 16 题词汇测试定级</p>
+        <label class="field">
+          <span class="field-label">冒险者名号</span>
+          <input id="inp-nick" type="text" maxlength="10" placeholder="冒险者">
+        </label>
+        <label class="field">
+          <span class="field-label">目标四级分数</span>
+          <div class="seg" id="seg-score">
+            <button data-v="425" class="seg-btn active">425</button>
+            <button data-v="500" class="seg-btn">500</button>
+            <button data-v="550" class="seg-btn">550</button>
+            <button data-v="600" class="seg-btn">600</button>
+          </div>
+        </label>
+        <label class="field">
+          <span class="field-label">每日投入</span>
+          <div class="seg" id="seg-min">
+            <button data-v="10" class="seg-btn">10分</button>
+            <button data-v="20" class="seg-btn active">20分</button>
+            <button data-v="30" class="seg-btn">30分</button>
+            <button data-v="60" class="seg-btn">60分</button>
+          </div>
+        </label>
+        <button id="btn-onboard" class="btn btn-primary">缔结契约 →</button>
+      </div>
+    </section>
+
+    <!-- ── 词汇测试 ── -->
+    <section class="view" id="view-assessment">
+      <div class="panel center narrow">
+        <div class="assess-head">
+          <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_potion.svg" alt="">词汇测试</h2>
+          <span id="assess-progress" class="assess-progress">1 / 16</span>
+        </div>
+        <div class="assess-bar"><div id="assess-fill" class="xp-fill"></div></div>
+        <p class="panel-desc">16 道四级词汇题。答对越多,初始等级越高、提前开放更多区域;全对直接开启全部区域。</p>
+        <div id="assess-card" class="quiz-card">
+          <div id="assess-loading" class="loading">召唤试题中...</div>
+          <div id="assess-q" class="quiz hidden">
+            <div id="assess-word" class="quiz-word"></div>
+            <div id="assess-options" class="quiz-options"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 词汇测试结果 ── -->
+    <section class="view" id="view-result">
+      <div class="panel center narrow result-panel">
+        <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_heart.svg" alt="">词汇测试结果</h2>
+        <div class="result-level">
+          <div class="result-level-badge" id="res-level">Lv.1</div>
+          <p class="result-level-sub">词汇测试判定的初始等级</p>
+        </div>
+        <div class="result-grid">
+          <div class="result-cell"><span class="rc-num" id="res-score">0/16</span><span class="rc-label">答对题数</span></div>
+          <div class="result-cell"><span class="rc-num" id="res-open">1 关</span><span class="rc-label">提前开放</span></div>
+        </div>
+        <p class="panel-desc" id="res-unlock"></p>
+        <div class="result-tip" id="res-tip"></div>
+        <button id="btn-to-map" class="btn btn-primary">进入词域地图 →</button>
+      </div>
+    </section>
+
+    <!-- ── 地图 ── -->
+    <section class="view" id="view-map">
+      <div class="panel map-panel">
+        <div class="map-head">
+          <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_map.svg" alt="">词域地图</h2>
+          <span id="map-player" class="map-player"></span>
+        </div>
+        <p class="panel-desc">选择关卡,击败怪物。词域越深,怪物越强,奖励越丰。</p>
+        <div id="map-regions" class="map-regions"></div>
+        <div id="map-dailies" class="map-dailies"></div>
+      </div>
+    </section>
+
+    <!-- ── 战斗 ── -->
+    <section class="view" id="view-battle">
+      <div class="battle" id="battle-box">
+        <!-- 怪物区 -->
+        <div class="battle-zone monster-zone">
+          <div class="battle-scene" id="battle-scene">
+            <div id="battle-monster" class="monster"></div>
+            <div class="battle-float" id="float-damage"></div>
+            <div class="battle-slash" id="battle-slash"></div>
+            <div class="battle-sparkle" id="battle-sparkle"></div>
+          </div>
+          <div class="monster-label"><span id="monster-name" class="monster-name">怪物</span></div>
+          <div class="hpbar"><div id="monster-hp" class="hp-fill"></div><span id="monster-hp-text" class="hp-text"></span></div>
+        </div>
+        <div class="battle-vs">VS</div>
+        <!-- 玩家区 -->
+        <div class="battle-zone player-zone">
+          <div class="player-info">
+            <span class="pinfo-id">
+              <span id="battle-player-avatar" class="pinfo-avatar"><img src="assets/characters/character_adventurer_idle.svg" alt="冒险者"></span>
+              <b id="battle-player-name" class="pinfo-name">冒险者</b>
+              <span id="battle-player-level" class="pinfo-level">Lv.1</span>
+            </span>
+            <span class="pinfo-gold"><img src="assets/icons/icon_gold.svg" alt="金币"> <b id="battle-gold">0</b></span>
+          </div>
+          <div class="player-stats">
+            <span><img src="assets/icons/icon_heart.svg" alt="生命"> <b id="battle-player-hp">100</b>/<b id="battle-player-max">100</b></span>
+            <span><img src="assets/icons/icon_sword.svg" alt="攻击"> <b id="battle-player-atk">10</b></span>
+            <span id="battle-combo" class="combo" data-c="0">Combo <b>×0</b></span>
+          </div>
+          <div class="hpbar"><div id="player-hp" class="hp-fill hp-fill-player"></div></div>
+          <div class="battle-xp" title="修为">
+            <div id="battle-xp-fill" class="xp-fill" style="width:0%"></div>
+            <span id="battle-xp-text" class="xp-text">0/100</span>
+          </div>
+          <div class="player-champ"><img src="assets/characters/character_adventurer_idle.svg" alt="冒险者"></div>
+        </div>
+        <!-- 剑气(角色挥剑射出的飞行投射物,从下往上打向怪物) -->
+        <div class="battle-beam" id="battle-beam"></div>
+        <!-- 题目区 -->
+        <div class="battle-quiz">
+          <div class="battle-tools">
+            <button id="btn-battle-retreat" class="btn btn-small btn-ghost battle-retreat" title="撤退回营地">← 撤退</button>
+            <span class="battle-region" id="battle-region">哥布林森林</span>
+            <div class="tool-btns">
+              <button id="btn-pronounce" class="tool-btn hidden" title="回响耳环:发音"><img src="assets/icons/icon_earring.svg" alt="发音"></button>
+              <button id="btn-insight" class="tool-btn hidden" title="洞察之眼:排除一个错误答案"><img src="assets/icons/icon_eye.svg" alt="洞察"></button>
+            </div>
+          </div>
+          <div id="battle-q" class="quiz">
+            <div id="battle-word" class="quiz-word"></div>
+            <div id="battle-phonetic" class="quiz-phonetic hidden"></div>
+            <div id="battle-options" class="quiz-options"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 战败遮罩 -->
+      <div id="modal-defeat" class="modal hidden">
+        <div class="modal-box">
+          <h2>倒下...</h2>
+          <p id="defeat-msg">怪物夺走了你的生命。回到营地休整吧。</p>
+          <button id="btn-defeat-back" class="btn btn-primary">返回营地</button>
+        </div>
+      </div>
+
+      <!-- Boss 剧情遮罩(登场/英语对话/最终战宣言) -->
+      <div id="boss-overlay" class="modal hidden">
+        <div class="modal-box boss-card">
+          <div class="boss-card-head">
+            <img id="boss-avatar" class="boss-avatar" src="assets/monsters/monster_goblin_king_idle.svg" alt="Boss">
+            <div class="boss-card-id">
+              <span id="boss-card-zh" class="boss-card-zh">哥布林王</span>
+              <span id="boss-card-en" class="boss-card-en">Goblin King</span>
+            </div>
+          </div>
+          <div id="boss-line" class="boss-line">
+            <div id="boss-line-en" class="boss-line-en"></div>
+            <div id="boss-line-zh" class="boss-line-zh"></div>
+          </div>
+          <div id="boss-choices" class="boss-choices hidden"></div>
+          <div class="boss-actions">
+            <button id="btn-boss-repeat" class="btn btn-small btn-ghost hidden">再听一遍</button>
+            <button id="btn-boss-next" class="btn btn-primary hidden">继续</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boss 胜利结算 -->
+      <div id="modal-boss-victory" class="modal hidden">
+        <div class="modal-box boss-victory">
+          <img class="victory-badge" src="assets/icons/icon_crown.svg" alt="胜利">
+          <h2>击败 <span id="victory-boss-name">哥布林王</span>!</h2>
+          <p id="victory-line" class="victory-line">英雄凯旋,村子的安宁由你守护。</p>
+          <button id="btn-victory-back" class="btn btn-primary btn-wide">返回地图</button>
+        </div>
+      </div>
+
+      <!-- 登录 / 注册 -->
+      <div id="modal-auth" class="modal hidden">
+        <div class="modal-box">
+          <h2 id="auth-title">登录</h2>
+          <div class="field">
+            <label class="field-label" for="auth-username">用户名</label>
+            <input id="auth-username" type="text" maxlength="20" placeholder="2-20 个字符" autocomplete="username">
+          </div>
+          <div class="field">
+            <label class="field-label" for="auth-password">密码</label>
+            <input id="auth-password" type="password" maxlength="72" placeholder="至少 6 位" autocomplete="current-password">
+          </div>
+          <button id="auth-submit" class="btn btn-primary btn-wide">登录</button>
+          <p id="auth-error" class="auth-error hidden"></p>
+          <div class="auth-toggle">
+            <span id="auth-toggle-text">还没有账号?</span>
+            <button id="auth-switch" class="link-btn" type="button">去注册</button>
+          </div>
+          <button id="auth-cancel" class="btn btn-small btn-ghost">取消</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 每日任务 ── -->
+    <section class="view" id="view-tasks">
+      <div class="panel center narrow">
+        <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_quest.svg" alt="">今日契约</h2>
+        <p class="panel-desc">每天刷新,完成全部契约可获得额外奖励</p>
+        <div id="task-list" class="task-list"></div>
+        <div class="task-reward">完成全部任务 → 神秘奖励</div>
+      </div>
+    </section>
+
+    <!-- ── 商店 ── -->
+    <section class="view" id="view-shop">
+      <div class="panel center narrow">
+        <div class="map-head">
+          <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_shop.svg" alt="">装备行商</h2>
+          <span class="gold-big"><img src="assets/icons/icon_gold.svg" alt="金币"> <b id="shop-gold">0</b></span>
+        </div>
+        <p class="panel-desc">用金币购置神兵与秘药,强化你的词汇之力</p>
+        <div id="shop-items" class="shop-grid"></div>
+      </div>
+    </section>
+
+    <!-- ── 背包 ── -->
+    <section class="view" id="view-inventory">
+      <div class="panel center narrow">
+        <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_bag.svg" alt="">冒险背包</h2>
+        <p class="panel-desc">管理你的装备与消耗品</p>
+        <div id="inv-items" class="shop-grid"></div>
+      </div>
+    </section>
+
+    <!-- ── 成长 ── -->
+    <section class="view" id="view-growth">
+      <div class="panel center narrow">
+        <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_xp.svg" alt="">成长之路</h2>
+        <div class="growth-hero">
+          <div class="growth-level" id="growth-level">Lv.1</div>
+          <div class="hud-xp big"><div id="growth-xp-fill" class="xp-fill" style="width:0%"></div><span id="growth-xp-text" class="xp-text"></span></div>
+        </div>
+        <div class="result-grid">
+          <div class="result-cell"><span class="rc-num" id="st-battles">0</span><span class="rc-label">总答题数</span></div>
+          <div class="result-cell"><span class="rc-num" id="st-acc">0%</span><span class="rc-label">正确率</span></div>
+          <div class="result-cell"><span class="rc-num" id="st-learned">0</span><span class="rc-label">已学单词</span></div>
+          <div class="result-cell"><span class="rc-num" id="st-mastered">0</span><span class="rc-label">掌握单词</span></div>
+        </div>
+        <div class="result-bars">
+          <div class="rbar"><span>难度1</span><div class="rbar-track"><div id="m-d1" class="rbar-fill" style="width:0%"></div></div><b id="m-d1-t">0%</b></div>
+          <div class="rbar"><span>难度2</span><div class="rbar-track"><div id="m-d2" class="rbar-fill" style="width:0%"></div></div><b id="m-d2-t">0%</b></div>
+          <div class="rbar"><span>难度3</span><div class="rbar-track"><div id="m-d3" class="rbar-fill" style="width:0%"></div></div><b id="m-d3-t">0%</b></div>
+          <div class="rbar"><span>难度4</span><div class="rbar-track"><div id="m-d4" class="rbar-fill" style="width:0%"></div></div><b id="m-d4-t">0%</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 词藏 ── -->
+    <section class="view" id="view-vault">
+      <div class="panel vault-panel">
+        <div class="map-head">
+          <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_vault.svg" alt="">词之宝库</h2>
+        </div>
+        <p class="panel-desc">你的个人词藏:每个词的掌握度、连击与复习计划</p>
+        <div id="vault-stats" class="vault-stats"></div>
+        <div class="vault-actions">
+          <button class="btn btn-primary btn-small" data-practice="weak"><img class="mini-ico" src="assets/icons/icon_sword.svg" alt="">薄弱词挑战</button>
+          <button class="btn btn-primary btn-small" data-practice="review"><img class="mini-ico" src="assets/icons/icon_repeat.svg" alt="">到期复习</button>
+          <button class="btn btn-primary btn-small" data-practice="unseen"><img class="mini-ico" src="assets/icons/icon_eye.svg" alt="">探索新词</button>
+        </div>
+        <div class="vault-tabs" id="vault-tabs">
+          <button data-status="all" class="vt active">全部</button>
+          <button data-status="unseen" class="vt">未学</button>
+          <button data-status="weak" class="vt">薄弱</button>
+          <button data-status="learning" class="vt">学习中</button>
+          <button data-status="mastered" class="vt">已掌握</button>
+        </div>
+        <div class="vault-search">
+          <input id="vault-q" type="search" placeholder="搜索英文或中文释义...">
+          <button id="vault-search-btn" class="btn btn-small">搜索</button>
+        </div>
+        <div id="vault-list" class="vault-list"></div>
+        <div id="vault-pager" class="vault-pager"></div>
+      </div>
+    </section>
+
+    <!-- ── 词详情 ── -->
+    <section class="view" id="view-word">
+      <div class="panel center narrow word-panel">
+        <button id="btn-word-back" class="btn btn-small word-back">← 返回词藏</button>
+        <div class="word-hero">
+          <div class="word-big" id="word-text"></div>
+          <div class="word-meta">
+            <span class="pos" id="word-pos"></span>
+            <span class="phon" id="word-phon"></span>
+            <button id="btn-word-say" class="tool-btn word-say" title="发音"><img src="assets/icons/icon_earring.svg" alt="发音"></button>
+          </div>
+          <div class="word-meaning" id="word-meaning"></div>
+          <div class="word-example" id="word-example"></div>
+        </div>
+        <div class="word-vault">
+          <div class="word-mastery">
+            <span class="wv-label">掌握度</span>
+            <div class="rbar-track"><div id="word-mastery-fill" class="rbar-fill" style="width:0%"></div></div>
+            <b id="word-mastery-num">0%</b>
+          </div>
+          <div class="result-grid word-cards">
+            <div class="result-cell"><span class="rc-num" id="word-correct">0</span><span class="rc-label">答对</span></div>
+            <div class="result-cell"><span class="rc-num" id="word-wrong">0</span><span class="rc-label">答错</span></div>
+            <div class="result-cell"><span class="rc-num" id="word-streak">0</span><span class="rc-label">连击</span></div>
+            <div class="result-cell"><span class="rc-num" id="word-status">未学</span><span class="rc-label">状态</span></div>
+          </div>
+          <div class="word-next" id="word-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 词藏练习 ── -->
+    <section class="view" id="view-practice">
+      <div class="practice-shell">
+        <button id="btn-practice-back" class="btn btn-small word-back">← 返回词藏</button>
+        <div class="battle-quiz practice">
+          <div class="battle-tools">
+            <span class="battle-region" id="practice-mode"></span>
+            <span id="practice-progress" class="assess-progress">0/0</span>
+          </div>
+          <div id="practice-q" class="quiz">
+            <div id="practice-word" class="quiz-word"></div>
+            <div id="practice-sub" class="practice-sub"></div>
+            <div id="practice-options" class="quiz-options"></div>
+          </div>
+          <div id="practice-empty" class="loading hidden">这个模式下还没有可练的词。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 设置 ── -->
+    <section class="view" id="view-settings">
+      <div class="panel center narrow settings-panel">
+        <h2 class="panel-title"><img class="title-ico" src="assets/icons/icon_settings.svg" alt="">设置</h2>
+        <p class="panel-desc">账号、主题与冒险目标</p>
+        <div class="settings-user">
+          <div class="su-avatar" id="set-avatar"><img src="assets/characters/character_adventurer_idle.svg" alt=""></div>
+          <div class="su-info">
+            <div class="su-nick"><b id="set-nick">冒险者</b><span id="set-username" class="su-username"></span></div>
+            <div class="su-meta" id="set-meta">Lv.1</div>
+          </div>
+        </div>
+        <div class="settings-sec">
+          <div class="ss-title">冒险者名号</div>
+          <div class="ss-row">
+            <input id="inp-nick2" type="text" maxlength="12" placeholder="冒险者">
+            <button id="btn-save-nick" class="btn btn-small">保存</button>
+          </div>
+        </div>
+        <div class="settings-sec">
+          <div class="ss-title">世界主题 · 一键换装</div>
+          <div class="theme-pick" id="theme-pick">
+            <button data-theme="western" class="tp active">
+              <img src="assets/scenes/scene_grassland.svg" alt="西幻王国">
+              <span class="tp-name">西幻王国</span>
+              <span class="tp-sub">城堡·骑士·巨龙</span>
+            </button>
+            <button data-theme="east" class="tp">
+              <img src="assets/east/scenes/scene_paddy.svg" alt="东方山海">
+              <span class="tp-name">东方山海</span>
+              <span class="tp-sub">青山·侠客·蛟龙</span>
+            </button>
+          </div>
+        </div>
+        <div class="settings-sec">
+          <div class="ss-title">目标四级分数</div>
+          <div class="seg" id="seg-score2">
+            <button data-v="425" class="seg-btn">425</button>
+            <button data-v="500" class="seg-btn">500</button>
+            <button data-v="550" class="seg-btn">550</button>
+            <button data-v="600" class="seg-btn">600</button>
+          </div>
+        </div>
+        <div class="settings-sec">
+          <div class="ss-title">每日投入</div>
+          <div class="seg" id="seg-min2">
+            <button data-v="10" class="seg-btn">10分</button>
+            <button data-v="20" class="seg-btn">20分</button>
+            <button data-v="30" class="seg-btn">30分</button>
+            <button data-v="60" class="seg-btn">60分</button>
+          </div>
+        </div>
+        <div class="settings-sec">
+          <div class="ss-title">账号</div>
+          <div class="ss-row">
+            <span id="set-acct" class="su-meta">本地存档</span>
+            <button id="btn-logout" class="btn btn-small btn-danger hidden">退出登录</button>
+          </div>
+        </div>
+        <div class="settings-about">Word Quest V1 · 四级背词 RPG · 完全离线</div>
+      </div>
+    </section>
+
+    <!-- ── 主题切换过场 ── -->
+    <div id="theme-transition" class="theme-transition hidden"></div>
+
+  </main>
+
+  <!-- ═══════ 底部导航 ═══════ -->
+  <nav id="nav" class="bottom-nav hidden">
+    <button data-nav="map" class="nav-btn"><img src="assets/icons/icon_map.svg" alt=""><small>地图</small></button>
+    <button data-nav="tasks" class="nav-btn"><img src="assets/icons/icon_quest.svg" alt=""><small>任务</small></button>
+    <button data-nav="vault" class="nav-btn"><img src="assets/icons/icon_vault.svg" alt=""><small>词藏</small></button>
+    <button data-nav="shop" class="nav-btn"><img src="assets/icons/icon_shop.svg" alt=""><small>商店</small></button>
+    <button data-nav="inventory" class="nav-btn"><img src="assets/icons/icon_bag.svg" alt=""><small>背包</small></button>
+    <button data-nav="growth" class="nav-btn"><img src="assets/icons/icon_xp.svg" alt=""><small>成长</small></button>
+    <button data-nav="settings" class="nav-btn"><img src="assets/icons/icon_settings.svg" alt=""><small>设置</small></button>
+  </nav>
+
+</div>
+
+<script src="js/words.js"></script>
+<script src="js/store.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

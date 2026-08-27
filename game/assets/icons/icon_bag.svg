@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="bag" cx="40%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#7A5A34"/>
+      <stop offset="100%" stop-color="#4E3620"/>
+    </radialGradient>
+  </defs>
+  <!-- 皮质背包 -->
+  <path d="M20 24 L20 18 Q20 10 32 10 Q44 10 44 18 L44 24 L52 28 L52 52 Q52 57 46 57 L18 57 Q12 57 12 52 L12 28 Z" fill="url(#bag)" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 袋口翻盖 -->
+  <path d="M20 24 L44 24 L44 20 Q44 14 32 14 Q20 14 20 20 Z" fill="#59402A" stroke="#2A2119" stroke-width="3.5"/>
+  <!-- 搭扣 -->
+  <rect x="27" y="24" width="10" height="9" rx="2" fill="#D9A441" stroke="#2A2119" stroke-width="3"/>
+  <!-- 缝线 -->
+  <path d="M16 34 L16 50 M48 34 L48 50" stroke="#3E2C1C" stroke-width="2" stroke-dasharray="3 3"/>
+  <!-- 高光 -->
+  <path d="M24 18 Q30 14 36 16" stroke="#9A7A50" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 240">
+  <defs>
+    <radialGradient id="xf" cx="45%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#F2DFAF"/>
+      <stop offset="55%" stop-color="#E7D1A3"/>
+      <stop offset="100%" stop-color="#C7AA72"/>
+    </radialGradient>
+    <linearGradient id="xg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3E5A3C"/>
+      <stop offset="100%" stop-color="#22351F"/>
+    </linearGradient>
+  </defs>
+  <!-- 地面阴影 -->
+  <ellipse cx="90" cy="228" rx="56" ry="8" fill="#0E1410" opacity=".4"/>
+  <!-- 红披风(两层) -->
+  <path d="M72 72 Q38 108 34 156 Q32 172 48 166 Q62 158 78 132 L76 72 Z" fill="#6E3A2E" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M76 74 Q88 108 94 142 Q96 156 88 160 Q78 152 78 134 L76 74 Z" fill="#8A3A2E" stroke="#2A2119" stroke-width="4"/>
+  <!-- 剑(右手持,身侧斜垂) -->
+  <path d="M118 134 L134 134 L138 140 L124 142 Z" fill="#6E5A3A" stroke="#2A2119" stroke-width="3"/>
+  <rect x="118" y="137" width="14" height="9" rx="3" fill="#C9992B" stroke="#2A2119" stroke-width="3"/>
+  <path d="M126 142 L144 210 L136 214 L118 146 Z" fill="#C7AA72" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M130 152 L138 190" stroke="#EAD9B0" stroke-width="2.5" opacity=".7"/>
+  <!-- 腿 -->
+  <path d="M80 168 L74 198 Q72 206 84 206 L94 206 L96 174 Z" fill="#22351F" stroke="#2A2119" stroke-width="5"/>
+  <path d="M100 168 L106 198 Q108 206 96 206 L86 206 L84 174 Z" fill="#22351F" stroke="#2A2119" stroke-width="5"/>
+  <!-- 靴子 -->
+  <path d="M72 206 L62 214 Q60 220 72 220 L92 220 L94 206 Z" fill="#4A3B28" stroke="#2A2119" stroke-width="4"/>
+  <path d="M108 206 L118 214 Q120 220 108 220 L88 220 L86 206 Z" fill="#4A3B28" stroke="#2A2119" stroke-width="4"/>
+  <!-- 躯干(青衫) -->
+  <path d="M70 118 Q64 142 74 158 Q82 170 90 170 Q98 170 106 158 Q116 142 110 118 Q98 126 90 126 Q82 126 70 118 Z" fill="url(#xg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 衣襟 -->
+  <path d="M82 124 L90 152 L98 124" stroke="#4E6E4A" stroke-width="3" fill="none"/>
+  <!-- 腰带 -->
+  <path d="M72 152 Q90 146 108 152 L106 158 Q90 164 74 158 Z" fill="#6E5A3A" stroke="#2A2119" stroke-width="3.5"/>
+  <rect x="84" y="148" width="12" height="10" rx="2" fill="#C9992B" stroke="#2A2119" stroke-width="3"/>
+  <!-- 左臂(负于身后) -->
+  <path d="M72 124 L56 140 Q52 146 58 148 L74 134" fill="#3E5A3C" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="58" cy="148" r="6" fill="url(#xf)" stroke="#2A2119" stroke-width="3"/>
+  <!-- 右臂(持剑) -->
+  <path d="M108 124 L124 140 Q128 146 124 150 L108 136" fill="#3E5A3C" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="124" cy="150" r="6" fill="url(#xf)" stroke="#2A2119" stroke-width="3"/>
+  <!-- 头 -->
+  <path d="M64 62 Q58 34 84 28 Q112 34 108 62 Q120 80 116 96 Q110 112 88 114 Q66 112 58 96 Q52 80 64 62 Z" fill="#8A5A32" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 发带(束发) -->
+  <path d="M88 36 L92 40 L88 44" stroke="#C9992B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- 发束(披肩) -->
+  <path d="M62 88 Q56 110 60 128 Q62 134 66 130 Q72 116 70 96 Z" fill="#3A3124" stroke="#2A2119" stroke-width="3"/>
+  <path d="M116 88 Q122 110 118 128 Q116 134 112 130 Q106 116 108 96 Z" fill="#3A3124" stroke="#2A2119" stroke-width="3"/>
+  <!-- 脸 -->
+  <ellipse cx="88" cy="92" rx="18" ry="15" fill="url(#xf)" stroke="#2A2119" stroke-width="4"/>
+  <!-- 眉(剑眉) -->
+  <path d="M70 84 L82 86 M106 84 L94 86" stroke="#2A2119" stroke-width="3" stroke-linecap="round"/>
+  <!-- 眼 -->
+  <ellipse cx="79" cy="90" rx="4" ry="5" fill="#FFF8EC" stroke="#2A2119" stroke-width="3"/>
+  <ellipse cx="97" cy="90" rx="4" ry="5" fill="#FFF8EC" stroke="#2A2119" stroke-width="3"/>
+  <circle cx="80" cy="91" r="2" fill="#2A2119"/>
+  <circle cx="96" cy="91" r="2" fill="#2A2119"/>
+  <!-- 嘴(沉着) -->
+  <path d="M83 100 Q88 103 93 100" stroke="#2A2119" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- 斗笠 -->
+  <path d="M90 34 L50 74 Q90 88 130 74 Z" fill="#6E5A3A" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M42 70 Q90 84 138 70 L136 78 Q90 92 44 78 Z" fill="#8A7445" stroke="#2A2119" stroke-width="4"/>
+  <path d="M90 38 L90 72" stroke="#2A2119" stroke-width="3"/>
+  <!-- 斗笠系带(飘动) -->
+  <path d="M56 72 Q48 66 50 60 Q56 58 60 62" stroke="#C9992B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>

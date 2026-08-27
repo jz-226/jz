@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="hg" cx="40%" cy="28%" r="75%">
+      <stop offset="0%" stop-color="#D9685C"/>
+      <stop offset="100%" stop-color="#A94B3F"/>
+    </radialGradient>
+  </defs>
+  <!-- 爱心 -->
+  <path d="M32 54 C14 42 8 30 12 21 C16 13 25 12 32 19 C39 12 48 13 52 21 C56 30 50 42 32 54 Z" fill="url(#hg)" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 高光 -->
+  <path d="M20 20 Q24 16 29 16" stroke="#F49A8E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+</svg>

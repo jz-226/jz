@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="lk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B675C"/>
+      <stop offset="100%" stop-color="#45413A"/>
+    </linearGradient>
+  </defs>
+  <!-- 锁体 -->
+  <rect x="12" y="28" width="40" height="28" rx="6" fill="url(#lk)" stroke="#2A2119" stroke-width="4"/>
+  <!-- 锁环 -->
+  <path d="M22 28 L22 18 Q22 8 32 8 Q42 8 42 18 L42 28" fill="none" stroke="#2A2119" stroke-width="6"/>
+  <path d="M23 27 L23 18 Q23 11 32 11 Q41 11 41 18 L41 27" fill="none" stroke="#6B675C" stroke-width="2.5"/>
+  <!-- 锁孔 -->
+  <circle cx="32" cy="41" r="5.5" fill="#2A2119"/>
+  <path d="M32 45 L32 51" stroke="#2A2119" stroke-width="3"/>
+</svg>

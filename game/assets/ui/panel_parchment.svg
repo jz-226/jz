@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 170" preserveAspectRatio="none">
+  <defs>
+    <radialGradient id="pg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#F0DDB2"/>
+      <stop offset="65%" stop-color="#E7D1A3"/>
+      <stop offset="100%" stop-color="#C9A768"/>
+    </radialGradient>
+  </defs>
+  <!-- 手绘羊皮纸外框 -->
+  <path d="M14 10 Q130 4 246 12 L252 26 Q258 88 248 152 Q238 164 128 165 Q28 166 12 150 Q6 90 14 10 Z" fill="url(#pg)" stroke="#2A2119" stroke-width="7"/>
+  <!-- 内衬线 -->
+  <path d="M30 27 Q130 21 232 29 Q238 90 230 145 Q220 151 128 151 Q32 153 27 143 Q24 90 30 27 Z" fill="none" stroke="#8A6D3F" stroke-width="2.5" opacity=".65"/>
+  <!-- 纸斑与划痕 -->
+  <circle cx="62" cy="92" r="3" fill="#8A6D3F" opacity=".16"/>
+  <circle cx="150" cy="58" r="2.2" fill="#8A6D3F" opacity=".14"/>
+  <circle cx="196" cy="120" r="3.4" fill="#8A6D3F" opacity=".15"/>
+  <circle cx="88" cy="132" r="1.8" fill="#8A6D3F" opacity=".14"/>
+  <path d="M72 40 Q92 36 110 42 M150 140 Q170 136 190 142" stroke="#8A6D3F" stroke-width="1.6" fill="none" opacity=".14"/>
+  <!-- 四角饰 -->
+  <path d="M22 26 L22 46 M22 26 L42 26" stroke="#2A2119" stroke-width="4" stroke-linecap="round"/>
+  <path d="M238 26 L238 46 M238 26 L218 26" stroke="#2A2119" stroke-width="4" stroke-linecap="round"/>
+  <path d="M22 144 L22 124 M22 144 L42 144" stroke="#2A2119" stroke-width="4" stroke-linecap="round"/>
+  <path d="M238 144 L238 124 M238 144 L218 144" stroke="#2A2119" stroke-width="4" stroke-linecap="round"/>
+</svg>

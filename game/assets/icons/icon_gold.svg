@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="cg" cx="38%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#F7D87A"/>
+      <stop offset="55%" stop-color="#D9A441"/>
+      <stop offset="100%" stop-color="#9C7320"/>
+    </radialGradient>
+  </defs>
+  <!-- 金币 -->
+  <circle cx="32" cy="32" r="27" fill="url(#cg)" stroke="#2A2119" stroke-width="4"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#8A6418" stroke-width="3"/>
+  <!-- 纹章 -->
+  <path d="M26 38 L28 24 L32 30 L36 24 L38 38 Z" fill="#6E4E0E" stroke="#2A2119" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- 高光 -->
+  <path d="M20 22 Q24 16 30 16" stroke="#FFE9A8" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 56" preserveAspectRatio="none">
+  <!-- HP 条外框:木框 + 石边(内芯透明,血量从 CSS 透出) -->
+  <rect x="5" y="5" width="310" height="46" rx="10" fill="#402D1C" stroke="#2A2119" stroke-width="6"/>
+  <rect x="10" y="10" width="300" height="36" rx="7" fill="none" stroke="#756B5A" stroke-width="2.5"/>
+  <path d="M16 16 L304 16" stroke="#C25E4F" stroke-width="3" opacity=".35"/>
+</svg>

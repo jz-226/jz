@@ -1,0 +1,143 @@
+/* ═══════════════════════════════════════════════════════
+   Word Quest · Design Tokens (S0)
+   Warm Fantasy Palette · 材质系统 · 排版 · 节奏
+   ═══════════════════════════════════════════════════════ */
+
+/* 奇幻 Display Font(自托管,离线可用) */
+@font-face {
+  font-family: "Cinzel Decorative";
+  src: url("../assets/fonts/cinzel-decorative-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cinzel Decorative";
+  src: url("../assets/fonts/cinzel-decorative-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  /* ── 色板 · Warm Fantasy Palette ── */
+  --forest:       #18251F;   /* 主背景·深森林 */
+  --forest-2:     #0F1A14;   /* 更深处 */
+  --ink:          #2A2119;   /* 手绘轮廓·深墨 */
+  --wood:         #59402A;   /* 木头 */
+  --wood-2:       #3E2C1C;   /* 深木 */
+  --parchment:    #E7D1A3;   /* 羊皮纸 */
+  --parchment-2:  #C7AA72;   /* 旧纸 */
+  --stone:        #756B5A;   /* 石 */
+  --stone-2:      #4A443A;   /* 深石 */
+  --metal:        #292722;   /* 深金属 */
+  --gold:         #D9A441;   /* 金 */
+  --gold-hi:      #F0C75E;   /* 金高光 */
+  --green:        #527A4B;   /* 森林绿 */
+  --green-hi:     #7FA86A;   /* 亮绿 */
+  --red:          #A94B3F;   /* 皇红 */
+  --red-hi:       #C25E4F;   /* 亮红 */
+  --blue:         #4C78A8;   /* 魔法蓝 */
+  --blue-hi:      #6E9AC4;   /* 亮蓝 */
+
+  /* ── 文本 ── */
+  --text:         #F2E8CF;   /* 暖白正文 */
+  --text-muted:   #A89A7C;   /* 暖灰说明 */
+  --text-ink:     #3B2E1E;   /* 羊皮纸上的深色文字 */
+
+  /* ── 排版 ── */
+  --font-display:  "Cinzel Decorative", Georgia, "Times New Roman", serif;
+  --font-word:     Georgia, "Times New Roman", serif;   /* 单词正文:有真小写,Cinzel 是大写专用 */
+  --font-title-cn: "KaiTi", "STKaiti", "STSong", "SimSun", serif;
+  --font-body:     "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-num:      "Cinzel Decorative", Georgia, serif;
+
+  /* ── 材质 ── */
+  --mat-wood:       #59402A;
+  --mat-wood-deep:  #3E2C1C;
+  --mat-stone:      #6E6655;
+  --mat-stone-deep: #48423A;
+  --mat-parchment:  #E7D1A3;
+  --mat-metal:      #4A4740;
+
+  /* ── 间距节奏(8px 基础) ── */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 20px;
+  --space-4: 28px;
+
+  /* ── 圆角(小倒角,非 SaaS 大圆角) ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* ── 动画档位 ── */
+  --t-fast: 150ms;
+  --t-mid: 300ms;
+  --t-slow: 500ms;
+  --t-scene: 800ms;
+  --ease-pop: cubic-bezier(.34, 1.56, .64, 1);
+  --shadow-mat: 0 5px 0 rgba(24, 14, 6, .35), 0 8px 18px rgba(10, 6, 2, .45);
+
+  /* ── 材质背景(主题可换:UI 面板/按钮纹理) ── */
+  --mat-panel:       url("../assets/ui/panel_parchment.svg");
+  --mat-panel-dark:  url("../assets/ui/panel_metal.svg");
+  --mat-panel-wood:  url("../assets/ui/panel_wood.svg");
+  --mat-btn-stone:   url("../assets/ui/button_stone.svg");
+  --mat-btn-wood:    url("../assets/ui/button_wood.svg");
+  --mat-btn-metal:   url("../assets/ui/button_metal.svg");
+  /* 面板底色:统一纯色(原羊皮纸渐变纹理会和棕色文字混在一起,改纯色更清晰) */
+  --panel-bg:        #F1E2B4;
+  --panel-border:    #8A6D3F;
+  /* 最底层页面背景:暖金暮色云海(写实照片,见 CREDITS.md) */
+  --bg-scene:        url("../assets/bg_western.webp");
+}
+
+/* ═══════════════════════════════════════════════════════
+   East · 东方山海主题(🏯)
+   竹墨青绿底 · 朱砂点题 · 宣纸面板 · 楷行题字
+   ═══════════════════════════════════════════════════════ */
+:root[data-theme="east"] {
+  /* ── 色板 · 东方山海 Palette ── */
+  --forest:       #1E2A20;   /* 主背景·竹墨青绿 */
+  --forest-2:     #101813;   /* 更深处 */
+  --ink:          #262019;   /* 墨色轮廓 */
+  --wood:         #6B4A2E;   /* 原木 */
+  --wood-2:       #462F1D;   /* 深木 */
+  --parchment:    #F0E3C4;   /* 宣纸 */
+  --parchment-2:  #D9C89C;   /* 旧纸 */
+  --stone:        #7C7A6E;   /* 山石 */
+  --stone-2:      #4C4A40;   /* 深石 */
+  --metal:        #2E2C26;   /* 深墨金属 */
+  --gold:         #C9992B;   /* 鎏金 */
+  --gold-hi:      #E8BC4A;   /* 鎏金高光 */
+  --green:        #4E6E44;   /* 竹青 */
+  --green-hi:     #7FA86A;   /* 嫩绿 */
+  --red:          #A93A2E;   /* 朱砂 */
+  --red-hi:       #C54A3C;   /* 亮朱砂 */
+  --blue:         #3E6B8E;   /* 青花 */
+  --blue-hi:      #5E92B8;   /* 亮青 */
+
+  /* ── 文本 ── */
+  --text:         #F4ECDC;
+  --text-muted:   #B4A88C;
+  --text-ink:     #2E2418;
+
+  /* ── 排版:标题改用楷行系统字体(离线可用) ── */
+  --font-display:  "STXingkai", "STKaiti", "KaiTi", "KaiTi_GB2312", "SimSun", serif;
+  --font-word:     "KaiTi", "STKaiti", "STXingkai", "KaiTi_GB2312", "SimSun", serif;  /* 楷体优先:英文有真小写 */
+  --font-title-cn: "KaiTi", "STKaiti", "KaiTi_GB2312", "SimSun", serif;
+  --font-body:     "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-num:      "Cinzel Decorative", Georgia, serif;
+
+  /* ── 材质背景:宣纸 / 漆木 ── */
+  --mat-panel:       url("../assets/east/ui/panel_paper.svg");
+  --mat-panel-dark:  url("../assets/east/ui/panel_lacquer.svg");
+  --mat-panel-wood:  url("../assets/east/ui/panel_lacquer.svg");
+  --mat-btn-stone:   url("../assets/east/ui/button_bamboo.svg");
+  --mat-btn-wood:    url("../assets/east/ui/button_lacquer.svg");
+  --mat-btn-metal:   url("../assets/east/ui/button_ink.svg");
+  /* 面板底色:统一宣纸色(原纹理同上,统一纯色) */
+  --panel-bg:        #F4ECD8;
+  --panel-border:    #9A835C;
+  /* 最底层页面背景:水墨青绿峰林(写实照片,见 CREDITS.md) */
+  --bg-scene:        url("../assets/east/bg_east.webp");
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 170" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="mg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5C584F"/>
+      <stop offset="45%" stop-color="#45413A"/>
+      <stop offset="100%" stop-color="#2B2823"/>
+    </linearGradient>
+  </defs>
+  <!-- 金属外框 -->
+  <path d="M12 12 Q130 6 248 14 L252 28 Q258 92 248 154 Q238 164 128 165 Q28 166 12 152 Q6 92 12 12 Z" fill="url(#mg)" stroke="#2A2119" stroke-width="7"/>
+  <!-- 金属斜纹 -->
+  <path d="M18 40 L240 52 M18 70 L240 82 M18 100 L240 112 M18 130 L240 142" stroke="#3A3730" stroke-width="1.6" fill="none" opacity=".5"/>
+  <!-- 鎏金内衬 -->
+  <path d="M30 28 Q130 22 232 30 Q238 92 230 146 Q222 152 130 152 Q36 154 30 144 Q26 92 30 28 Z" fill="none" stroke="#D9A441" stroke-width="2.5" opacity=".7"/>
+</svg>

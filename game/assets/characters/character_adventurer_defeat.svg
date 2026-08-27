@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 240">
+  <defs>
+    <radialGradient id="adc" cx="45%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#F2DFAF"/>
+      <stop offset="55%" stop-color="#E7D1A3"/>
+      <stop offset="100%" stop-color="#C7AA72"/>
+    </radialGradient>
+    <linearGradient id="adt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D9A441"/>
+      <stop offset="100%" stop-color="#A9742B"/>
+    </linearGradient>
+    <radialGradient id="adh" cx="45%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#4A6B3C"/>
+      <stop offset="60%" stop-color="#31492C"/>
+      <stop offset="100%" stop-color="#223621"/>
+    </radialGradient>
+  </defs>
+  <!-- 地面阴影(横躺) -->
+  <ellipse cx="92" cy="216" rx="62" ry="10" fill="#0E1410" opacity=".4"/>
+  <!-- 摊倒披风 -->
+  <path d="M54 176 Q38 184 34 194 Q34 202 46 202 L72 196 L70 180 Z" fill="#7A2A24" stroke="#2A2119" stroke-width="4"/>
+  <path d="M50 182 Q42 190 42 196 Q44 200 54 198 L66 194 L64 184 Z" fill="#A03A2E" stroke="#2A2119" stroke-width="3"/>
+  <!-- 瘫倒身体(朝左躺) -->
+  <path d="M64 188 Q56 172 70 166 Q84 162 98 168 Q112 172 116 184 Q110 196 96 198 Q70 200 64 190 Z" fill="url(#adt)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M66 180 Q86 176 102 182" stroke="#8A5A1A" stroke-width="3" fill="none"/>
+  <path d="M70 194 Q84 200 98 194" stroke="#59402A" stroke-width="3.5" fill="none"/>
+  <!-- 腿(瘫伸) -->
+  <path d="M108 192 L118 210 Q120 216 110 216 L100 212 L102 194 Z" fill="#2E4629" stroke="#2A2119" stroke-width="5"/>
+  <path d="M118 210 L128 214 Q132 218 122 220 L110 218 L112 212 Z" fill="#59402A" stroke="#2A2119" stroke-width="4"/>
+  <!-- 兜帽(侧倒) -->
+  <path d="M58 176 Q50 150 74 144 Q100 140 106 158 Q112 148 118 158 Q120 172 112 176 Q126 184 122 200 Q118 216 98 222 Q74 228 54 218 Q38 208 38 192 Q38 178 50 176 Q42 178 58 176 Z" fill="url(#adh)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M62 190 Q70 194 78 190" stroke="#18251F" stroke-width="4" opacity=".45" fill="none"/>
+  <!-- 脸 -->
+  <ellipse cx="70" cy="188" rx="18" ry="14" fill="url(#adc)" stroke="#2A2119" stroke-width="4" transform="rotate(10 70 188)"/>
+  <!-- X 眼 -->
+  <path d="M62 182 L72 192 M72 182 L62 192" stroke="#2A2119" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M80 182 L90 192 M90 182 L80 192" stroke="#2A2119" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- 嘴(晕) -->
+  <path d="M68 200 Q72 196 76 200" stroke="#2A2119" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- 掉落剑 -->
+  <path d="M136 178 L158 210 L152 216 L130 184 Z" fill="#D9DDE3" stroke="#2A2119" stroke-width="4"/>
+  <rect x="136" y="182" width="14" height="9" rx="3" fill="#D9A441" stroke="#2A2119" stroke-width="3" transform="rotate(38 143 187)"/>
+  <!-- 眩晕圈 -->
+  <ellipse cx="128" cy="156" rx="14" ry="8" fill="none" stroke="#E7D1A3" stroke-width="3"/>
+  <circle cx="128" cy="153" r="2.5" fill="#2A2119" opacity=".6"/>
+</svg>

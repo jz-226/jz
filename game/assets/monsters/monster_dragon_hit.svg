@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 230">
+  <defs>
+    <radialGradient id="drg" cx="40%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#8CC27A"/>
+      <stop offset="55%" stop-color="#4E8A4A"/>
+      <stop offset="100%" stop-color="#2C5230"/>
+    </radialGradient>
+  </defs>
+  <!-- 垂落的翅膀 -->
+  <path d="M84 78 L30 44 Q22 40 32 42 L74 60 M70 70 L40 62 Q32 60 42 62 L76 66 M76 96 L48 96 Q40 98 50 100 L84 100" fill="#2C5230" stroke="#2A2119" stroke-width="6"/>
+  <path d="M156 78 L210 44 Q218 40 208 42 L166 60 M170 70 L200 62 Q208 60 198 62 L164 66 M164 96 L192 96 Q200 98 190 100 L156 100" fill="#2C5230" stroke="#2A2119" stroke-width="6"/>
+  <!-- 后仰的头 -->
+  <path d="M92 40 Q88 20 120 18 Q152 20 148 40 Q158 56 152 72 Q142 92 118 92 Q94 92 86 72 Q80 56 92 40 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 受击星星 -->
+  <path d="M64 34 L66 41 L73 44 L66 47 L64 54 L62 47 L55 44 L62 41 Z" fill="#F0C75E" stroke="#2A2119" stroke-width="2.5"/>
+  <!-- 挤闭的眼 -->
+  <path d="M96 58 L118 56 M144 58 L122 56" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <!-- 疼痛嘴 -->
+  <path d="M104 80 Q120 72 136 80" stroke="#2A2119" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- 后缩身体 -->
+  <path d="M92 92 Q86 116 94 138 L148 138 Q156 116 148 92 Q126 106 120 106 Q100 106 92 92 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="5"/>
+  <path d="M80 138 Q68 172 84 198 Q92 216 120 216 Q150 216 158 198 Q172 172 162 138 Q140 152 120 152 Q100 152 80 138 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="7" stroke-linejoin="round"/>
+  <!-- 黄金胸徽 -->
+  <path d="M104 152 L110 164 L122 166 L114 176 L116 188 L104 182 L92 188 L94 176 L86 166 L98 164 Z" fill="#D9A441" stroke="#2A2119" stroke-width="4"/>
+  <!-- 后退线 -->
+  <path d="M34 160 L14 168 M42 178 L24 190" stroke="#8CC27A" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+  <!-- 腿 -->
+  <path d="M96 208 L90 220 Q88 228 100 228 L116 228 L118 214 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="6"/>
+  <path d="M144 208 L150 220 Q152 228 140 228 L124 228 L122 214 Z" fill="url(#drg)" stroke="#2A2119" stroke-width="6"/>
+</svg>

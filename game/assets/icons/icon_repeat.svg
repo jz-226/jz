@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="rp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7FA86A"/>
+      <stop offset="100%" stop-color="#4E6E44"/>
+    </linearGradient>
+  </defs>
+  <!-- 循环弧线 -->
+  <path d="M44 24 A 20 20 0 0 0 14 30" fill="none" stroke="url(#rp)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M20 42 A 20 20 0 0 0 50 36" fill="none" stroke="url(#rp)" stroke-width="7" stroke-linecap="round"/>
+  <!-- 箭头 -->
+  <path d="M12 16 L14 30 L26 22 Z" fill="#527A4B" stroke="#2A2119" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M52 50 L50 36 L38 44 Z" fill="#527A4B" stroke="#2A2119" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>

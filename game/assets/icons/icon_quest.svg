@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 委托卷轴 -->
+  <path d="M18 8 Q26 4 34 6 L44 8 L44 56 Q36 52 28 54 L18 52 Z" fill="#E7D1A3" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 卷轴两端 -->
+  <path d="M16 8 Q22 2 28 6 L20 12 Q14 16 16 8 Z" fill="#C7AA72" stroke="#2A2119" stroke-width="3"/>
+  <path d="M18 52 Q24 58 30 54 L44 56" fill="#C7AA72" stroke="#2A2119" stroke-width="3"/>
+  <!-- 卷轴横轴 -->
+  <rect x="44" y="6" width="6" height="48" rx="3" fill="#59402A" stroke="#2A2119" stroke-width="3"/>
+  <!-- 文字线 -->
+  <path d="M23 22 L38 24 M23 30 L38 32 M23 38 L33 40" stroke="#8A6D3F" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- 火漆 -->
+  <circle cx="22" cy="47" r="5" fill="#A94B3F" stroke="#2A2119" stroke-width="2.5"/>
+</svg>

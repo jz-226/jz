@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 240">
+  <defs>
+    <radialGradient id="adc" cx="45%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#F2DFAF"/>
+      <stop offset="55%" stop-color="#E7D1A3"/>
+      <stop offset="100%" stop-color="#C7AA72"/>
+    </radialGradient>
+    <linearGradient id="adt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D9A441"/>
+      <stop offset="100%" stop-color="#A9742B"/>
+    </linearGradient>
+    <radialGradient id="adh" cx="45%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#4A6B3C"/>
+      <stop offset="60%" stop-color="#31492C"/>
+      <stop offset="100%" stop-color="#223621"/>
+    </radialGradient>
+  </defs>
+  <!-- 地面阴影 -->
+  <ellipse cx="88" cy="228" rx="56" ry="9" fill="#0E1410" opacity=".4"/>
+  <!-- 披风(前摆) -->
+  <path d="M82 66 Q116 104 124 156 Q128 172 110 166 Q94 156 82 130 L80 66 Z" fill="#7A2A24" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M80 68 Q66 100 62 136 Q60 152 70 156 Q80 148 84 128 L82 68 Z" fill="#A03A2E" stroke="#2A2119" stroke-width="4"/>
+  <!-- 受击星星 -->
+  <path d="M38 58 L40 64 L46 66 L40 68 L38 74 L36 68 L30 66 L36 64 Z" fill="#F0C75E" stroke="#2A2119" stroke-width="2.5"/>
+  <path d="M150 40 L151 44 L155 45 L151 46 L150 50 L149 46 L145 45 L149 44 Z" fill="#F0C75E" stroke="#2A2119" stroke-width="2"/>
+  <!-- 后仰腿(重心后移) -->
+  <path d="M82 168 L70 200 Q68 208 80 208 L92 208 L96 174 Z" fill="#2E4629" stroke="#2A2119" stroke-width="5"/>
+  <path d="M70 208 L60 214 Q58 220 70 220 L90 220 L92 208 Z" fill="#59402A" stroke="#2A2119" stroke-width="4"/>
+  <path d="M100 168 L112 196 Q114 204 102 204 L90 204 L86 172 Z" fill="#2E4629" stroke="#2A2119" stroke-width="5"/>
+  <path d="M112 204 L122 210 Q124 216 112 216 L92 216 L90 204 Z" fill="#59402A" stroke="#2A2119" stroke-width="4"/>
+  <!-- 躯干(后仰) -->
+  <path d="M72 114 Q64 140 76 158 Q84 172 92 172 Q100 172 108 158 Q118 140 110 114 Q98 122 92 122 Q84 122 72 114 Z" fill="url(#adt)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M92 122 L92 150" stroke="#8A5A1A" stroke-width="3"/>
+  <path d="M74 148 Q92 142 110 148 L108 154 Q92 160 76 154 Z" fill="#59402A" stroke="#2A2119" stroke-width="3.5"/>
+  <rect x="86" y="144" width="12" height="10" rx="2" fill="#F0C75E" stroke="#2A2119" stroke-width="3"/>
+  <!-- 左臂(后扬) -->
+  <path d="M72 120 L54 132 Q48 136 54 140 L74 128" fill="#3E5A33" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="54" cy="140" r="6" fill="url(#adc)" stroke="#2A2119" stroke-width="3"/>
+  <!-- 右臂(举剑护身) -->
+  <path d="M108 120 L134 134 Q140 138 140 144 L112 130" fill="#3E5A33" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="140" cy="144" r="6" fill="url(#adc)" stroke="#2A2119" stroke-width="3"/>
+  <!-- 剑(护手在手上,剑身朝右上斜举) -->
+  <path d="M138 142 L162 98 L168 104 L144 148 Z" fill="#D9DDE3" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="132" y="138" width="16" height="9" rx="3" fill="#D9A441" stroke="#2A2119" stroke-width="3" transform="rotate(-38 140 143)"/>
+  <path d="M136 132 L140 138 L146 136 L142 130 Z" fill="#59402A" stroke="#2A2119" stroke-width="3"/>
+  <!-- 兜帽(后仰) -->
+  <path d="M60 50 Q52 22 92 14 Q130 24 124 52 Q136 72 132 94 Q124 116 92 118 Q62 116 54 94 Q50 72 60 50 Z" fill="url(#adh)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 兜帽阴影 -->
+  <path d="M64 70 Q92 60 120 70 Q120 90 92 94 Q64 90 64 70 Z" fill="#18251F" opacity=".5"/>
+  <!-- 脸 -->
+  <ellipse cx="92" cy="80" rx="20" ry="16" fill="url(#adc)" stroke="#2A2119" stroke-width="4"/>
+  <!-- X 眼(受击) -->
+  <path d="M76 74 L86 84 M86 74 L76 84" stroke="#2A2119" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M100 74 L110 84 M110 74 L100 84" stroke="#2A2119" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- 嘴(吃痛) -->
+  <path d="M84 92 Q92 88 100 92" stroke="#2A2119" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

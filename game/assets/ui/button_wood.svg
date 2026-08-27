@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 84" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="bw" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B4C2E"/>
+      <stop offset="50%" stop-color="#59402A"/>
+      <stop offset="100%" stop-color="#402D1C"/>
+    </linearGradient>
+  </defs>
+  <!-- 木按钮外框 -->
+  <rect x="7" y="7" width="206" height="70" rx="9" fill="url(#bw)" stroke="#2A2119" stroke-width="7"/>
+  <!-- 顶面高光 -->
+  <rect x="14" y="13" width="192" height="12" rx="5" fill="#7A5A38" opacity=".55"/>
+  <!-- 木纹 -->
+  <path d="M24 34 Q70 28 120 36 T200 32 M20 52 Q80 46 140 54 T208 50" stroke="#3E2C1C" stroke-width="2" fill="none" opacity=".45"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120">
+  <!-- 挥剑弧形斩 -->
+  <path d="M150 10 Q60 20 16 84 Q50 88 84 66 Q60 96 100 104 Q150 88 150 10 Z" fill="#F0C75E" stroke="#2A2119" stroke-width="4" opacity=".9"/>
+  <path d="M150 10 Q68 22 22 82 Q52 78 78 62" fill="none" stroke="#FFF8EC" stroke-width="4" stroke-linecap="round" opacity=".95"/>
+  <!-- 尾焰 -->
+  <path d="M148 12 Q162 30 150 10" fill="#FFF8EC" opacity=".9"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="pl" cx="40%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#F09BD0"/>
+      <stop offset="60%" stop-color="#C35EA8"/>
+      <stop offset="100%" stop-color="#8E3B77"/>
+    </radialGradient>
+  </defs>
+  <!-- 瓶身 -->
+  <path d="M22 12 L42 12 L42 20 L48 34 Q50 52 32 56 Q14 52 16 34 L22 20 Z" fill="url(#pl)" stroke="#2A2119" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 瓶颈 -->
+  <rect x="24" y="9" width="16" height="6" rx="2" fill="#E7D1A3" stroke="#2A2119" stroke-width="3"/>
+  <!-- 瓶塞 -->
+  <path d="M25 4 L39 4 L37 9 L27 9 Z" fill="#59402A" stroke="#2A2119" stroke-width="3"/>
+  <!-- 液面 -->
+  <path d="M20 36 Q32 30 44 36 L44 40 Q32 44 20 40 Z" fill="#8E3B77" opacity=".6"/>
+  <!-- 高光 -->
+  <path d="M20 24 Q20 32 24 36" stroke="#FFC4E4" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

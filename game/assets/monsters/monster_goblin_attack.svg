@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 190">
+  <defs>
+    <radialGradient id="gbg" cx="45%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#7FA968"/>
+      <stop offset="60%" stop-color="#527A4B"/>
+      <stop offset="100%" stop-color="#3A5C36"/>
+    </radialGradient>
+  </defs>
+  <!-- 大耳朵(前倾) -->
+  <path d="M40 56 L14 30 Q10 24 20 24 L52 46 Q56 52 52 58 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="5"/>
+  <path d="M160 56 L186 30 Q190 24 180 24 L148 46 Q144 52 148 58 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="5"/>
+  <!-- 头(前倾张嘴) -->
+  <path d="M56 44 Q52 14 100 10 Q148 14 144 44 Q152 82 134 104 Q118 118 100 118 Q82 118 66 104 Q48 82 56 44 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 怒眼 -->
+  <path d="M66 58 L86 64 M134 58 L114 64" stroke="#2A2119" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="76" cy="70" rx="10" ry="11" fill="#FFF8EC" stroke="#2A2119" stroke-width="4"/>
+  <ellipse cx="124" cy="70" rx="10" ry="11" fill="#FFF8EC" stroke="#2A2119" stroke-width="4"/>
+  <circle cx="79" cy="73" r="5" fill="#2A2119"/>
+  <circle cx="121" cy="73" r="5" fill="#2A2119"/>
+  <!-- 大鼻 -->
+  <ellipse cx="100" cy="86" rx="8" ry="6" fill="#3A5C36" stroke="#2A2119" stroke-width="4"/>
+  <!-- 巨嘴吼叫 -->
+  <path d="M70 100 Q100 132 130 100" fill="#2C4230" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M78 106 L80 116 M88 110 L90 120 M112 110 L110 120 M122 106 L120 116" stroke="#FFF8EC" stroke-width="4" stroke-linecap="round"/>
+  <!-- 高举木棍 -->
+  <rect x="150" y="30" width="8" height="70" rx="3" fill="#59402A" stroke="#2A2119" stroke-width="4" transform="rotate(28 154 65)"/>
+  <ellipse cx="166" cy="26" rx="15" ry="7" fill="#6B4C2E" stroke="#2A2119" stroke-width="4" transform="rotate(28 166 26)"/>
+  <!-- 前扑身体 -->
+  <path d="M78 118 L66 158 Q66 172 96 172 Q126 172 126 158 L122 118 Q112 128 100 128 Q88 128 78 118 Z" fill="url(#gbg)" stroke="#2A2119" stroke-width="5" stroke-linejoin="round"/>
+  <!-- 冲刺线 -->
+  <path d="M22 90 L6 86 M24 108 L8 112" stroke="#7FA968" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+</svg>
