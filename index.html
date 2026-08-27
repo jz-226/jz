@@ -9,16 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="interactions.css">
 </head>
 <body>
   <header class="site-header shell">
-    <a class="wordmark" href="#top" aria-label="回到首页">JZ—26</a>
+    <a class="wordmark" href="#top" aria-label="回到首页" data-cursor="HOME">JZ—26</a>
     <nav aria-label="页面导航">
       <a href="#work">01 / WORK</a>
       <a href="#about">02 / PROFILE</a>
       <a href="#archive">03 / ARCHIVE</a>
     </nav>
-    <a class="header-contact" href="mailto:2175564440@qq.com">CONTACT ↗</a>
+    <a class="header-contact" href="mailto:2175564440@qq.com" data-cursor="EMAIL">CONTACT ↗</a>
   </header>
 
   <main id="top">
@@ -27,7 +28,7 @@
         <p class="index-label">INDEX / 2026 / 01</p>
         <h1>把想法做成<br><em>真实的体验。</em></h1>
         <p class="intro">姜梓，数字媒体艺术专业。做 AI 产品、交互体验与独立游戏，也负责把它们完成、上线，交到用户手中。</p>
-        <a class="under-link" href="#work">进入项目目录 <span>↓</span></a>
+        <a class="under-link" href="#work" data-cursor="EXPLORE">进入项目目录 <span>↓</span></a>
       </div>
 
       <figure class="masthead-image reveal">
@@ -42,14 +43,26 @@
       </div>
     </section>
 
+    <section class="control-room shell reveal" aria-label="工作方法互动控制台">
+      <div class="control-top"><span>JZ / WORKING SYSTEM</span><span id="controlStatus">01 — DEFINE</span><span>CLICK A MODE</span></div>
+      <div class="control-grid">
+        <div class="control-modes" role="tablist" aria-label="工作方式">
+          <button class="control-mode active" role="tab" aria-selected="true" data-code="01" data-name="DEFINE" data-copy="从一个具体的卡点出发，先确认谁在什么场景里失去下一步。">01 / DEFINE</button>
+          <button class="control-mode" role="tab" aria-selected="false" data-code="02" data-name="PROTOTYPE" data-copy="把判断变成可见的路径、可点按的界面与可以被验证的交互。">02 / PROTOTYPE</button>
+          <button class="control-mode" role="tab" aria-selected="false" data-code="03" data-name="SHIP" data-copy="将视觉、前端和真实反馈接在一起，让作品不止停在展示稿。">03 / SHIP</button>
+        </div>
+        <div class="control-output" aria-live="polite"><p class="terminal-line">$ jz.system --mode <span id="controlCommand">define</span></p><strong id="controlNumber">01</strong><p id="controlCopy">从一个具体的卡点出发，先确认谁在什么场景里失去下一步。</p><span class="terminal-caret">READY_</span></div>
+      </div>
+    </section>
+
     <section class="work" id="work">
       <div class="directory-head shell reveal"><span>01 / SELECTED WORK</span><span>JIANG ZI — PORTFOLIO</span><span>HOVER TO PREVIEW</span></div>
       <div class="directory-list" role="list">
-        <button class="project-row reveal" role="listitem" data-case="offerpilot" data-image="assets/offerpilot-hero.jpg" data-preview-video="assets/offerpilot-showcase.mp4" data-alt="OfferPilot 产品界面" data-type="AI PRODUCT"><span>2026</span><b>OfferPilot<small>/ P. 01 — AI 职业成长 Agent</small></b><i>AI PRODUCT</i></button>
-        <button class="project-row reveal" role="listitem" data-case="wind" data-image="assets/6.png" data-alt="Marketing Wind Tunnel 决策界面" data-type="AI OPERATIONS"><span>2026</span><b>Marketing Wind Tunnel<small>/ P. 02 — 让营销方案先被攻击一次</small></b><i>AI OPERATIONS</i></button>
-        <button class="project-row reveal" role="listitem" data-case="tutor" data-image="assets/屏幕截图 2026-06-18 003259.jpg" data-preview-video="assets/tutor-create-course.mp4" data-alt="姜记学情本小程序界面" data-type="MINI PROGRAM"><span>2026</span><b>姜记学情本<small>/ P. 03 — 给家教老师的学生管理工具</small></b><i>MINI PROGRAM</i></button>
-        <button class="project-row reveal" role="listitem" data-case="wordquest" data-image="assets/wordquest-cover.png" data-alt="单词远征游戏封面" data-type="H5 GAME"><span>2025</span><b>单词远征<small>/ P. 04 — TapTap 上线的四级背词 RPG</small></b><i>H5 GAME</i></button>
-        <button class="project-row reveal" role="listitem" data-case="before8" data-image="assets/before-8am-logo.png" data-alt="早八在逃游戏标识" data-type="GAME DESIGN"><span>2026</span><b>早八在逃<small>/ P. 05 — 在早八以前，离开午夜校园</small></b><i>GAME DESIGN</i></button>
+        <button class="project-row reveal" role="listitem" data-cursor="OPEN CASE" data-case="offerpilot" data-image="assets/offerpilot-hero.jpg" data-preview-video="assets/offerpilot-showcase.mp4" data-alt="OfferPilot 产品界面" data-type="AI PRODUCT"><span>2026</span><b>OfferPilot<small>/ P. 01 — AI 职业成长 Agent</small></b><i>AI PRODUCT</i></button>
+        <button class="project-row reveal" role="listitem" data-cursor="OPEN CASE" data-case="wind" data-image="assets/6.png" data-alt="Marketing Wind Tunnel 决策界面" data-type="AI OPERATIONS"><span>2026</span><b>Marketing Wind Tunnel<small>/ P. 02 — 让营销方案先被攻击一次</small></b><i>AI OPERATIONS</i></button>
+        <button class="project-row reveal" role="listitem" data-cursor="OPEN CASE" data-case="tutor" data-image="assets/屏幕截图 2026-06-18 003259.jpg" data-preview-video="assets/tutor-create-course.mp4" data-alt="姜记学情本小程序界面" data-type="MINI PROGRAM"><span>2026</span><b>姜记学情本<small>/ P. 03 — 给家教老师的学生管理工具</small></b><i>MINI PROGRAM</i></button>
+        <button class="project-row reveal" role="listitem" data-cursor="OPEN CASE" data-case="wordquest" data-image="assets/wordquest-cover.png" data-alt="单词远征游戏封面" data-type="H5 GAME"><span>2025</span><b>单词远征<small>/ P. 04 — TapTap 上线的四级背词 RPG</small></b><i>H5 GAME</i></button>
+        <button class="project-row reveal" role="listitem" data-cursor="OPEN CASE" data-case="before8" data-image="assets/before-8am-logo.png" data-alt="早八在逃游戏标识" data-type="GAME DESIGN"><span>2026</span><b>早八在逃<small>/ P. 05 — 在早八以前，离开午夜校园</small></b><i>GAME DESIGN</i></button>
       </div>
       <div class="directory-foot shell"><span>点击作品，查看完整案例</span><span>05 PROJECTS / 2025—2026</span></div>
       <aside class="hover-preview" id="hoverPreview" aria-hidden="true"><img id="previewImage" alt=""><video id="previewVideo" muted loop playsinline hidden aria-hidden="true"></video></aside>
@@ -102,6 +115,7 @@
     </div>
   </div>
 
+  <div class="cursor-note" id="cursorNote" aria-hidden="true"><span>JZ /</span><b>VIEW</b></div>
   <div class="video-modal" id="video"><button id="videoClose" aria-label="关闭视频">×</button><video id="videoPlayer" controls playsinline></video></div>
   <script src="app.js"></script>
 </body>
