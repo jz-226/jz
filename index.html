@@ -16,7 +16,9 @@
     <a class="wordmark" href="#top" aria-label="回到首页">JZ—26</a>
     <nav aria-label="页面导航">
       <a href="#work">01 / WORK</a>
-      <a href="#about">02 / PROFILE</a>
+      <a href="#toolchain">02 / TOOLCHAIN</a>
+      <a href="#playground">03 / PLAY</a>
+      <a href="#about">06 / PROFILE</a>
     </nav>
     <a class="header-contact" href="mailto:2175564440@qq.com">CONTACT ↗</a>
   </header>
@@ -73,9 +75,42 @@
       </div>
     </section>
 
+    <section class="toolchain shell reveal" id="toolchain" aria-label="AI 工具链">
+      <div class="toolchain-head"><p class="index-label">03 / AI TOOLCHAIN</p><p>把工具当作真实工作流的一部分：理解代码库、拆解任务、持续迭代，再将结果接回产品。</p></div>
+      <div class="toolchain-grid">
+        <div class="tool-list" role="tablist" aria-label="工具链">
+          <button class="tool-card active" role="tab" aria-selected="true" data-tool="codex" data-title="Codex" data-line="从仓库到可交付的改动。" data-detail="用终端、代码审查与任务上下文推进实际项目：定位问题、改动实现、验证并交付。" data-code="$ codex implement --scope portfolio\n✓ inspect repository\n✓ build interaction\n✓ verify and ship"><span>01</span><b>Codex</b><small>CODE / TERMINAL / DELIVERY</small></button>
+          <button class="tool-card" role="tab" aria-selected="false" data-tool="claude" data-title="Claude Code" data-line="先理解全局，再落到一个改动。" data-detail="用于研究代码结构、厘清复杂依赖与迭代方案；让长上下文的理解最终落到可读、可运行的实现上。" data-code="$ claude analyze --project\n✓ map system context\n✓ compare approaches\n✓ implement with intent"><span>02</span><b>Claude Code</b><small>RESEARCH / CONTEXT / REFACTOR</small></button>
+          <button class="tool-card" role="tab" aria-selected="false" data-tool="n8n" data-title="n8n" data-line="把重复的动作变成可复用的流程。" data-detail="将触发条件、内容处理与通知串成自动化流程，让运营或产品工作少依赖手工复制与状态追踪。" data-code="$ n8n run workflow\n✓ trigger event\n✓ transform content\n✓ notify and log"><span>03</span><b>n8n</b><small>AUTOMATION / WORKFLOW / OPS</small></button>
+        </div>
+        <div class="tool-terminal" aria-live="polite"><p class="terminal-title" id="toolTitle">TOOL / CODEX</p><h2 id="toolLine">从仓库到可交付的改动。</h2><p id="toolDetail">用终端、代码审查与任务上下文推进实际项目：定位问题、改动实现、验证并交付。</p><pre id="toolCode">$ codex implement --scope portfolio
+✓ inspect repository
+✓ build interaction
+✓ verify and ship</pre></div>
+      </div>
+    </section>
+
+    <section class="playground" id="playground" aria-label="Agent Playground">
+      <div class="playground-inner shell reveal">
+        <div class="playground-head"><p>04 / AGENT PLAYGROUND</p><span>SELECT A TASK, THEN RUN IT</span></div>
+        <div class="playground-grid">
+          <div class="play-choices" role="group" aria-label="选择任务"><button class="play-choice active" data-play="product">产品需求拆解</button><button class="play-choice" data-play="code">代码审查</button><button class="play-choice" data-play="automation">自动化流程</button></div>
+          <div class="agent-stage" id="agentStage"><div class="agent-node node-input">INPUT</div><div class="agent-link"></div><div class="agent-node node-reason">REASON</div><div class="agent-link"></div><div class="agent-node node-output">OUTPUT</div><p id="agentResult">选择一个任务，观察 Agent 如何把模糊输入变成可执行结果。</p></div>
+          <div class="play-control"><p id="playPrompt">“帮我把一个模糊想法变成能被验证的产品路径。”</p><button id="runAgent" class="run-agent">RUN AGENT <span>↗</span></button><small id="agentStatus">IDLE / WAITING FOR INPUT</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="build-log shell reveal" aria-label="构建日志">
+      <div class="build-log-head"><p class="index-label">05 / BUILD LOG</p><p>点开一条，看见一个项目从想法走到上线时真正要处理的部分。</p></div>
+      <details open><summary><span>01</span><b>从一句需求开始，而不是从一个界面开始</b><i>+</i></summary><p>先把问题、使用场景与下一步说清楚。后续的产品结构、AI 工作流与视觉才有真正的落点。</p></details>
+      <details><summary><span>02</span><b>让模型能力进入明确的反馈循环</b><i>+</i></summary><p>不是把聊天框塞进产品，而是定义输入、过程、结果和用户可以采取的行动。</p></details>
+      <details><summary><span>03</span><b>完成开发、验证与真正的发布</b><i>+</i></summary><p>从代码到可访问链接，从测试版到用户可以实际游玩的体验，交付本身是设计的一部分。</p></details>
+    </section>
+
     <section class="profile shell reveal" id="about">
       <div>
-        <p class="index-label">02 / PROFILE</p>
+        <p class="index-label">06 / PROFILE</p>
         <h2>不只画界面，<br>也完成交付。</h2>
       </div>
       <div class="profile-content">
