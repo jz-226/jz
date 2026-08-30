@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="FireGuard 消防隐患闭环协同平台界面示意">
+  <rect width="1200" height="760" fill="#071c24"/>
+  <path d="M0 80H1200M0 160H1200M0 240H1200M0 320H1200M0 400H1200M0 480H1200M0 560H1200M0 640H1200M120 0V760M240 0V760M360 0V760M480 0V760M600 0V760M720 0V760M840 0V760M960 0V760M1080 0V760" stroke="#75d4ba" stroke-opacity=".08"/>
+  <rect x="112" y="100" width="976" height="560" fill="#f2f7f4" stroke="#75d4ba" stroke-width="3"/>
+  <rect x="112" y="100" width="976" height="76" fill="#eef5f1"/>
+  <path d="M112 176H1088" stroke="#c5d8d3" stroke-width="2"/>
+  <text x="151" y="150" fill="#e84c43" font-family="monospace" font-size="38" font-weight="700">F/</text>
+  <text x="218" y="149" fill="#173339" font-family="sans-serif" font-size="28" font-weight="700">消防隐患闭环平台</text>
+  <rect x="972" y="125" width="77" height="28" fill="#d9f4e9"/><text x="989" y="145" fill="#167159" font-family="monospace" font-size="14">在线</text>
+  <rect x="112" y="177" width="198" height="483" fill="#e5efeb"/>
+  <text x="148" y="236" fill="#153a3c" font-family="sans-serif" font-size="21" font-weight="700">现场巡检</text>
+  <text x="148" y="292" fill="#58706d" font-family="sans-serif" font-size="18">整改任务</text>
+  <text x="148" y="340" fill="#58706d" font-family="sans-serif" font-size="18">复查中心</text>
+  <text x="148" y="388" fill="#58706d" font-family="sans-serif" font-size="18">知识库</text>
+  <text x="357" y="239" fill="#6e8380" font-family="monospace" font-size="16">今日待处理</text>
+  <text x="954" y="244" fill="#e84c43" font-family="monospace" font-size="56" font-weight="700">03</text>
+  <path d="M357 270H1039" stroke="#d6e3df" stroke-width="2"/>
+  <rect x="357" y="308" width="682" height="146" fill="#fff1ed"/>
+  <rect x="357" y="308" width="9" height="146" fill="#e84c43"/>
+  <text x="396" y="347" fill="#c93d36" font-family="monospace" font-size="15">高风险</text>
+  <text x="396" y="392" fill="#173339" font-family="sans-serif" font-size="30" font-weight="700">一楼灭火器压力不足</text>
+  <text x="396" y="428" fill="#7e6763" font-family="sans-serif" font-size="18">已分配 · 待整改</text>
+  <rect x="357" y="512" width="145" height="48" fill="#d9f4e9"/><text x="380" y="542" fill="#285b59" font-family="sans-serif" font-size="17">巡检发现</text>
+  <text x="523" y="544" fill="#e84c43" font-family="sans-serif" font-size="24">→</text>
+  <rect x="560" y="512" width="145" height="48" fill="#d9f4e9"/><text x="583" y="542" fill="#285b59" font-family="sans-serif" font-size="17">整改提交</text>
+  <text x="726" y="544" fill="#e84c43" font-family="sans-serif" font-size="24">→</text>
+  <rect x="763" y="512" width="145" height="48" fill="#d9f4e9"/><text x="786" y="542" fill="#285b59" font-family="sans-serif" font-size="17">复查闭环</text>
+</svg>
